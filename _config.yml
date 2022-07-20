@@ -1,6 +1,10 @@
-title: Alex Coch's DataSciece portfolio
+title: DataScience portfolio
 logo: /assets/img/logo.png
-description: Bookmark this to keep an eye on my project updates.
+description: #Bookmark this to keep an eye on my project updates.
+Alex Coch<br><br>
+<a href=https://linkedin.com/in/alexcoch>View My LinkedIn Profile</a><br><br>
+<a href=https://kaggle.com/alekscoch>View My Kaggle Profile</a><br><br>
+<a href=https://facebook.com/f.alex.coch>View My Facebook Profile</a><br><br>
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
