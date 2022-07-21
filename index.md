@@ -4,7 +4,8 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[https://img.shields.io/badge/GitGub-View_on_GitHub-2088FF?logo=GitHub]
+[https://img.shields.io/badge/GitGub-View_on_GitHub-2088FF?logo=GitHub] (.)
+[https://img.shields.io/badge/Colab-Run_on_Colab-F9AB00?logo=Colab] (.)
 
 [Link to another page](./another-page.html).
 
