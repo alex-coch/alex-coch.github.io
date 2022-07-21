@@ -4,6 +4,8 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
+[https://img.shields.io/badge/GitGub-View_on_GitHub-2088FF?logo=GitHub]
+
 [Link to another page](./another-page.html).
 
 There should be whitespace between paragraphs.
