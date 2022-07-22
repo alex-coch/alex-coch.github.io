@@ -6,7 +6,7 @@ description:
   <a href=https://kaggle.com/alekscoch>Kaggle</a> |
   <a href=https://facebook.com/f.alex.coch>Facebook</a>
   </p>   
-  <p><a href="#top">Somewhere</a></p>
+  <p><a href="#bottom">Somewhere</a></p>
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
