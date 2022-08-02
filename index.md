@@ -5,9 +5,10 @@ layout: default
 ## Machine Learning
 ### Predicting Boston Housing Prices 
 A model to predict the value of a given house in the Boston real estate market using various statistical analysis tools. Identified the best price that a client can sell their house utilizing machine learning. [(GitHub)](https://github.com/alex-coch/alex-coch.github.io/blob/main/boston_housing/). 
+<br>
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/blob/main/boston_housing/)
 [![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/boston_housing/boston_housing.ipynb)
-[![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/boston_housing/boston_housing.html)
+[![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](https://alex-coch.github.io/boston_housing/boston_housing.html)
 [![Open Web App](https://img.shields.io/badge/Heroku-Open_Web_App-blue?logo=Heroku)](.)
 
 ---
