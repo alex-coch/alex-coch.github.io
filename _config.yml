@@ -6,7 +6,8 @@ description:
   <a href=https://kaggle.com/alekscoch>Kaggle</a> |
   <a href=https://facebook.com/f.alex.coch>Facebook</a>
   </p>   
-  <p><a href="#bottom">Somewhere</a></p>
+  <p><a href="#machinelearning">Machine Learning</a></p>
+*   <a href="#boston">Predicting Boston Housing Prices</a>
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
