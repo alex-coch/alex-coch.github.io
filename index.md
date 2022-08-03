@@ -11,10 +11,14 @@ A model to predict the value of a given house in the Boston real estate market u
 [![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/boston_housing/boston_housing.ipynb)
 [![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](https://alex-coch.github.io/boston_housing/boston_housing.html)
 
-![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white-blue)
 <br>
 <center><img src="/assets/img/boston.jpg"></center>
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![Seaborn](https://img.shields.io/badge/seaborn-blue.svg?style=for-the-badge&logo=seaborn&logoColor=white)
+
 ---
+
 <br>
 <br>
 <br>
