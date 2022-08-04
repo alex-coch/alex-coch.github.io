@@ -7,7 +7,7 @@ description:
   <a href=https://facebook.com/f.alex.coch>Facebook</a>
   </p>   
   <a href="#machinelearning">Machine Learning</a><br>
-  <a href="#boston">Predicting Boston Housing Prices</a>
+  * <a href="#boston">Predicting Boston Housing Prices</a>
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
