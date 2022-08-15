@@ -19,6 +19,7 @@ A model to predict the value of a given house in the Boston real estate market u
 ![Seaborn](https://img.shields.io/badge/seaborn-%235C7DA2.svg?style=for-the-badge&logo=seaborn&logoColor=white)
                                                     
 ---
+<a name="donors"></a>
 ### Supervised Learning: Finding Donors for CharityML 
 Testing out several different supervised learning algorithms to build a model that accurately predicts whether an individual makes more than $50,000, to identify likely donors for a fictional non-profit organisation.
 > Supervised learning, Classification, SVM, Decision Trees, AdaBoost.
