@@ -8,6 +8,7 @@ description:
   </p>   
   <a href="#machinelearning">Machine Learning</a><br>
   - <a href="#boston">Predicting Boston Housing Prices</a>
+  - <a href="#donors">Supervised Learning: Finding Donors for CharityML</a>
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
