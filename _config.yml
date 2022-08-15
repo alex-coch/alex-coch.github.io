@@ -7,8 +7,8 @@ description:
   <a href=https://facebook.com/f.alex.coch>Facebook</a>
   </p>   
   <a href="#machinelearning">Machine Learning</a><br>
-  - <a href="#boston">Predicting Boston Housing Prices</a>
-  - <a href="#donors">Supervised Learning: Finding Donors for CharityML</a>
+  - <a href="#boston">Predicting Boston Housing Prices</a><br>
+  - <a href="#donors">Supervised Learning: Finding Donors for CharityML</a><br>
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
