@@ -6,13 +6,15 @@ import warnings
 #
 # Display inline matplotlib plots with IPython
 from IPython import get_ipython
-###########################################
 
 import matplotlib.pyplot as pl
 import numpy as np
 import sklearn.model_selection as curves
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import ShuffleSplit, train_test_split
+
+###########################################
+
 
 warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -31,14 +33,14 @@ def model_learning(x, y):
     # Create the figure window
     fig = pl.figure(figsize=(10, 7))
 
-    ax = None
     # Create three different models based on max_depth
+    ax = None
     for k, depth in enumerate([1, 3, 6, 10]):
         # Create a Decision Tree at max_depth = depth
-        reg1 = DecisionTreeRegressor(max_depth=depth)
+        r = DecisionTreeRegressor(max_depth=depth)
 
         # Calculate the training and testing scores
-        sizes, train_scores, test_scores = curves.learning_curve(reg1, x, y,
+        sizes, train_scores, test_scores = curves.learning_curve(r, x, y,
                                                                  cv=cv, train_sizes=train_sizes, scoring='r2')
 
         # Find the mean and standard deviation for smoothing
@@ -130,7 +132,7 @@ def predict_trials(x, y, fitter, data):
         prices.append(predict)
 
         # Result
-        print("Trial {}: ${:,.2f}".format(k + 1, pred))
+        print("Trial {}: ${:,.2f}".format(k + 1, predict))
 
     # Display price range
     print("\nRange in prices: ${:,.2f}".format(max(prices) - min(prices)))
