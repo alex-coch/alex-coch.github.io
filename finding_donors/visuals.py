@@ -3,8 +3,10 @@
 # Necessary for newer version of matplotlib
 import warnings
 
+#
 # Display inline matplotlib plots with IPython
 from IPython import get_ipython
+###########################################
 
 import matplotlib.pyplot as pl
 import matplotlib.patches as m_patches
@@ -38,15 +40,14 @@ def distribution(data, transformed=False):
 
     # Plot aesthetics
     if transformed:
-        fig.suptitle()
+        fig.suptitle("Log-transformed Distributions of Continuous Census Data Features",
+                     fontsize=16, y=1.03)
     else:
         fig.suptitle("Skewed Distributions of Continuous Census Data Features",
                      fontsize=16, y=1.03)
 
     fig.tight_layout()
-
-
-#    fig.show()
+    fig.show()
 
 
 def evaluate(results, accuracy, f1):
@@ -69,7 +70,7 @@ def evaluate(results, accuracy, f1):
 
     # Super loop to plot four panels of data
     for k, learner in enumerate(results.keys()):
-        for j, metric in enumerate(['train_time', 'acc_train', 'f_train', 'predict_time', 'acc_test', 'f_test']):
+        for j, metric in enumerate(['train_time', 'acc_train', 'f_train', 'pred_time', 'acc_test', 'f_test']):
             for i in np.arange(3):
                 # Creative plot code
                 ax[j // 4, j % 3].bar(i + k * bar_width, results[learner][i][metric], width=bar_width, color=colors[k])
@@ -125,7 +126,7 @@ def feature_plot(importance, x_train):
     values = importance[indices][:5]
 
     # Create the plot
-    # fig = pl.figure(fig_size=(9, 5))
+    # fig = pl.figure()
     pl.title("Normalized Weights for First Five Most Predictive Features", fontsize=16)
     pl.bar(np.arange(5), values, width=0.6, align="center", color='#00A000',
            label="Feature Weight")
