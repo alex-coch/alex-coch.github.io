@@ -1,0 +1,11 @@
+[Unit]
+Description=Gunicorn daemon to serve my flaskapp
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/deployedapp
+ExecStart=/home/ubuntu/deployedapp/venv/bin/gunicorn app
+
+[Install]
+WantedBy=multi-user.target
