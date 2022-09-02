@@ -15,7 +15,7 @@ def index():
                    [8, 3, 12]]   # Client 3
     ret = ""
     for i, price in enumerate(reg.predict(client_data)):
-        ret += f"Predicted selling price for Client {i+1}'s home: ${price:.2f}<br>"
+        ret += "Predicted selling price for Client {ii}'s home: ${pp:.2f}<br>".format(ii = i+1, pp = price)
     return ret
 
 
