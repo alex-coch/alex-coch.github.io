@@ -9,39 +9,32 @@ application = Flask(__name__)
 application.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 Bootstrap(application)
 
-class CafeForm(FlaskForm):
-    cafe1 = StringField('Cafe name1', validators=[DataRequired()])
-    cafe2 = StringField('Cafe name2', validators=[DataRequired()])
-    cafe3 = StringField('Cafe name3', validators=[DataRequired()])
-    # location = StringField("Cafe Location on Google Maps (URL)", validators=[DataRequired(), URL()])
-    # open = StringField("Opening Time e.g. 8AM", validators=[DataRequired()])
-    # close = StringField("Closing Time e.g. 5:30PM", validators=[DataRequired()])
-    # coffee_rating = SelectField("Coffee Rating", choices=["☕️", "☕☕", "☕☕☕", "☕☕☕☕", "☕☕☕☕☕"], validators=[DataRequired()])
-    # wifi_rating = SelectField("Wifi Strength Rating", choices=["✘", "💪", "💪💪", "💪💪💪", "💪💪💪💪", "💪💪💪💪💪"], validators=[DataRequired()])
-    # power_rating = SelectField("Power Socket Availability", choices=["✘", "🔌", "🔌🔌", "🔌🔌🔌", "🔌🔌🔌🔌", "🔌🔌🔌🔌🔌"], validators=[DataRequired()])
+class MForm(FlaskForm):
+    data1 = StringField('Cafe name1', validators=[DataRequired()])
+    data2 = StringField('Cafe name2', validators=[DataRequired()])
+    data3 = StringField('Cafe name3', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
-@application.route("/")
+@application.route("/", methods=["GET", "POST"])
 def index():
-    with open('boston_housing_model.pkl', 'rb') as f:
-        reg = pickle.load(f)
-    # Produce a matrix for client data
-    client_data = [[5, 17, 15],  # Client 1
-                   [4, 32, 22],  # Client 2
-                   [8, 3, 12]]   # Client 3
+    form = MForm()
     ret = ""
-    for i, price in enumerate(reg.predict(client_data)):
-        ret += "Predicted selling price for Client {ii}'s home: ${pp:.2f}<br>".format(ii = i+1, pp = price)
-    # return ret
-    return render_template('index.html')
-
-@application.route('/add', methods=["GET", "POST"])
-def add_cafe():
-    form = CafeForm()
     if form.validate_on_submit():
-        # return redirect(url_for('cafes'))
-        return render_template('index.html')
-    return render_template('add.html', form=form)
+        with open('boston_housing_model.pkl', 'rb') as f:
+            reg = pickle.load(f)
+        # Produce a matrix for client data
+        print(form.data1, form.data2, form.data3) // todo(alex): <input id="data1" name="data1" required type="text" value="1"> <input id="data2" name="data2" required type="text" value="2"> <input id="data3" name="data3" required type="text" value="3">
+        client_data = list(map(float, [form.data1, form.data2, form.data3]))
+
+        # for i, price in enumerate(reg.predict(client_data)):
+        price = reg.predict(client_data)
+        ret = "Predicted selling price for Client's home: ${pp:.2f}".format(pp=price)
+        # return ret
+        # return render_template('index.html')
+    # return redirect(url_for('index'))
+    return render_template('index.html', form=form, ret=ret)
+    # return render_template('add.html', form=form)
+
 
 if __name__ == "__main__":
     # application.run(host='0.0.0.0', port='8080')
