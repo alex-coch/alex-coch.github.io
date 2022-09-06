@@ -1,0 +1,30 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+
+{% block title %}Set the initial parameters for predicting{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+
+      <h1>Set the initial parameters for predicting</h1>
+
+      {{ wtf.quick_form(form, novalidate=True) }}
+
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!--	  <p class="space-above"><a href="{{ url_for('.') }}">See all cafes</a></p>-->
