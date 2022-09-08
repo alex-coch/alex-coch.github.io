@@ -25,7 +25,7 @@ Seaborn, pandas, sklearn
 ### Supervised Learning: Finding Donors for CharityML 
 Testing out several different supervised learning algorithms to build a model that accurately predicts whether an individual makes more than $50,000, to identify likely donors for a fictional non-profit organisation.
 ```
-> Supervised learning, Classification, SVM, Decision Trees, AdaBoost.<br>
+Supervised learning, Classification, SVM, Decision Trees, AdaBoost.<br>
 ```
 ```pyhton
 Seaborn, numpy, pandas, matplotlib, sklearn
@@ -34,7 +34,7 @@ Seaborn, numpy, pandas, matplotlib, sklearn
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/blob/main/finding_donors/)
 [![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/finding_donors/finding_donors.ipynb)
 [![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](/finding_donors/finding_donors.html)
-[![Open Web App](https://img.shields.io/badge/Heroku-Open_Web_App-blue?logo=Heroku)](.)
+[![Open Web App](https://img.shields.io/badge/Heroku-Open_Web_App-blue?logo=Heroku)](https://alex-coch.herokuapp.com/)
 
 <center><img src="/assets/img/donors.jpg"></center>
 
