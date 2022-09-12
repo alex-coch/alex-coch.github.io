@@ -10,7 +10,7 @@ A model to predict the value of a given house in the Boston real estate market u
 Supervised learning, Regression, Decision Trees.
 ```
 ```pyhton
-Seaborn, pandas, sklearn
+Seaborn, pandas, sklearn, AWS
 ```
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/blob/main/boston_housing/)
