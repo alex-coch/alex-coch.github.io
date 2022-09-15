@@ -1,2 +1,0 @@
-Shields.io badges
-https://github.com/Ileriayo/markdown-badges#markdown-badges
