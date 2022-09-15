@@ -25,7 +25,7 @@ Seaborn, pandas, sklearn, AWS
 ### Supervised Learning: Finding Donors for CharityML 
 Testing out several different supervised learning algorithms to build a model that accurately predicts whether an individual makes more than $50,000, to identify likely donors for a fictional non-profit organisation.
 ```
-Supervised learning, Classification, SVM, Decision Trees, AdaBoost.<br>
+Supervised learning, Classification, SVM, Decision Trees, AdaBoost.
 ```
 ```pyhton
 Seaborn, numpy, pandas, matplotlib, sklearn, Heroku
@@ -37,5 +37,9 @@ Seaborn, numpy, pandas, matplotlib, sklearn, Heroku
 [![Open Web App](https://img.shields.io/badge/Heroku-Open_Web_App-blue?logo=Heroku)](https://alex-coch.herokuapp.com/)
 
 <center><img src="/assets/img/donors.jpg"></center>
+
+---
+<a name="segments"></a>
+### Unsupervised Learning: Creating Customer Segments: Analyzing a dataset containing data on various customers' annual spending amounts (reported in monetary units) of diverse product categories for discovering internal structure, patterns and knowledge.
 
 [.](another-page.md)

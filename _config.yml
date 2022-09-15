@@ -9,6 +9,7 @@ description:
   <a href="#machinelearning">Machine Learning</a><br>
   - <a href="#boston">Predicting Boston Housing Prices</a><br>
   - <a href="#donors">Finding Donors for CharityML</a><br>
+  - <a href="#segments">Unsupervised Learning: Creating Customer Segments</a><br>
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
