@@ -28,7 +28,7 @@ Testing out several different supervised learning algorithms to build a model th
 Supervised learning, Classification, SVM, Decision Trees, AdaBoost.<br>
 ```
 ```pyhton
-Seaborn, numpy, pandas, matplotlib, sklearn
+Seaborn, numpy, pandas, matplotlib, sklearn, Heroku
 ```
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/blob/main/finding_donors/)

@@ -1,0 +1,40 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+
+{% block title %}Set the initial parameters for predicting{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+
+            <h1>Finding Donors for CharityML</h1>
+            {% if ret != "": %}
+
+            <h3>{{ret }}</h3>
+            <p class="space-above"><a href="{{ url_for('index') }}">Predict again</a></p>
+
+            {% else %}
+
+            <h2>Set the initial parameters for predicting</h2>
+
+            {{ wtf.quick_form(form, novalidate=True) }}
+            {% endif %}
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
