@@ -9,7 +9,7 @@ A model to predict the value of a given house in the Boston real estate market u
 ```
 Supervised learning/Regression: Decision Trees.
 ```
-```pyhton
+```python
 Seaborn, pandas, sklearn, AWS.
 ```
 
@@ -27,7 +27,7 @@ Testing out several different supervised learning algorithms to build a model th
 ```
 Supervised learning/Classification: SVM, Decision Trees, AdaBoost.
 ```
-```pyhton
+```python
 Seaborn, numpy, pandas, matplotlib, sklearn, Heroku.
 ```
 
@@ -44,9 +44,10 @@ Seaborn, numpy, pandas, matplotlib, sklearn, Heroku.
 Analyzing a dataset containing data on various customers' annual spending amounts (reported in monetary units) of diverse product categories for discovering internal structure, patterns and knowledge.
 
 ```
-Unsupervised Learning/
+Unsupervised Learning/Dimension reduction: PCA.
 ```
-```pyhton
+```python
+Numpy, pandas, matplotlib, sklearn.
 ...
 ```
 
