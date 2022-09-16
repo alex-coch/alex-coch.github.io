@@ -7,10 +7,10 @@ layout: default
 ### Predicting Boston Housing Prices 
 A model to predict the value of a given house in the Boston real estate market using various statistical analysis tools. Identified the best price that a client can sell their house utilizing machine learning. 
 ```
-Supervised learning, Regression, Decision Trees.
+Supervised learning/Regression: Decision Trees.
 ```
 ```pyhton
-Seaborn, pandas, sklearn, AWS
+Seaborn, pandas, sklearn, AWS.
 ```
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/blob/main/boston_housing/)
@@ -25,10 +25,10 @@ Seaborn, pandas, sklearn, AWS
 ### Supervised Learning: Finding Donors for CharityML 
 Testing out several different supervised learning algorithms to build a model that accurately predicts whether an individual makes more than $50,000, to identify likely donors for a fictional non-profit organisation.
 ```
-Supervised learning, Classification, SVM, Decision Trees, AdaBoost.
+Supervised learning/Classification: SVM, Decision Trees, AdaBoost.
 ```
 ```pyhton
-Seaborn, numpy, pandas, matplotlib, sklearn, Heroku
+Seaborn, numpy, pandas, matplotlib, sklearn, Heroku.
 ```
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/blob/main/finding_donors/)
@@ -40,6 +40,20 @@ Seaborn, numpy, pandas, matplotlib, sklearn, Heroku
 
 ---
 <a name="segments"></a>
-### Unsupervised Learning: Creating Customer Segments: Analyzing a dataset containing data on various customers' annual spending amounts (reported in monetary units) of diverse product categories for discovering internal structure, patterns and knowledge.
+### Unsupervised Learning: Creating Customer Segments 
+Analyzing a dataset containing data on various customers' annual spending amounts (reported in monetary units) of diverse product categories for discovering internal structure, patterns and knowledge.
+
+```
+Unsupervised Learning/
+```
+```pyhton
+...
+```
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/blob/main/finding_donors/)
+[![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/finding_donors/finding_donors.ipynb)
+[![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](/finding_donors/finding_donors.html)
+
+<center><img src="/assets/img/customer.jpg"></center>
 
 [.](another-page.md)
