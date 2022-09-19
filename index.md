@@ -44,11 +44,10 @@ Seaborn, numpy, pandas, matplotlib, sklearn, Heroku.
 Analyzing a dataset containing data on various customers' annual spending amounts (reported in monetary units) of diverse product categories for discovering internal structure, patterns and knowledge.
 
 ```
-Unsupervised Learning/Dimension reduction: PCA.
+Unsupervised Learning/Dimension reduction: PCA. Clusterization: Gaussian Mixture Model.
 ```
 ```python
 Numpy, pandas, matplotlib, sklearn.
-...
 ```
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/blob/main/finding_donors/)
