@@ -1,5 +1,5 @@
-[![GitHub last commit](https://img.shields.io/github/last-commit/alex-coch/alex-coch.github.io)](https://github.com/alex-coch/alex-coch.github.io/commits/master)
-[![GitHub repo size](https://img.shields.io/github/repo-size/nathan-abela/alex-coch.github.io)](https://github.com/alex-coch/alex-coch.github.io/archive/master.zip)
+[![GitHub last commit](https://img.shields.io/github/last-commit/alex-coch/alex-coch.github.io)](https://github.com/alex-coch/alex-coch.github.io/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/nathan-abela/alex-coch.github.io)](https://github.com/alex-coch/alex-coch.github.io/archive/main.zip)
 
 # Data Science portfolio
 Repository containing portfolio of data science projects completed by me for academic, self learning, and hobby purposes. Presented in the form of iPython Notebooks.
