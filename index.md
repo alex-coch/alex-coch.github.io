@@ -9,9 +9,7 @@ A model to predict the value of a given house in the Boston real estate market u
 ```
 Supervised learning/Regression: Decision Trees.
 ```
-```python
-Seaborn, pandas, sklearn, AWS.
-```
+```python Seaborn, pandas, sklearn, AWS.```
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/blob/main/boston_housing/)
 [![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/boston_housing/boston_housing.ipynb)
@@ -55,5 +53,23 @@ Numpy, pandas, matplotlib, sklearn.
 [![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](/customer_segments/customer_segments.html)
 
 <center><img src="/assets/img/customer.jpg"></center>
+
+---
+<a name="smartcab"></a>
+### Unsupervised Learning: Creating Customer Segments 
+Analyzing a dataset containing data on various customers' annual spending amounts (reported in monetary units) of diverse product categories for discovering internal structure, patterns and knowledge.
+
+```
+Reinforcement Learning: Q-Learning.
+```
+```python
+xxx.
+```
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/blob/main/customer_segments/)
+[![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/customer_segments/customer_segments.ipynb)
+[![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](/customer_segments/customer_segments.html)
+
+Reinforcement Learning: Training a Smartcab to Drive: Creating an optimized Q-Learning driving agent that will navigate a Smartcab through its environment towards a goal.
 
 [.](another-page.md)
