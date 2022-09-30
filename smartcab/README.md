@@ -2,7 +2,10 @@
 ## Project: Train a Smartcab How to Drive
 
 This project was completed as a part of Udacity's Machine Learning Nanodegree.
-<p align=center>![Smartcab](smartcab.gif)</p>
+<p align="center">
+  <img src="smartcab.gif" alt="smartcab" />
+</p>
+
 
 ### Introduction
 
