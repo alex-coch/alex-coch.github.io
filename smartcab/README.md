@@ -13,7 +13,7 @@ In this project, we work towards constructing an optimized Q-Learning driving ag
 
 Note that, template code for the Smartcab's environment and other agents (cars) in the environment was already provided. Our job is to implement a learning algorithm so that the Smartcab behaves properly, following the rules and regulations, while moving towards its destination.
 
-### [Analysis Notebook](https://github.com/sajal2692/Training-a-Smartcab-to-Drive/blob/master/smartcab.ipynb) 
+[Analysis Notebook](https://github.com/sajal2692/Training-a-Smartcab-to-Drive/blob/master/smartcab.ipynb) 
 Please visit the notebook linked above to check out a step-by-step analysis of the project at various stages, and to understand the project better.
 
 
@@ -29,7 +29,6 @@ This project requires **Python 2.7** with the [pygame](https://www.pygame.org/wi
 In a terminal or command window, navigate to the top-level project directory `smartcab/` (that contains this README) and run one of the following commands:
 
 ```python smartcab/agent.py```  
-```python -m smartcab.agent```
 
 This will run the `agent.py` file and execute your agent code.
 
