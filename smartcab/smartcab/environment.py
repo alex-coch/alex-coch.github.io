@@ -98,7 +98,7 @@ class Environment(object):
 
     def set_primary_agent(self, agent, enforce_deadline=False):
         """ When called, set_primary_agent sets 'agent' as the primary agent.
-            The primary agent is the smartcab that is followed in the environment. """
+            The primary agent is the Smart-cab that is followed in the environment. """
 
         self.primary_agent = agent
         agent.primary_agent = True
@@ -129,7 +129,7 @@ class Environment(object):
         start_heading = random.choice(self.valid_headings)
         distance = self.compute_dist(start, destination)
         deadline = distance * 5  # 5 time steps per intersection away
-        if (self.verbose == True):  # Debugging
+        if self.verbose:  # Debugging
             print
             "Environment.reset(): Trial set up with start = {}, destination = {}, deadline = {}".format(start,
                                                                                                         destination,
@@ -194,7 +194,7 @@ class Environment(object):
         print
         ""
 
-        if (self.verbose == True):  # Debugging
+        if self.verbose:  # Debugging
             print
             "Environment.step(): t = {}".format(self.t)
 
@@ -241,7 +241,7 @@ class Environment(object):
         location = state['location']
         heading = state['heading']
         light = 'green' if (self.intersections[location].state and heading[1] != 0) or (
-                    (not self.intersections[location].state) and heading[0] != 0) else 'red'
+                (not self.intersections[location].state) and heading[0] != 0) else 'red'
 
         # Populate oncoming, left, right
         oncoming = None
@@ -259,7 +259,7 @@ class Environment(object):
             if (heading[0] * other_state['heading'][0] + heading[1] * other_state['heading'][1]) == -1:
                 if oncoming != 'left':  # we don't want to override oncoming == 'left'
                     oncoming = other_heading
-            elif (heading[1] == other_state['heading'][0] and -heading[0] == other_state['heading'][1]):
+            elif heading[1] == other_state['heading'][0] and -heading[0] == other_state['heading'][1]:
                 if right != 'forward' and right != 'left':  # we don't want to override right == 'forward or 'left'
                     right = other_heading
             else:
@@ -284,7 +284,7 @@ class Environment(object):
         location = state['location']
         heading = state['heading']
         light = 'green' if (self.intersections[location].state and heading[1] != 0) or (
-                    (not self.intersections[location].state) and heading[0] != 0) else 'red'
+                (not self.intersections[location].state) and heading[0] != 0) else 'red'
         inputs = self.sense(agent)
 
         # Assess whether the agent can move based on the action chosen.
@@ -341,7 +341,7 @@ class Environment(object):
                 heading = (-heading[1], heading[0])
 
         # Agent wants to perform no action:
-        elif action == None:
+        elif action is None:
             if light == 'green' and inputs['oncoming'] != 'left':  # No oncoming traffic
                 violation = 1  # Minor violation
 
@@ -349,7 +349,7 @@ class Environment(object):
         if violation == 0:
             if action == agent.get_next_waypoint():  # Was it the correct action?
                 reward += 2 - penalty  # (2, 1)
-            elif action == None and light != 'green':  # Was the agent stuck at a red light?
+            elif action is None and light != 'green':  # Was the agent stuck at a red light?
                 reward += 2 - penalty  # (2, 1)
             else:  # Valid but incorrect
                 reward += 1 - penalty  # (1, 0)
@@ -357,9 +357,10 @@ class Environment(object):
             # Move the agent
             if action is not None:
                 location = (
-                (location[0] + heading[0] - self.bounds[0]) % (self.bounds[2] - self.bounds[0] + 1) + self.bounds[0],
-                (location[1] + heading[1] - self.bounds[1]) % (self.bounds[3] - self.bounds[1] + 1) + self.bounds[
-                    1])  # wrap-around
+                    (location[0] + heading[0] - self.bounds[0]) % (self.bounds[2] - self.bounds[0] + 1) + self.bounds[
+                        0],
+                    (location[1] + heading[1] - self.bounds[1]) % (self.bounds[3] - self.bounds[1] + 1) + self.bounds[
+                        1])  # wrap-around
                 state['location'] = location
                 state['heading'] = heading
         # Agent attempted invalid move
@@ -384,11 +385,11 @@ class Environment(object):
                 self.done = True
                 self.success = True
 
-                if (self.verbose == True):  # Debugging
+                if self.verbose:  # Debugging
                     print
                     "Environment.act(): Primary agent has reached destination!"
 
-            if (self.verbose == True):  # Debugging
+            if self.verbose:  # Debugging
                 print
                 "Environment.act() [POST]: location: {}, heading: {}, action: {}, reward: {}".format(location, heading,
                                                                                                      action, reward)
@@ -408,7 +409,7 @@ class Environment(object):
             self.trial_data['net_reward'] += reward
             self.trial_data['actions'][violation] += 1
 
-            if (self.verbose == True):  # Debugging
+            if self.verbose:  # Debugging
                 print
                 "Environment.act(): Step data: {}".format(self.step_data)
         return reward
@@ -478,8 +479,8 @@ class DummyAgent(Agent):
                 action_okay = False
 
         # Move to the next waypoint and choose a new one.
-        action = None
+        # action = None
         if action_okay:
-            action = self.next_waypoint
+            # action = self.next_waypoint
             self.next_waypoint = random.choice(Environment.valid_actions[1:])
-        reward = self.env.act(self, action)
+        # reward = self.env.act(self, action)
