@@ -58,8 +58,8 @@ Numpy, pandas, matplotlib, sklearn.
 
 ---
 <a name="smartcab"></a>
-### Reinforcement Learning: 
-Training a Smartcab to Drive: Creating an optimized Q-Learning driving agent that will navigate a Smartcab through its environment towards a goal.
+### Reinforcement Learning: Training a Smartcab to Drive
+Creating an optimized Q-Learning driving agent that will navigate a Smartcab through its environment towards a goal.
 
 ```
 Reinforcement Learning: Q-Learning.
@@ -69,7 +69,7 @@ Numpy.
 ```
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/tree/main/smartcab)
-[![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://github.com/alex-coch/alex-coch.github.io/blob/main/smartcab/smartcab.ipynb)
+[![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/smartcab/smartcab.ipynb)
 [![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](/smartcab/smartcab.html)
 
 <center><img src="/assets/img/smartcab.jpg"></center>
