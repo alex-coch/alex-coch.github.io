@@ -11,7 +11,7 @@ Repository containing portfolio of data science projects completed by me for aca
 ## Contents
 
 - ### Machine Learning
-```python 
+``` 
 Pandas, numpy, matplotlib, seaborn, sklearn, AWS, Heroku. 
 ```
 	- [Predicting Boston Housing Prices](/boston_housing/boston_housing.ipynb): A model to predict the value of a given house in the Boston real estate market using various statistical analysis tools. Identified the best price that a client can sell their house utilizing machine learning.
