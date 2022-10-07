@@ -11,6 +11,7 @@ description:
   - <a href="#donors">Finding Donors for CharityML</a><br>
   - <a href="#segments">Creating Customer Segments</a><br>
   - <a href="#smartcab">Training a Smartcab to Drive</a><br>
+  - <a href="#digit">Digit Sequence Recognition using CNNs</a><br>
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
