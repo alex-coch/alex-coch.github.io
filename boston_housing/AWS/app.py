@@ -32,7 +32,7 @@ def index():
             reg = pickle.load(f)
         client_data = np.array([form.data1.data, form.data2.data, form.data3.data]).reshape(1, -1)
         price = reg.predict(client_data)
-        ret = "Predicted selling price for the home: ${pp:.2f}".format(pp=float(price[0]))
+        ret = f"Predicted selling price for the home: ${float(price[0]):.2f}"
 
     return render_template('index.html', form=form, ret=ret)
 
