@@ -130,7 +130,7 @@ def predict_trials(x, y, fitter, data):
         prices.append(predict)
 
         # Result
-        print("Trial {}: ${:,.2f}".format(k + 1, pred))
+        print(f"Trial {k + 1}: ${pred:,.2f}")
 
     # Display price range
-    print("\nRange in prices: ${:,.2f}".format(max(prices) - min(prices)))
+    print(f"\nRange in prices: ${max(prices) - min(prices):,.2f}")
