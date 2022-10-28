@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>digit_recognition_mnist_sequence</title>
+<title>digit_recognition-mnist-sequence</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13253,7 +13253,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">build_synth_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">labels</span><span class="p">,</span><span class="n">dataset_size</span><span class="p">):</span>
@@ -13311,7 +13311,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Building the training dataset</span>
@@ -13325,7 +13325,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Building the test dataset</span>
@@ -13339,7 +13339,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#checking a sample</span>
@@ -13359,7 +13359,7 @@ Label for image: 5
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13407,7 +13407,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Converting labels to One-hot representations of shape (set_size,digits,classes)</span>
@@ -13444,7 +13444,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">train_labels</span> <span class="o">=</span> <span class="n">convert_labels</span><span class="p">(</span><span class="n">y_synth_train</span><span class="p">)</span>
@@ -13458,7 +13458,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Checking the shape of the OHE array for the first digit position</span>
@@ -13475,7 +13475,7 @@ Label for image: 5
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -13492,7 +13492,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">np_utils</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">(</span><span class="n">y_synth_train</span><span class="p">[</span><span class="mi">234</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="mi">11</span><span class="p">)</span>
@@ -13508,7 +13508,7 @@ Label for image: 5
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -13540,7 +13540,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">prep_data_keras</span><span class="p">(</span><span class="n">img_data</span><span class="p">):</span>
@@ -13564,7 +13564,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">train_images</span> <span class="o">=</span> <span class="n">prep_data_keras</span><span class="p">(</span><span class="n">X_synth_train</span><span class="p">)</span>
@@ -13578,7 +13578,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">train_images</span><span class="p">)</span>
@@ -13594,7 +13594,7 @@ Label for image: 5
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -13611,7 +13611,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">test_images</span><span class="p">)</span>
@@ -13627,7 +13627,7 @@ Label for image: 5
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -13651,7 +13651,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Importing relevant keras modules</span>
@@ -13677,7 +13677,7 @@ Label for image: 5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Building the model</span>
@@ -13750,42 +13750,42 @@ Label for image: 5
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/12
-469/469 [==============================] - 15s 11ms/step - loss: 6.7863 - dense_25_loss: 1.8013 - dense_26_loss: 1.7332 - dense_27_loss: 1.3908 - dense_28_loss: 0.9969 - dense_29_loss: 0.8641 - dense_25_accuracy: 0.3586 - dense_26_accuracy: 0.3950 - dense_27_accuracy: 0.5188 - dense_28_accuracy: 0.6704 - dense_29_accuracy: 0.7931 - val_loss: 4.1906 - val_dense_25_loss: 0.9087 - val_dense_26_loss: 1.0203 - val_dense_27_loss: 0.8717 - val_dense_28_loss: 0.6389 - val_dense_29_loss: 0.7510 - val_dense_25_accuracy: 0.7654 - val_dense_26_accuracy: 0.7259 - val_dense_27_accuracy: 0.7574 - val_dense_28_accuracy: 0.8094 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 15s 12ms/step - loss: 6.7855 - dense_1_loss: 1.7857 - dense_2_loss: 1.7342 - dense_3_loss: 1.3989 - dense_4_loss: 0.9882 - dense_5_loss: 0.8785 - dense_1_accuracy: 0.3680 - dense_2_accuracy: 0.3920 - dense_3_accuracy: 0.5173 - dense_4_accuracy: 0.6737 - dense_5_accuracy: 0.7935 - val_loss: 4.1266 - val_dense_1_loss: 0.8956 - val_dense_2_loss: 1.0231 - val_dense_3_loss: 0.8416 - val_dense_4_loss: 0.6099 - val_dense_5_loss: 0.7563 - val_dense_1_accuracy: 0.7511 - val_dense_2_accuracy: 0.7071 - val_dense_3_accuracy: 0.7764 - val_dense_4_accuracy: 0.8259 - val_dense_5_accuracy: 0.7996
 Epoch 2/12
-469/469 [==============================] - 4s 9ms/step - loss: 4.7142 - dense_25_loss: 1.1082 - dense_26_loss: 1.1662 - dense_27_loss: 0.9593 - dense_28_loss: 0.7000 - dense_29_loss: 0.7805 - dense_25_accuracy: 0.6160 - dense_26_accuracy: 0.5976 - dense_27_accuracy: 0.6655 - dense_28_accuracy: 0.7594 - dense_29_accuracy: 0.7995 - val_loss: 3.1018 - val_dense_25_loss: 0.6030 - val_dense_26_loss: 0.7244 - val_dense_27_loss: 0.5868 - val_dense_28_loss: 0.4506 - val_dense_29_loss: 0.7369 - val_dense_25_accuracy: 0.8512 - val_dense_26_accuracy: 0.8043 - val_dense_27_accuracy: 0.8483 - val_dense_28_accuracy: 0.8837 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 5s 11ms/step - loss: 4.6295 - dense_1_loss: 1.1001 - dense_2_loss: 1.1422 - dense_3_loss: 0.9203 - dense_4_loss: 0.6799 - dense_5_loss: 0.7870 - dense_1_accuracy: 0.6171 - dense_2_accuracy: 0.6001 - dense_3_accuracy: 0.6773 - dense_4_accuracy: 0.7640 - dense_5_accuracy: 0.7994 - val_loss: 2.9270 - val_dense_1_loss: 0.5652 - val_dense_2_loss: 0.6779 - val_dense_3_loss: 0.5306 - val_dense_4_loss: 0.4115 - val_dense_5_loss: 0.7418 - val_dense_1_accuracy: 0.8519 - val_dense_2_accuracy: 0.8157 - val_dense_3_accuracy: 0.8569 - val_dense_4_accuracy: 0.8967 - val_dense_5_accuracy: 0.7996
 Epoch 3/12
-469/469 [==============================] - 5s 10ms/step - loss: 4.1324 - dense_25_loss: 0.9468 - dense_26_loss: 1.0206 - dense_27_loss: 0.8136 - dense_28_loss: 0.5976 - dense_29_loss: 0.7538 - dense_25_accuracy: 0.6740 - dense_26_accuracy: 0.6491 - dense_27_accuracy: 0.7166 - dense_28_accuracy: 0.7940 - dense_29_accuracy: 0.7998 - val_loss: 2.6679 - val_dense_25_loss: 0.4784 - val_dense_26_loss: 0.6135 - val_dense_27_loss: 0.4827 - val_dense_28_loss: 0.3658 - val_dense_29_loss: 0.7274 - val_dense_25_accuracy: 0.8796 - val_dense_26_accuracy: 0.8428 - val_dense_27_accuracy: 0.8708 - val_dense_28_accuracy: 0.9097 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 5s 11ms/step - loss: 3.9615 - dense_1_loss: 0.9009 - dense_2_loss: 0.9577 - dense_3_loss: 0.7761 - dense_4_loss: 0.5651 - dense_5_loss: 0.7617 - dense_1_accuracy: 0.6910 - dense_2_accuracy: 0.6691 - dense_3_accuracy: 0.7292 - dense_4_accuracy: 0.8081 - dense_5_accuracy: 0.7998 - val_loss: 2.4755 - val_dense_1_loss: 0.4359 - val_dense_2_loss: 0.5398 - val_dense_3_loss: 0.4400 - val_dense_4_loss: 0.3226 - val_dense_5_loss: 0.7370 - val_dense_1_accuracy: 0.8864 - val_dense_2_accuracy: 0.8602 - val_dense_3_accuracy: 0.8847 - val_dense_4_accuracy: 0.9265 - val_dense_5_accuracy: 0.7996
 Epoch 4/12
-469/469 [==============================] - 5s 10ms/step - loss: 3.8189 - dense_25_loss: 0.8434 - dense_26_loss: 0.9349 - dense_27_loss: 0.7555 - dense_28_loss: 0.5439 - dense_29_loss: 0.7413 - dense_25_accuracy: 0.7150 - dense_26_accuracy: 0.6791 - dense_27_accuracy: 0.7334 - dense_28_accuracy: 0.8117 - dense_29_accuracy: 0.7998 - val_loss: 2.4559 - val_dense_25_loss: 0.4205 - val_dense_26_loss: 0.5351 - val_dense_27_loss: 0.4451 - val_dense_28_loss: 0.3315 - val_dense_29_loss: 0.7237 - val_dense_25_accuracy: 0.8940 - val_dense_26_accuracy: 0.8634 - val_dense_27_accuracy: 0.8899 - val_dense_28_accuracy: 0.9216 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 5s 10ms/step - loss: 3.5990 - dense_1_loss: 0.7858 - dense_2_loss: 0.8555 - dense_3_loss: 0.7073 - dense_4_loss: 0.4989 - dense_5_loss: 0.7514 - dense_1_accuracy: 0.7351 - dense_2_accuracy: 0.7038 - dense_3_accuracy: 0.7554 - dense_4_accuracy: 0.8287 - dense_5_accuracy: 0.7998 - val_loss: 2.2017 - val_dense_1_loss: 0.3686 - val_dense_2_loss: 0.4541 - val_dense_3_loss: 0.3790 - val_dense_4_loss: 0.2655 - val_dense_5_loss: 0.7343 - val_dense_1_accuracy: 0.8990 - val_dense_2_accuracy: 0.8838 - val_dense_3_accuracy: 0.9030 - val_dense_4_accuracy: 0.9378 - val_dense_5_accuracy: 0.7996
 Epoch 5/12
-469/469 [==============================] - 5s 10ms/step - loss: 3.6056 - dense_25_loss: 0.7814 - dense_26_loss: 0.8634 - dense_27_loss: 0.7172 - dense_28_loss: 0.5089 - dense_29_loss: 0.7348 - dense_25_accuracy: 0.7376 - dense_26_accuracy: 0.7070 - dense_27_accuracy: 0.7483 - dense_28_accuracy: 0.8257 - dense_29_accuracy: 0.7998 - val_loss: 2.2340 - val_dense_25_loss: 0.3681 - val_dense_26_loss: 0.4626 - val_dense_27_loss: 0.3902 - val_dense_28_loss: 0.2923 - val_dense_29_loss: 0.7208 - val_dense_25_accuracy: 0.9016 - val_dense_26_accuracy: 0.8853 - val_dense_27_accuracy: 0.8997 - val_dense_28_accuracy: 0.9334 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 5s 10ms/step - loss: 3.3834 - dense_1_loss: 0.7241 - dense_2_loss: 0.7953 - dense_3_loss: 0.6630 - dense_4_loss: 0.4539 - dense_5_loss: 0.7470 - dense_1_accuracy: 0.7581 - dense_2_accuracy: 0.7287 - dense_3_accuracy: 0.7706 - dense_4_accuracy: 0.8454 - dense_5_accuracy: 0.7998 - val_loss: 2.0508 - val_dense_1_loss: 0.3325 - val_dense_2_loss: 0.3989 - val_dense_3_loss: 0.3508 - val_dense_4_loss: 0.2346 - val_dense_5_loss: 0.7340 - val_dense_1_accuracy: 0.9116 - val_dense_2_accuracy: 0.9007 - val_dense_3_accuracy: 0.9121 - val_dense_4_accuracy: 0.9481 - val_dense_5_accuracy: 0.7996
 Epoch 6/12
-469/469 [==============================] - 5s 10ms/step - loss: 3.4337 - dense_25_loss: 0.7411 - dense_26_loss: 0.8055 - dense_27_loss: 0.6711 - dense_28_loss: 0.4864 - dense_29_loss: 0.7296 - dense_25_accuracy: 0.7524 - dense_26_accuracy: 0.7287 - dense_27_accuracy: 0.7671 - dense_28_accuracy: 0.8343 - dense_29_accuracy: 0.7998 - val_loss: 2.1031 - val_dense_25_loss: 0.3403 - val_dense_26_loss: 0.4253 - val_dense_27_loss: 0.3528 - val_dense_28_loss: 0.2709 - val_dense_29_loss: 0.7137 - val_dense_25_accuracy: 0.9124 - val_dense_26_accuracy: 0.8907 - val_dense_27_accuracy: 0.9082 - val_dense_28_accuracy: 0.9352 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 5s 10ms/step - loss: 3.2137 - dense_1_loss: 0.6729 - dense_2_loss: 0.7380 - dense_3_loss: 0.6251 - dense_4_loss: 0.4334 - dense_5_loss: 0.7443 - dense_1_accuracy: 0.7753 - dense_2_accuracy: 0.7499 - dense_3_accuracy: 0.7860 - dense_4_accuracy: 0.8537 - dense_5_accuracy: 0.7998 - val_loss: 1.9389 - val_dense_1_loss: 0.3058 - val_dense_2_loss: 0.3579 - val_dense_3_loss: 0.3191 - val_dense_4_loss: 0.2238 - val_dense_5_loss: 0.7322 - val_dense_1_accuracy: 0.9151 - val_dense_2_accuracy: 0.9113 - val_dense_3_accuracy: 0.9174 - val_dense_4_accuracy: 0.9486 - val_dense_5_accuracy: 0.7996
 Epoch 7/12
-469/469 [==============================] - 4s 9ms/step - loss: 3.2857 - dense_25_loss: 0.6967 - dense_26_loss: 0.7591 - dense_27_loss: 0.6442 - dense_28_loss: 0.4610 - dense_29_loss: 0.7246 - dense_25_accuracy: 0.7693 - dense_26_accuracy: 0.7452 - dense_27_accuracy: 0.7765 - dense_28_accuracy: 0.8436 - dense_29_accuracy: 0.7998 - val_loss: 2.0094 - val_dense_25_loss: 0.3150 - val_dense_26_loss: 0.3963 - val_dense_27_loss: 0.3323 - val_dense_28_loss: 0.2543 - val_dense_29_loss: 0.7116 - val_dense_25_accuracy: 0.9178 - val_dense_26_accuracy: 0.9003 - val_dense_27_accuracy: 0.9170 - val_dense_28_accuracy: 0.9447 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 5s 11ms/step - loss: 3.0898 - dense_1_loss: 0.6449 - dense_2_loss: 0.6967 - dense_3_loss: 0.5951 - dense_4_loss: 0.4127 - dense_5_loss: 0.7405 - dense_1_accuracy: 0.7871 - dense_2_accuracy: 0.7632 - dense_3_accuracy: 0.7960 - dense_4_accuracy: 0.8610 - dense_5_accuracy: 0.7998 - val_loss: 1.8524 - val_dense_1_loss: 0.2795 - val_dense_2_loss: 0.3286 - val_dense_3_loss: 0.3017 - val_dense_4_loss: 0.2076 - val_dense_5_loss: 0.7350 - val_dense_1_accuracy: 0.9237 - val_dense_2_accuracy: 0.9145 - val_dense_3_accuracy: 0.9220 - val_dense_4_accuracy: 0.9516 - val_dense_5_accuracy: 0.7996
 Epoch 8/12
-469/469 [==============================] - 4s 9ms/step - loss: 3.1615 - dense_25_loss: 0.6590 - dense_26_loss: 0.7260 - dense_27_loss: 0.6105 - dense_28_loss: 0.4456 - dense_29_loss: 0.7204 - dense_25_accuracy: 0.7818 - dense_26_accuracy: 0.7580 - dense_27_accuracy: 0.7910 - dense_28_accuracy: 0.8487 - dense_29_accuracy: 0.7998 - val_loss: 1.8771 - val_dense_25_loss: 0.2855 - val_dense_26_loss: 0.3606 - val_dense_27_loss: 0.2980 - val_dense_28_loss: 0.2284 - val_dense_29_loss: 0.7046 - val_dense_25_accuracy: 0.9222 - val_dense_26_accuracy: 0.9074 - val_dense_27_accuracy: 0.9227 - val_dense_28_accuracy: 0.9500 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 5s 10ms/step - loss: 3.0026 - dense_1_loss: 0.6172 - dense_2_loss: 0.6671 - dense_3_loss: 0.5769 - dense_4_loss: 0.4020 - dense_5_loss: 0.7395 - dense_1_accuracy: 0.7963 - dense_2_accuracy: 0.7748 - dense_3_accuracy: 0.8044 - dense_4_accuracy: 0.8646 - dense_5_accuracy: 0.7998 - val_loss: 1.7950 - val_dense_1_loss: 0.2680 - val_dense_2_loss: 0.3052 - val_dense_3_loss: 0.2872 - val_dense_4_loss: 0.2029 - val_dense_5_loss: 0.7316 - val_dense_1_accuracy: 0.9248 - val_dense_2_accuracy: 0.9212 - val_dense_3_accuracy: 0.9274 - val_dense_4_accuracy: 0.9515 - val_dense_5_accuracy: 0.7996
 Epoch 9/12
-469/469 [==============================] - 5s 10ms/step - loss: 3.0556 - dense_25_loss: 0.6330 - dense_26_loss: 0.6916 - dense_27_loss: 0.5873 - dense_28_loss: 0.4275 - dense_29_loss: 0.7161 - dense_25_accuracy: 0.7921 - dense_26_accuracy: 0.7681 - dense_27_accuracy: 0.7972 - dense_28_accuracy: 0.8559 - dense_29_accuracy: 0.7998 - val_loss: 1.8105 - val_dense_25_loss: 0.2777 - val_dense_26_loss: 0.3347 - val_dense_27_loss: 0.2843 - val_dense_28_loss: 0.2110 - val_dense_29_loss: 0.7028 - val_dense_25_accuracy: 0.9230 - val_dense_26_accuracy: 0.9111 - val_dense_27_accuracy: 0.9250 - val_dense_28_accuracy: 0.9526 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 5s 11ms/step - loss: 2.9282 - dense_1_loss: 0.5931 - dense_2_loss: 0.6479 - dense_3_loss: 0.5577 - dense_4_loss: 0.3919 - dense_5_loss: 0.7376 - dense_1_accuracy: 0.8059 - dense_2_accuracy: 0.7825 - dense_3_accuracy: 0.8105 - dense_4_accuracy: 0.8679 - dense_5_accuracy: 0.7998 - val_loss: 1.7315 - val_dense_1_loss: 0.2524 - val_dense_2_loss: 0.2892 - val_dense_3_loss: 0.2734 - val_dense_4_loss: 0.1866 - val_dense_5_loss: 0.7299 - val_dense_1_accuracy: 0.9301 - val_dense_2_accuracy: 0.9255 - val_dense_3_accuracy: 0.9280 - val_dense_4_accuracy: 0.9572 - val_dense_5_accuracy: 0.7996
 Epoch 10/12
-469/469 [==============================] - 4s 9ms/step - loss: 2.9665 - dense_25_loss: 0.6130 - dense_26_loss: 0.6645 - dense_27_loss: 0.5608 - dense_28_loss: 0.4171 - dense_29_loss: 0.7111 - dense_25_accuracy: 0.7994 - dense_26_accuracy: 0.7792 - dense_27_accuracy: 0.8084 - dense_28_accuracy: 0.8607 - dense_29_accuracy: 0.7998 - val_loss: 1.7216 - val_dense_25_loss: 0.2532 - val_dense_26_loss: 0.3147 - val_dense_27_loss: 0.2631 - val_dense_28_loss: 0.1979 - val_dense_29_loss: 0.6926 - val_dense_25_accuracy: 0.9253 - val_dense_26_accuracy: 0.9146 - val_dense_27_accuracy: 0.9282 - val_dense_28_accuracy: 0.9530 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 6s 12ms/step - loss: 2.8536 - dense_1_loss: 0.5762 - dense_2_loss: 0.6228 - dense_3_loss: 0.5379 - dense_4_loss: 0.3797 - dense_5_loss: 0.7370 - dense_1_accuracy: 0.8108 - dense_2_accuracy: 0.7926 - dense_3_accuracy: 0.8176 - dense_4_accuracy: 0.8722 - dense_5_accuracy: 0.7998 - val_loss: 1.6741 - val_dense_1_loss: 0.2386 - val_dense_2_loss: 0.2737 - val_dense_3_loss: 0.2557 - val_dense_4_loss: 0.1776 - val_dense_5_loss: 0.7285 - val_dense_1_accuracy: 0.9324 - val_dense_2_accuracy: 0.9273 - val_dense_3_accuracy: 0.9310 - val_dense_4_accuracy: 0.9576 - val_dense_5_accuracy: 0.7996
 Epoch 11/12
-469/469 [==============================] - 4s 9ms/step - loss: 2.8817 - dense_25_loss: 0.5929 - dense_26_loss: 0.6484 - dense_27_loss: 0.5410 - dense_28_loss: 0.3978 - dense_29_loss: 0.7014 - dense_25_accuracy: 0.8071 - dense_26_accuracy: 0.7844 - dense_27_accuracy: 0.8163 - dense_28_accuracy: 0.8656 - dense_29_accuracy: 0.7998 - val_loss: 1.6792 - val_dense_25_loss: 0.2499 - val_dense_26_loss: 0.3096 - val_dense_27_loss: 0.2521 - val_dense_28_loss: 0.1897 - val_dense_29_loss: 0.6779 - val_dense_25_accuracy: 0.9282 - val_dense_26_accuracy: 0.9178 - val_dense_27_accuracy: 0.9317 - val_dense_28_accuracy: 0.9563 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 5s 10ms/step - loss: 2.8059 - dense_1_loss: 0.5703 - dense_2_loss: 0.6012 - dense_3_loss: 0.5271 - dense_4_loss: 0.3727 - dense_5_loss: 0.7346 - dense_1_accuracy: 0.8127 - dense_2_accuracy: 0.8006 - dense_3_accuracy: 0.8214 - dense_4_accuracy: 0.8747 - dense_5_accuracy: 0.7998 - val_loss: 1.6648 - val_dense_1_loss: 0.2477 - val_dense_2_loss: 0.2639 - val_dense_3_loss: 0.2479 - val_dense_4_loss: 0.1762 - val_dense_5_loss: 0.7292 - val_dense_1_accuracy: 0.9312 - val_dense_2_accuracy: 0.9277 - val_dense_3_accuracy: 0.9359 - val_dense_4_accuracy: 0.9581 - val_dense_5_accuracy: 0.7996
 Epoch 12/12
-469/469 [==============================] - 4s 9ms/step - loss: 2.8167 - dense_25_loss: 0.5754 - dense_26_loss: 0.6303 - dense_27_loss: 0.5315 - dense_28_loss: 0.3900 - dense_29_loss: 0.6894 - dense_25_accuracy: 0.8144 - dense_26_accuracy: 0.7930 - dense_27_accuracy: 0.8214 - dense_28_accuracy: 0.8691 - dense_29_accuracy: 0.7999 - val_loss: 1.6114 - val_dense_25_loss: 0.2398 - val_dense_26_loss: 0.2877 - val_dense_27_loss: 0.2423 - val_dense_28_loss: 0.1821 - val_dense_29_loss: 0.6594 - val_dense_25_accuracy: 0.9329 - val_dense_26_accuracy: 0.9245 - val_dense_27_accuracy: 0.9340 - val_dense_28_accuracy: 0.9580 - val_dense_29_accuracy: 0.7996
+469/469 [==============================] - 5s 11ms/step - loss: 2.7463 - dense_1_loss: 0.5506 - dense_2_loss: 0.5837 - dense_3_loss: 0.5110 - dense_4_loss: 0.3682 - dense_5_loss: 0.7328 - dense_1_accuracy: 0.8220 - dense_2_accuracy: 0.8058 - dense_3_accuracy: 0.8250 - dense_4_accuracy: 0.8760 - dense_5_accuracy: 0.7998 - val_loss: 1.6289 - val_dense_1_loss: 0.2307 - val_dense_2_loss: 0.2559 - val_dense_3_loss: 0.2402 - val_dense_4_loss: 0.1770 - val_dense_5_loss: 0.7251 - val_dense_1_accuracy: 0.9335 - val_dense_2_accuracy: 0.9306 - val_dense_3_accuracy: 0.9352 - val_dense_4_accuracy: 0.9563 - val_dense_5_accuracy: 0.7996
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;keras.callbacks.History at 0x7f646c4081d0&gt;</pre>
+<pre>&lt;keras.callbacks.History at 0x7f85a04d3e50&gt;</pre>
 </div>
 
 </div>
@@ -13796,7 +13796,7 @@ Epoch 12/12
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_images</span><span class="p">)</span>
@@ -13816,7 +13816,7 @@ Epoch 12/12
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>313/313 [==============================] - 1s 4ms/step
+<pre>313/313 [==============================] - 1s 2ms/step
 </pre>
 </div>
 </div>
@@ -13827,7 +13827,7 @@ Epoch 12/12
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
@@ -13843,7 +13843,7 @@ Epoch 12/12
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -13860,7 +13860,7 @@ Epoch 12/12
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -13876,7 +13876,7 @@ Epoch 12/12
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -13893,7 +13893,7 @@ Epoch 12/12
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">test_labels</span><span class="p">)</span>
@@ -13909,7 +13909,7 @@ Epoch 12/12
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -13934,7 +13934,7 @@ Epoch 12/12
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">calculate_acc</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span><span class="n">real_labels</span><span class="p">):</span>
@@ -13966,7 +13966,7 @@ Epoch 12/12
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">ind_acc</span><span class="p">,</span><span class="n">glob_acc</span> <span class="o">=</span> <span class="n">calculate_acc</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span><span class="n">test_labels</span><span class="p">)</span>
@@ -13979,11 +13979,11 @@ Epoch 12/12
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The individual accuracy is </span><span class="si">{}</span><span class="s2"> %&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ind_acc</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The sequence prediction accuracy is </span><span class="si">{}</span><span class="s2"> %&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">glob_acc</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The individual accuracy is </span><span class="si">{</span><span class="n">ind_acc</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The sequence prediction accuracy is </span><span class="si">{</span><span class="n">glob_acc</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14000,8 +14000,8 @@ Epoch 12/12
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The individual accuracy is 90.98 %
-The sequence prediction accuracy is 64.14 %
+<pre>The individual accuracy is 91.104 %
+The sequence prediction accuracy is 64.56 %
 </pre>
 </div>
 </div>
@@ -14012,7 +14012,7 @@ The sequence prediction accuracy is 64.14 %
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Printing some examples of real and predicted labels</span>
@@ -14025,8 +14025,8 @@ The sequence prediction accuracy is 64.14 %
         <span class="n">actual_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">test_labels</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
         <span class="n">predicted_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predictions</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
         
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Actual labels: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">actual_labels</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted labels: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predicted_labels</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actual labels: </span><span class="si">{</span><span class="n">actual_labels</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicted labels: </span><span class="si">{</span><span class="n">predicted_labels</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14050,7 +14050,7 @@ Actual labels: [8, 5, 1, 8, 10]
 Predicted labels: [8, 5, 1, 8, 10]
 
 Actual labels: [2, 5, 7, 4, 10]
-Predicted labels: [2, 5, 7, 9, 10]
+Predicted labels: [2, 5, 7, 8, 10]
 
 Actual labels: [8, 0, 10, 10, 10]
 Predicted labels: [8, 0, 10, 10, 10]
