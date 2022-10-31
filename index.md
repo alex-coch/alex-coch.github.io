@@ -86,6 +86,22 @@ TensorFlow.
 
 <center><img src="/assets/img/digit.jpg"></center>
 
+---
+<a name="message"></a>
+ 
+### Disaster Message Classifier 
+A multilabel classification model to predict the categories of a disaster message. Includes an ETL pipeline for data processing, a ML pipeline to train the model, and a web app, with visualizations, where the model can be used to classify messages. Tools: NLTK, Scikit-learn, XGBoost, Flask, Plotly
+
+
+```
+NLTK, XGBoost, Flask, Plotly.
+```
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/tree/main/digit_recognition)
+[![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/digit_recognition/digit_recognition_mnist_sequence.ipynb)
+[![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](/digit_recognition/digit_recognition_mnist_sequence.html)
+
+<center><img src="/assets/img/digit.jpg"></center>
 
 
 
