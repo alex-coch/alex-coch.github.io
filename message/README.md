@@ -10,7 +10,7 @@ A walkthrough notebook for the project can be found [here](notebook/walkthrough.
 - `data/process_data.py`: The ETL pipeline used to process data in preparation for model building.
 - `models/train_classifier.py`: The Machine Learning pipeline used to fit, tune, evaluate, and export the model to a Python pickle (pickle is not uploaded to the repo due to size constraints.).
 - `app/templates/*.html`: HTML templates for the web app.
-- `run.py`: Start the Python server for the web app and prepare visualizations.s
+- `run.py`: Start the Python server for the web app and prepare visualizations.
 
 ## Instructions:
 
@@ -29,7 +29,7 @@ A walkthrough notebook for the project can be found [here](notebook/walkthrough.
 
 4. Go to http://0.0.0.0:3001/
 
-Please raise an issue if these instructions don't work for you!
+Enjoy yourself!
 
 ## Further Improvements
 
@@ -45,4 +45,3 @@ This repo sticks to the basics in order to provide a good baseline model for thi
 ![Classified Message](screenshots/message_classification_result.png)
 
 
-Check out my [Data Science Portfolio](https://github.com/sajal2692/data-science-portfolio) repository, or my [website](https://sajalsharma.com) for more Data Science and Machine Learning Projects.
