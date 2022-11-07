@@ -1,10 +1,8 @@
 import joblib
 import re
 import sys
-
 import nltk
-nltk.download(['punkt', 'wordnet'])
-nltk.download('stopwords')
+
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
@@ -19,45 +17,42 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
+nltk.download(['punkt', 'wordnet'])
+nltk.download('stopwords')
+nltk.download('omw-1.4')
 
 PUNCTUATION_REGEX = re.compile(r"[^\w\s]")
 STOPWORDS = stopwords.words('english')
 WORDNET_LEMMATIZER = WordNetLemmatizer()
 POS_TAGS_TO_LEMMATIZE = ["n", "v"]
 
-def load_data(database_filepath):
+
+def load_data(database_filepath: str) -> tuple:
     """
     Loads data from database
-
     Args:
-        database_filepath: path to database
-
+        database_filepath:str path to database
     Returns:
         (DataFrame) X: feature
         (DataFrame) Y: labels
-
     """
     engine = create_engine('sqlite:///' + database_filepath)
     df = pd.read_sql_query('select * from messages', engine)
 
-    X = df['message'].values
-    Y = df.drop(columns=['message','genre'], axis=1)
-    category_names = Y.columns
-    return X, Y, category_names
+    x = df['message'].values
+    y = df.drop(columns=['message', 'genre'], axis=1)
+    category_names = y.columns
+    return x, y, category_names
 
 
-def tokenize(text):
+def tokenize(text: str) -> list:
     """
     Tokenizes a given text.
-
     Args:
-        text: text string
-
+        text:str text string
     Returns:
         tokens: list of tokens
-
     """
-    
     # lowercase string and remove punctuation
     text = PUNCTUATION_REGEX.sub(" ", text.lower()).strip()
     # tokenize text
@@ -70,50 +65,46 @@ def tokenize(text):
     return tokens
 
 
-def build_model():
-    """Builds classification model """
-
+def build_model() -> GridSearchCV:
+    """Builds classification model"""
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
         ('clf', MultiOutputClassifier(XGBClassifier()))
     ])
-
     parameters = {
         "clf__estimator__max_depth": [4, 8, 16],
-        "clf__estimator__colsample_bytree":[0.5, 0.75, 1],
-        "clf__estimator__learning_rate":[0.1,]
+        "clf__estimator__colsample_bytree": [0.5, 0.75, 1],
+        "clf__estimator__learning_rate": [0.1, ]
     }
 
     cv = GridSearchCV(pipeline, cv=3, param_grid=parameters, verbose=3, n_jobs=-1, scoring="f1_micro")
     return cv
 
 
-def evaluate_model(model, X_test, Y_test, category_names):
+def evaluate_model(model: GridSearchCV, x_test: pd.DataFrame, y_test: pd.Series, category_names: list) -> None:
     """
     Evaluate the model against a test dataset
-
     Args:
         model: Trained model
-        X_test: Test features
-        Y_test: Test labels
+        x_test: Test features
+        y_test: Test labels
         category_names: String array of category names
     """
-    y_preds = model.predict(X_test)
-    print(classification_report(y_preds, Y_test.values, target_names=category_names))
+    y_preds = model.predict(x_test)
+    print(classification_report(y_preds, y_test.values, target_names=category_names))
     # collect accuracy scores in a dict
     category_name_2_accuracy_score = {}
     for i in range(len(category_names)):
-        category_name_2_accuracy_score[Y_test.columns[i]] = accuracy_score(Y_test.values[:,i],y_preds[:,i])
+        category_name_2_accuracy_score[Y_test.columns[i]] = accuracy_score(Y_test.values[:, i], y_preds[:, i])
     print("Accuracy per category")
     print(pd.Series(category_name_2_accuracy_score))
 
 
-def save_model(model, model_filepath):
+def save_model(model: GridSearchCV, model_filepath: str) -> None:
     """
     Save the model to a Python pickle
-
-    Args:s
+    Args:
         model: Trained model
         model_filepath: Path where to save the model
     """
@@ -124,17 +115,17 @@ def main():
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
-        X, Y, category_names = load_data(database_filepath)
-        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
+        x, y, category_names = load_data(database_filepath)
+        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
         print('Building model...')
         model = build_model()
 
         print('Training model...')
-        model.fit(X_train, Y_train)
+        model.fit(x_train, y_train)
 
         print('Evaluating model...')
-        evaluate_model(model, X_test, Y_test, category_names)
+        evaluate_model(model, x_test, y_test, category_names)
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))
         save_model(model, model_filepath)
@@ -142,10 +133,10 @@ def main():
         print('Trained model saved!')
 
     else:
-        print('Please provide the filepath of the disaster messages database '\
-              'as the first argument and the filepath of the pickle file to '\
-              'save the model to as the second argument. \n\nExample: python '\
-              'train_classifier.py ../data/DisasterResponse.db classifier.pkl')
+        print('''Please provide the filepath of the disaster messages database 
+              the first argument and the filepath of the pickle file to 
+              save the model to as the second argument. \n\nExample: python 
+              train_classifier.py ../data/DisasterResponse.db classifier.pkl''')
 
 
 if __name__ == '__main__':

@@ -94,7 +94,7 @@ A multilabel classification model to predict the categories of a disaster messag
 
 
 ```
-NLTK, XGBoost, Flask, Plotly.
+NLTK, XGBoost, Flask, Plotly, Pandas, SQLAlchemy.
 ```
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/tree/main/digit_recognition)

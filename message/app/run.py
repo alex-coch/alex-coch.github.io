@@ -2,10 +2,6 @@ import json
 import sys
 import os
 
-current = os.path.dirname(os.path.realpath(__file__))
-parent = os.path.dirname(current)
-sys.path.append(parent)
-
 from models.train_classifier import tokenize, STOPWORDS
 
 import plotly
@@ -18,6 +14,9 @@ from plotly.graph_objs import Bar
 import joblib
 from sqlalchemy import create_engine
 
+current = os.path.dirname(os.path.realpath(__file__))
+parent = os.path.dirname(current)
+sys.path.append(parent)
 
 app = Flask(__name__)
 
@@ -33,18 +32,16 @@ model = joblib.load("models/classifier.pkl")
 @app.route('/')
 @app.route('/index')
 def index():
-
     # extract data needed for visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
 
-    category_counts = df.drop(['message','genre'], axis=1).sum()
+    category_counts = df.drop(['message', 'genre'], axis=1).sum()
     category_names = list(category_counts.index)
 
     word_series = pd.Series(' '.join(df['message']).lower().split())
     top_words = word_series[~word_series.isin(STOPWORDS)].value_counts()[:5]
     top_words_names = list(top_words.index)
-
 
     # create visuals
     graphs = [
@@ -105,7 +102,7 @@ def index():
     ]
 
     # encode plotly graphs in JSON
-    ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
+    ids = [f"graph-{i}" for i, _ in enumerate(graphs)]
     graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
 
     # render web page with plotly graphs
@@ -122,7 +119,7 @@ def go():
     classification_labels = model.predict([query])[0]
     # make sure the columns below are mapped to the correct labels, or the web app results will be inaccurate
     classification_results = dict(zip(df.columns[2:], classification_labels))
-    
+
     # This will render the go.html Please see that file.
     return render_template(
         'go.html',
