@@ -2,8 +2,6 @@ import json
 import sys
 import os
 
-from models.train_classifier import tokenize, STOPWORDS
-
 import plotly
 import pandas as pd
 from nltk.corpus import stopwords
@@ -18,6 +16,8 @@ current = os.path.dirname(os.path.realpath(__file__))
 parent = os.path.dirname(current)
 sys.path.append(parent)
 
+from models.train_classifier import tokenize, STOPWORDS
+
 app = Flask(__name__)
 
 # load data
@@ -28,10 +28,14 @@ df = pd.read_sql_table('messages', engine)
 model = joblib.load("models/classifier.pkl")
 
 
-# index webpage displays cool visuals and receives user input text for model
 @app.route('/')
 @app.route('/index')
 def index():
+    """
+    Displays an index webpage with cool visuals and receives user input text for model
+    Returns:
+        render_template: a rendering web page with plotly graphs
+    """
     # extract data needed for visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
@@ -103,15 +107,19 @@ def index():
 
     # encode plotly graphs in JSON
     ids = [f"graph-{i}" for i, _ in enumerate(graphs)]
-    graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
+    graph_json = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
 
     # render web page with plotly graphs
-    return render_template('master.html', ids=ids, graphJSON=graphJSON)
+    return render_template('master.html', ids=ids, graphJSON=graph_json)
 
 
-# web page that handles user query and displays model results
 @app.route('/go')
 def go():
+    """
+    Handles user query and displays model results
+    Returns:
+        render_template: the rendering web page go.html
+    """
     # save user input in query
     query = request.args.get('query', '')
 
