@@ -1,6 +1,4 @@
 models/*.pkl
-data/*.db
 .ipynb_checkpoints
-*.db
 __pycache__
 venv
