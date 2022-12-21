@@ -14,7 +14,7 @@ description:
   Computer vision<br>
   - <a href="#digit">Digit Sequence Recognition</a><br>
   Natural Language Processing<br>
-  <a href="#message">Message Classifier</a><br>
+  - <a href="#message">Message Classifier</a><br>
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
