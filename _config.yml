@@ -6,7 +6,7 @@ description:
   <a href=https://kaggle.com/alekscoch>Kaggle</a> |
   <a href=https://facebook.com/f.alex.coch>Facebook</a>
   </p>   
-  <a href="#machinelearning">Machine Learning</a><br>
+  Machine Learning<br>
   - <a href="#boston">Predicting Boston Housing Prices</a><br>
   - <a href="#donors">Finding Donors for CharityML</a><br>
   - <a href="#segments">Creating Customer Segments</a><br>
@@ -14,7 +14,7 @@ description:
   Computer vision<br>
   - <a href="#digit">Digit Sequence Recognition using CNN</a><br>
   Natural Language Processing<br>
-  <a href="#message">NLTK, XGBoost, Flask</a><br>
+  <a href="#message">Message Classifier</a><br>
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
