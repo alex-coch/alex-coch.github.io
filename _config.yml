@@ -12,7 +12,7 @@ description:
   - <a href="#segments">Creating Customer Segments</a><br>
   - <a href="#smartcab">Training a Smartcab to Drive</a><br>
   Computer vision<br>
-  - <a href="#digit">Digit Sequence Recognition using CNN</a><br>
+  - <a href="#digit">Digit Sequence Recognition</a><br>
   Natural Language Processing<br>
   <a href="#message">Message Classifier</a><br>
 show_downloads: false
