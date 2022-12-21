@@ -101,7 +101,7 @@ NLTK, XGBoost, Flask, Plotly, Pandas, SQLAlchemy.
 [![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/message/notebook/walkthrough.ipynb)
 [![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](/digit_recognition/digit_recognition_mnist_sequence.html)
 
-<center><img src="/assets/img/digit.jpg"></center>
+<center><img src="/assets/img/message.jpg"></center>
 
 
 
