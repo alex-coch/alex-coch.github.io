@@ -15,6 +15,7 @@ description:
   - <a href="#digit">Digit Sequence Recognition</a><br>
   Natural Language Processing<br>
   - <a href="#message">Message Classifier</a><br>
+  - <a href="#sentiment">Sentiment Analysis</a><br>
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal

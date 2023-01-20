@@ -90,7 +90,7 @@ TensorFlow.
 <a name="message"></a>
  
 ### Disaster Message Classifier 
-A multilabel classification model to predict the categories of a disaster message. Includes an ETL pipeline for data processing, a ML pipeline to train the model, and a web app, with visualizations, where the model can be used to classify messages. Tools: NLTK, Scikit-learn, XGBoost, Flask, Plotly
+A multilabel classification model to predict the categories of a disaster message. Includes an ETL pipeline for data processing, a ML pipeline to train the model, and a web app, with visualizations, where the model can be used to classify messages.
 
 
 ```
@@ -102,6 +102,28 @@ NLTK, XGBoost, Flask, Plotly, Pandas, SQLAlchemy.
 [![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](/message/notebook/walkthrough.html)
 
 <center><img src="/assets/img/message.jpg"></center>
+
+---
+<a name="sentiment"></a>
+ 
+### 3-way Sentiment Analysis for Tweets 
+3-way polarity (positive, negative, neutral) classification system for tweets, without using NLTK's sentiment analysis engine. 
+
+
+```
+NLTK, XGBoost, Flask, Plotly, Pandas, SQLAlchemy.
+```
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alex-coch/alex-coch.github.io/tree/main/sentiment)
+[![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/sentiment/Sentiment_Analysis_for_Tweets.ipynb)
+[![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](/sentiment/sentiment.html)
+
+<center><img src="/assets/img/message.jpg"></center>
+
+
+
+
+
 
 
 
