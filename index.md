@@ -118,7 +118,7 @@ NLTK, XGBoost, Flask, Plotly, Pandas, SQLAlchemy.
 [![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://githubtocolab.com/alex-coch/alex-coch.github.io/blob/main/sentiment/Sentiment_Analysis_for_Tweets.ipynb)
 [![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](/sentiment/Sentiment_Analysis_for_Tweets.html)
 
-<center><img src="/assets/img/message.jpg"></center>
+<center><img src="/assets/img/sentiment.png"></center>
 
 
 
