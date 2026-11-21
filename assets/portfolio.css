@@ -23,7 +23,8 @@ article {background:var(--panel);border-left:4px solid var(--accent);padding:cla
 footer {margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.3rem}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 /* Keep section headings above card titles in the homepage hierarchy. */
-:is(#work, #writing) > h2 {font-size:clamp(1.75rem, 3.5vw, 2.25rem)}
+main > .hero ~ section {display:flow-root;margin-block-start:2rem}
+main > .hero ~ section > h2 {font-size:clamp(1.75rem, 3.5vw, 2.25rem);margin-block-start:0}
 :is(#work, #writing) article h3 {font-size:clamp(1.35rem, 2.6vw, 1.75rem)}
 :is(#work, #writing) article + article {margin-top:1rem}
 
@@ -55,7 +56,6 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
 .contact-icons button:focus-visible {outline:3px solid var(--focus);outline-offset:4px}
 .actions {display:flex;align-items:center;flex-wrap:wrap;gap:1.3rem;margin:1.6rem 0}
 .hero .location {font-size:1rem;color:var(--muted)}
-#skills,#contact {margin-top:3rem}
 .skills {display:grid;grid-template-columns:auto 1fr;gap:.7em 1.5em}
 .skills dt {font-weight:650}
 .skills dd {margin:0}
