@@ -11,11 +11,11 @@
 <p>The GPU service has a narrow contract. It receives one audio window, runs Wav2Vec2, and returns a score for each possible speech token at each time step. The processor uses those scores to align the book text with the recording and place each match on the original audiobook timeline.</p>
 <figure class="pipeline">
   <figcaption>From audiobook recording to synchronization map</figcaption>
-  <div class="node"><strong>Python processor · Airflow</strong><span>Prepare overlapping audio windows with FFmpeg.</span></div>
+  <div class="node"><strong>Python processor · Airflow</strong> <span>Prepare overlapping audio windows with FFmpeg.</span></div>
   <div class="edge">↓ One audio window per request</div>
-  <div class="node gpu"><strong>GPU service · FastAPI + Wav2Vec2</strong><span>Run inference on the audio window.</span></div>
+  <div class="node gpu"><strong>GPU service · FastAPI + Wav2Vec2</strong> <span>Run inference on the audio window.</span></div>
   <div class="edge">↓ Frame-level token scores and timing metadata</div>
-  <div class="node"><strong>Python processor + ebook text</strong><span>Match the scores to passages, recover source timestamps, and validate the SMIL map.</span></div>
+  <div class="node"><strong>Python processor + ebook text</strong> <span>Match the scores to passages, recover source timestamps, and validate the SMIL map.</span></div>
   <div class="edge">↓ Validated map or failure details</div>
   <div class="node"><strong>Calling system</strong></div>
 </figure>

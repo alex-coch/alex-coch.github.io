@@ -3,8 +3,15 @@
 <body><main>
 <header><a class="name" href="/">Aleksei Kokorev</a><a href="/learning/ml/">ML archive</a></header>
 <section class="hero"><h1>Python Backend<br>Engineer</h1><p>I build APIs and event-driven services. My recent work includes search, reading activity tracking, and a production pipeline that matches audiobook narration to text.</p>
-<nav><a class="primary" href="#work">View case study ↓</a><a href="/assets/Aleksei_Kokorev_Python_Backend_CV.pdf" download>Download CV</a><a href="https://www.linkedin.com/in/alexcoch/">LinkedIn ↗</a></nav></section>
-<section id="work"><h2>Selected work</h2><article><div class="meta">Production GPU service · Backend engineering</div><h3><a href="/projects/audiobook-alignment/">Matching audiobook narration to text</a></h3><p>I built a pipeline that maps passages in an ebook to time ranges in its audiobook. A dedicated GPU service processes the audio, while a Python backend matches the narration to the text and validates the timing.</p><p class="meta">Python · Apache Airflow · FastAPI · Wav2Vec2</p><a href="/projects/audiobook-alignment/">Read case study →</a></article></section>
+<nav><a class="primary" href="#work">View case studies ↓</a><a href="/assets/Aleksei_Kokorev_Python_Backend_CV.pdf" download>Download CV</a><a href="https://www.linkedin.com/in/alexcoch/">LinkedIn ↗</a></nav></section>
+<section id="work"><h2>Selected work</h2><article><div class="meta">Production GPU service · Backend engineering</div><h3><a href="/projects/audiobook-alignment/">Matching audiobook narration to text</a></h3><p>I built a pipeline that maps passages in an ebook to time ranges in its audiobook. A dedicated GPU service processes the audio, while a Python backend matches the narration to the text and validates the timing.</p><p class="meta">Python · Apache Airflow · FastAPI · Wav2Vec2</p><a href="/projects/audiobook-alignment/">Read case study →</a></article>
+<article>
+  <div class="meta">Backend engineering · Event-driven systems</div>
+  <h3><a href="/projects/transactional-outbox/">Reliable event delivery for document workflows</a></h3>
+  <p>I built a transactional outbox for a document workflow system. It kept events available for retry when RabbitMQ was unavailable, and idempotent consumers kept duplicate deliveries from applying the same change twice.</p>
+  <p class="meta">Python · PostgreSQL · RabbitMQ</p>
+  <a href="/projects/transactional-outbox/">Read case study →</a>
+</article></section>
 <footer><a href="/learning/ml/">Machine Learning Archive →</a><p>Earlier projects in machine learning, computer vision, and natural language processing.</p></footer></main>
 <script>
 const archiveAnchors = ['machinelearning','boston','donors','segments','smartcab','digit','message','sentiment'];
@@ -16,6 +23,6 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
       observer.unobserve(entry.target);
     }
   });
-  observer.observe(document.querySelector('article'));
+  document.querySelectorAll('#work article').forEach(card => observer.observe(card));
 }
 </script></body></html>

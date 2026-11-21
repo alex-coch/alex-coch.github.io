@@ -20,3 +20,4 @@ article {background:#e8efea;border-left:4px solid var(--accent);padding:clamp(1.
 .pipeline .edge {padding:.55rem 1rem;color:#405e55;font-size:.9rem}
 footer {margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.3rem}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+#work article + article {margin-top:1rem}
