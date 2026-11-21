@@ -1,41 +1,42 @@
 (() => {
   const motion = matchMedia('(prefers-reduced-motion: no-preference)');
-  const lines = [...document.querySelectorAll('.hero-focus-lines span')];
-  const toggle = document.querySelector('.hero-focus-toggle');
-  let current = 0;
-  let paused = false;
-  let timer;
+  if (!motion.matches) return;
 
-  function showLine(index) {
-    lines[current].removeAttribute('data-visible');
-    current = index;
-    lines[current].setAttribute('data-visible', '');
-  }
+  const text = document.querySelector('.hero-focus-text');
+  const lines = [...document.querySelectorAll('.hero-focus-line')].map(line => line.textContent);
+  const wait = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
+  let typing = true;
 
-  function updateRotation() {
-    clearInterval(timer);
-    toggle.hidden = !motion.matches;
-    if (!motion.matches) showLine(0);
-    if (motion.matches && !paused && !document.hidden) {
-      timer = setInterval(() => showLine((current + 1) % lines.length), 4000);
+  motion.addEventListener('change', () => {
+    typing = false;
+    text.textContent = lines[0];
+    text.removeAttribute('data-typing');
+  }, { once: true });
+
+  async function typeHeadline() {
+    text.setAttribute('data-typing', '');
+    for (const line of lines.slice(1)) {
+      await wait(950);
+      while (typing && text.textContent.length) {
+        text.textContent = text.textContent.slice(0, -1);
+        await wait(10);
+      }
+      for (let length = 1; typing && length <= line.length; length++) {
+        text.textContent = line.slice(0, length);
+        await wait(19);
+      }
+      if (!typing) return;
     }
+    text.removeAttribute('data-typing');
   }
 
-  toggle.addEventListener('click', () => {
-    paused = !paused;
-    toggle.textContent = paused ? 'Play' : 'Pause';
-    toggle.setAttribute('aria-label', paused ? 'Play headline rotation' : 'Pause headline rotation');
-    updateRotation();
-  });
+  typeHeadline();
 
-  motion.addEventListener('change', updateRotation);
-  document.addEventListener('visibilitychange', updateRotation);
-  updateRotation();
-
-  if (!motion.matches || !('IntersectionObserver' in window)) return;
+  if (!('IntersectionObserver' in window)) return;
 
   const observer = new IntersectionObserver(entries => {
-    entries.filter(entry => entry.isIntersecting).forEach(({ target }) => {
+    const visibleCards = new Set(entries.filter(entry => entry.isIntersecting).map(entry => entry.target));
+    visibleCards.forEach(target => {
       observer.unobserve(target);
       if (motion.matches) {
         target.animate(
@@ -46,5 +47,5 @@
     });
   }, { threshold: 0.15 });
 
-  document.querySelectorAll('.skill-card').forEach(card => observer.observe(card));
+  document.querySelectorAll('.skill-card, #work article').forEach(card => observer.observe(card));
 })();
