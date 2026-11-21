@@ -24,7 +24,10 @@
   }
 
   const toggle = header.querySelector('.menu-toggle');
+  const menu = document.getElementById(toggle.getAttribute('aria-controls'));
+  const mobile = matchMedia('(max-width:48rem)');
   function setMenuOpen(open) {
+    menu.inert = mobile.matches && !open;
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close main menu' : 'Open main menu');
   }
@@ -43,7 +46,8 @@
       toggle.focus();
     }
   });
-  matchMedia('(max-width:48rem)').addEventListener('change', closeMenu);
+  closeMenu();
+  mobile.addEventListener('change', closeMenu);
   window.addEventListener('pageshow', closeMenu);
 
   measureHeader();
