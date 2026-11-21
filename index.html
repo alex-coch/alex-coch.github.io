@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Aleksei Kokorev · Python Backend Engineer</title><meta name="description" content="Python backend engineering portfolio. APIs, event-driven systems and production GPU inference."><link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=13"><script defer src="/assets/portfolio-nav.js?v=7"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=14"><script defer src="/assets/portfolio-nav.js?v=7"></script>
 </head>
 <body>
 <header>
@@ -89,6 +89,13 @@
     <a href="https://t.me/alex_coch">Message on Telegram (@alex_coch)</a>
     <a href="https://wa.me/995568311218">Message on WhatsApp</a>
   </div>
+  <form id="contact-form" action="https://formspree.io/f/xqpqyzky" method="post">
+    <label for="contact-email">Your email</label>
+    <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+    <label for="contact-message">Message</label>
+    <textarea id="contact-message" name="message" rows="5" maxlength="3000" required></textarea>
+    <button class="primary" type="submit">Send message</button>
+  </form>
 </section>
 <footer><a href="/learning/ml/">Machine Learning Archive →</a><p>Earlier projects in machine learning, computer vision, and natural language processing.</p></footer></main>
 <script>

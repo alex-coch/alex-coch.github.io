@@ -98,3 +98,13 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
   [data-pinned-nav] .menu-backdrop {transition:opacity var(--menu-motion), visibility var(--menu-motion)}
   [data-pinned-nav] header nav {transition:clip-path var(--menu-motion), visibility var(--menu-motion)}
 }
+
+#contact-form {display:grid;gap:.65rem;max-width:36rem}
+#contact-form label {font-weight:650}
+#contact-form input,#contact-form textarea {
+  width:100%;padding:.7em .8em;font:inherit;color:var(--ink);
+  background:var(--panel);border:1px solid var(--muted);border-radius:.3rem
+}
+#contact-form textarea {resize:vertical}
+#contact-form button {justify-self:start;border:0;font:inherit;cursor:pointer}
+#contact-form :focus-visible {outline:3px solid var(--focus);outline-offset:3px}
