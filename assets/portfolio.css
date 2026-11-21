@@ -47,7 +47,7 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
 .theme-switch input:checked + .theme-track .theme-thumb::before {content:"☾"}
 .theme-switch input:focus-visible + .theme-track {outline:3px solid var(--focus);outline-offset:3px}
 @media(prefers-reduced-motion:no-preference){.theme-thumb {transition:transform .18s ease}}
-.contact-icons {max-width:calc(276px + 6.5rem);justify-content:space-between;gap:2px}
+.actions.contact-icons {max-width:calc(276px + 6.5rem);justify-content:space-between;gap:2px}
 .contact-icons :is(a, button) {display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--panel);border:1px solid var(--line)}
 .contact-icons :is(a, button):hover {border-color:currentColor}
 .contact-icons button {color:var(--accent);padding:0;cursor:pointer}
