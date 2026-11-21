@@ -3,7 +3,6 @@
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   if (!mobile) return;
 
-  const link = document.querySelector('[data-telegram-app]');
   let fallbackTimer;
 
   function cancelFallback() {
@@ -15,8 +14,9 @@
   });
   window.addEventListener('pagehide', cancelFallback);
 
-  link.addEventListener('click', event => {
-    if (event.defaultPrevented || event.button !== 0 ||
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[data-app-url]');
+    if (!link || event.defaultPrevented || event.button !== 0 ||
         event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
     event.preventDefault();
@@ -24,6 +24,6 @@
     fallbackTimer = setTimeout(() => {
       if (!document.hidden) window.location.assign(link.href);
     }, 1500);
-    window.location.assign(link.dataset.telegramApp);
+    window.location.assign(link.dataset.appUrl);
   });
 })();
