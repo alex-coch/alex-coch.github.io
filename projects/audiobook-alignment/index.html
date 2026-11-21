@@ -1,9 +1,28 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Matching audiobook narration to text · Aleksei Kokorev</title><link rel="stylesheet" href="/assets/portfolio.css"></head>
 <body><main><header><a class="name" href="/">Aleksei Kokorev</a><a href="/#work">← Selected work</a></header>
-<section class="case"><p class="meta">In production · Python backend engineering</p><h1>Matching audiobook narration to text</h1>
-<h2>The problem</h2><p>A book contains passages. Its audiobook contains a continuous timeline. Given a passage, the alignment task is to find where the narrator starts and finishes reading it.</p>
-<h2>My contribution</h2><p>I built the Python pipeline that processes the written text and audio, orchestrated the work with Apache Airflow, and deployed a dedicated service for GPU inference.</p>
-<h2>How it works</h2><ol class="flow"><li><strong>Inputs</strong><br>Book text and narration</li><li><strong>Processing</strong><br>Airflow pipeline and GPU inference</li><li><strong>Alignment</strong><br>Text mapped to audio time ranges</li></ol>
-<p>Airflow coordinates the processing steps. A dedicated GPU worker runs the model that matches the narration to the text.</p>
-<h2>Result</h2><p>The GPU inference service runs in production as part of the audiobook alignment pipeline.</p></section><footer><a href="/">← Backend portfolio</a></footer></main></body></html>
+<section class="case">
+<p class="meta">Production GPU service · Python backend engineering</p>
+<h1>Matching audiobook narration to text</h1>
+<h2>The problem</h2>
+<p>Given a passage in an ebook, where does it begin and end in the audiobook? The book gives us the words, and the recording gives us a timeline. Connecting the two gets tricky when the narrator repeats a line or reads a heading differently from the printed version.</p>
+<h2>What I built</h2>
+<p>I built the Python alignment pipeline and deployed a dedicated GPU inference service to production. The pipeline runs under Apache Airflow. It prepares the book text and uses FFmpeg to split the narration into short, overlapping audio windows.</p>
+<p>The GPU service has a narrow contract. It receives one audio window, runs Wav2Vec2, and returns a score for each possible speech token at each time step. The processor uses those scores to align the book text with the recording and place each match on the original audiobook timeline.</p>
+<figure class="pipeline">
+  <figcaption>From audiobook recording to synchronization map</figcaption>
+  <div class="node"><strong>Python processor · Airflow</strong><span>Prepare overlapping audio windows with FFmpeg.</span></div>
+  <div class="edge">↓ One audio window per request</div>
+  <div class="node gpu"><strong>GPU service · FastAPI + Wav2Vec2</strong><span>Run inference on the audio window.</span></div>
+  <div class="edge">↓ Frame-level token scores and timing metadata</div>
+  <div class="node"><strong>Python processor + ebook text</strong><span>Match the scores to passages, recover source timestamps, and validate the SMIL map.</span></div>
+  <div class="edge">↓ Validated map or failure details</div>
+  <div class="node"><strong>Calling system</strong></div>
+</figure>
+<h2>An engineering detail</h2>
+<p>A passage can span two audio windows. Simply joining their results would count part of the recording twice. The processor uses the model’s frame timing to trim the overlap and map the remaining frames back to their positions in the source audio. That gives both windows a common clock.</p>
+<h2>Result</h2>
+<p>The GPU service runs in production. The pipeline assembles the chapter timings into a SMIL synchronization map that links ebook passages to audio intervals. It validates the map before reporting the outcome to the calling system.</p>
+</section>
+<footer><a href="/">← Backend portfolio</a></footer>
+</main></body></html>
