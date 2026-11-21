@@ -59,6 +59,7 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
   min-height:44px;padding:.4em .75em;border:1px solid var(--line);border-radius:.3rem;background:var(--panel)
 }
 .hero .actions .primary,.resume-action {display:inline-flex;align-items:center;gap:.45em}
+.hero .actions .primary {min-height:44px;padding-block:.4em;border:1px solid transparent}
 .hero .actions svg,.resume-action svg {flex:none}
 .resume-action:hover {border-color:currentColor}
 .hero .location {font-size:1rem;color:var(--muted)}
