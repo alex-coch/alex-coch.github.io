@@ -27,7 +27,6 @@
   function setMenuOpen(open) {
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close main menu' : 'Open main menu');
-    toggle.textContent = open ? '×' : '☰';
   }
   function closeMenu() {
     setMenuOpen(false);

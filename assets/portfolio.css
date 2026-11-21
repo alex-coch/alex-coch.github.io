@@ -74,3 +74,12 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
   [data-pinned-nav] .menu-toggle[aria-expanded="false"] + nav {display:none}
   header nav a {display:flex;align-items:center;min-height:44px}
 }
+
+.menu-icon {fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.menu-icon path {transform-box:view-box;transform-origin:12px 12px}
+.menu-toggle[aria-expanded="true"] path:first-child {transform:rotate(45deg) translateY(6px)}
+.menu-toggle[aria-expanded="true"] path:nth-child(2) {opacity:0}
+.menu-toggle[aria-expanded="true"] path:last-child {transform:rotate(-45deg) translateY(-6px)}
+@media(prefers-reduced-motion:no-preference){
+  .menu-icon path {transition:transform 180ms ease-in-out, opacity 180ms ease-in-out}
+}
