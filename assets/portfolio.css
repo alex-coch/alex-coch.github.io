@@ -27,6 +27,8 @@ main > .hero ~ section {display:flow-root;margin-block-start:2rem}
 main > .hero ~ section > h2 {font-size:clamp(1.75rem, 3.5vw, 2.25rem);margin-block-start:0}
 .work-card h3 {font-size:clamp(1.35rem, 2.6vw, 1.75rem)}
 .work-card + .work-card {margin-top:1rem}
+.skill-cards + .work-card {margin-top:2rem}
+.work-card > h2 {margin-block-start:0}
 
 body > header {position:sticky;top:0;z-index:2;background:var(--page);width:min(58rem,90%);margin-inline:auto}
 html[data-pinned-nav] body {padding-top:var(--nav-height)}
