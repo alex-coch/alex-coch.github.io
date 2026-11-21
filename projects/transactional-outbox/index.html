@@ -33,6 +33,11 @@
 <section class="case">
   <p class="meta">Backend engineering · Event-driven systems</p>
   <h1>Reliable event delivery for document workflows</h1>
+  <ul role="list" class="tech-tags" aria-label="Tech stack">
+    <li>Python</li>
+    <li>PostgreSQL</li>
+    <li>RabbitMQ</li>
+  </ul>
   <h2>The problem</h2>
   <p>A document update had to save the change in PostgreSQL and notify other services through RabbitMQ. If the database commit succeeded and the process stopped before sending the message, the document would show its new state while downstream services would have no record of the change.</p>
   <h2>What I built</h2>
