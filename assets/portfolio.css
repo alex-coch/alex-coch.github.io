@@ -99,7 +99,11 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
   [data-pinned-nav] header nav {transition:clip-path var(--menu-motion), visibility var(--menu-motion)}
 }
 
-#contact-form {display:grid;gap:.65rem;max-width:36rem}
+#contact-form summary {
+  width:fit-content;padding:.55em .8em;color:var(--accent);
+  background:var(--panel);border:1px solid var(--line);border-radius:.3rem;cursor:pointer
+}
+#contact-form form {margin-top:1rem;display:grid;gap:.65rem;max-width:36rem}
 #contact-form label {font-weight:650}
 #contact-form input,#contact-form textarea {
   width:100%;padding:.7em .8em;font:inherit;color:var(--ink);
