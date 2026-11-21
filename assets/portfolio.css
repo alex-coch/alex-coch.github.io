@@ -75,9 +75,15 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 }
 .hero-focus > span {grid-area:1 / 1}
 .hero-focus-line {opacity:0;pointer-events:none}
-.hero-focus-text[data-typing]::after {
-  content:"";display:inline-block;height:.95em;margin-inline-start:.12em;
-  border-inline-start:2px solid currentColor;vertical-align:-.13em
+@media (prefers-reduced-motion:no-preference) {
+  .hero-focus-text[data-typing]::after {
+    content:"";display:inline-block;height:.95em;margin-inline-start:.12em;
+    border-inline-start:2px solid currentColor;vertical-align:-.13em;
+    animation:hero-cursor-blink 1s steps(1) infinite
+  }
+}
+@keyframes hero-cursor-blink {
+  50% {opacity:0}
 }
 
 .skills {display:grid;grid-template-columns:auto 1fr;gap:.7em 1.5em}
