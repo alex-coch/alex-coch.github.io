@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Matching audiobook narration to text · Aleksei Kokorev</title><link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=31"><script defer src="/assets/portfolio-nav.js?v=7"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=36"><script defer src="/assets/portfolio-nav.js?v=7"></script>
 </head>
 <body><header>
   <a class="name" href="/">Aleksei Kokorev</a>
@@ -51,5 +51,9 @@
 <h2>Handling overlapping audio windows</h2>
 <p>A passage can span two audio windows. Simply joining their results would count part of the recording twice. The processor uses the model’s frame timing to trim the overlap and map the remaining frames back to their positions in the source audio. That gives both windows a common clock.</p>
 </section>
-<footer><a href="/">← Backend portfolio</a></footer>
+<footer>
+  <div class="actions work-actions">
+    <a href="/">← Backend portfolio</a>
+  </div>
+</footer>
 </main></body></html>
