@@ -56,10 +56,10 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
 .contact-icons button:focus-visible {outline:3px solid var(--focus);outline-offset:4px}
 .actions {display:flex;align-items:center;flex-wrap:wrap;gap:1.3rem;margin:1.6rem 0}
 .resume-action {
-  display:inline-flex;align-items:center;gap:.45em;min-height:44px;
-  padding:.4em .75em;border:1px solid var(--line);border-radius:.3rem;background:var(--panel)
+  min-height:44px;padding:.4em .75em;border:1px solid var(--line);border-radius:.3rem;background:var(--panel)
 }
-.resume-action svg {flex:none}
+.hero .actions .primary,.resume-action {display:inline-flex;align-items:center;gap:.45em}
+.hero .actions svg,.resume-action svg {flex:none}
 .resume-action:hover {border-color:currentColor}
 .hero .location {font-size:1rem;color:var(--muted)}
 .skills {display:grid;grid-template-columns:auto 1fr;gap:.7em 1.5em}
