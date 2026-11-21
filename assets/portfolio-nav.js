@@ -32,7 +32,7 @@
   header.after(backdrop);
 
   function setMenuOpen(open) {
-    backdrop.classList.toggle('is-open', open);
+    document.documentElement.classList.toggle('menu-open', open);
     menu.inert = mobile.matches && !open;
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close main menu' : 'Open main menu');
