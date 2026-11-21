@@ -1,6 +1,6 @@
-:root {color-scheme:light;--ink:#233447;--accent:#415f82;--line:#c3cfdd;--page:#fafbfd;--panel:#eaf0f6;--muted:#4a6078;--hover:#2e4868;--on-accent:white;--focus:#476e99;background:var(--page);color:var(--ink);font:17px/1.55 system-ui,sans-serif}
-:root[data-theme="dark"] {color-scheme:dark;--page:#182331;--ink:#e7edf5;--accent:#a3bcd7;--line:#485e73;--panel:#223245;--muted:#b6c5d5;--hover:#c7d8ec;--on-accent:#182331;--focus:#adc9eb}
-@media(prefers-color-scheme:dark){:root:not([data-theme]) {color-scheme:dark;--page:#182331;--ink:#e7edf5;--accent:#a3bcd7;--line:#485e73;--panel:#223245;--muted:#b6c5d5;--hover:#c7d8ec;--on-accent:#182331;--focus:#adc9eb}}
+:root {color-scheme:light;--ink:#233447;--accent:#415f82;--line:#c3cfdd;--page:#fafbfd;--backdrop:rgba(10,20,35,.28);--panel:#eaf0f6;--muted:#4a6078;--hover:#2e4868;--on-accent:white;--focus:#476e99;background:var(--page);color:var(--ink);font:17px/1.55 system-ui,sans-serif}
+:root[data-theme="dark"] {color-scheme:dark;--page:#182331;--backdrop:rgba(0,0,0,.62);--ink:#e7edf5;--accent:#a3bcd7;--line:#485e73;--panel:#223245;--muted:#b6c5d5;--hover:#c7d8ec;--on-accent:#182331;--focus:#adc9eb}
+@media(prefers-color-scheme:dark){:root:not([data-theme]) {color-scheme:dark;--page:#182331;--backdrop:rgba(0,0,0,.62);--ink:#e7edf5;--accent:#a3bcd7;--line:#485e73;--panel:#223245;--muted:#b6c5d5;--hover:#c7d8ec;--on-accent:#182331;--focus:#adc9eb}}
 * {box-sizing:border-box} body {margin:0} main {width:min(58rem,90%);margin:auto}
 a {color:var(--accent);text-underline-offset:.22em} a:hover {color:var(--hover)}
 a:focus-visible {outline:3px solid var(--focus);outline-offset:4px}
@@ -58,13 +58,13 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
 }
 
 :root {--menu-motion:180ms ease-in-out}
-.menu-toggle {display:none}
+.menu-toggle, .menu-backdrop {display:none}
 @media(max-width:48rem){
-  [data-pinned-nav] body::before {
-    content:"";position:fixed;inset:0;z-index:1;background:rgb(10 20 35 / 20%);
+  [data-pinned-nav] .menu-backdrop {
+    display:block;position:fixed;inset:0;z-index:1;background:var(--backdrop);
     opacity:0;visibility:hidden
   }
-  [data-pinned-nav] body:has(.menu-toggle[aria-expanded="true"])::before {
+  [data-pinned-nav] .menu-backdrop.is-open {
     opacity:1;visibility:visible
   }
   html[data-pinned-nav] body > header {padding-block:.25rem;column-gap:.5rem}
@@ -94,6 +94,6 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
   .menu-icon path {transition:transform var(--menu-motion), opacity var(--menu-motion)}
 }
 @media(max-width:48rem) and (prefers-reduced-motion:no-preference){
-  [data-pinned-nav] body::before {transition:opacity var(--menu-motion), visibility var(--menu-motion)}
+  [data-pinned-nav] .menu-backdrop {transition:opacity var(--menu-motion), visibility var(--menu-motion)}
   [data-pinned-nav] header nav {transition:clip-path var(--menu-motion), visibility var(--menu-motion)}
 }
