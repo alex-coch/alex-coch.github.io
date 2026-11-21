@@ -94,7 +94,7 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 #work article {border:1px solid var(--line);border-left:4px solid var(--accent)}
 .skill-card h3 {margin:0 0 .7rem;font-size:1.08rem;letter-spacing:normal}
 .tech-tags {display:flex;flex-wrap:wrap;gap:.45rem;margin:.75rem 0;padding:0;list-style:none}
-.skill-card .tech-tags {margin:0}
+.skill-card .tech-tags,.skills .tech-tags {margin:0}
 .tech-tags li {
   padding:.16rem .62rem;border:1px solid var(--line);border-radius:1rem;
   background:var(--page);color:var(--ink);font-size:.86rem
