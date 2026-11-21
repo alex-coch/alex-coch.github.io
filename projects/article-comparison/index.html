@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What’s new in this article? · Aleksei Kokorev</title>
+  <link rel="stylesheet" href="/assets/portfolio.css">
+</head>
+<body><main>
+<header><a class="name" href="/">Aleksei Kokorev</a><a href="/#work">← Selected work</a></header>
+<section class="case">
+  <p class="meta">Chrome extension · Python backend · Retrieval-augmented generation</p>
+  <h1>What’s new in this article?</h1>
+  <h2>The problem</h2>
+  <p>When you follow a topic across several publications, a new article often spends most of its time on familiar ground. A summary tells you what the article says. As a returning reader, I wanted to answer a more specific question: <em>What does this add to what I’ve already read?</em></p>
+  <h2>What I built</h2>
+  <p>I built a Chrome extension in JavaScript and a Python API to handle article processing, retrieval, and comparison. The extension presents the result alongside the reading experience: a short summary, the points covered in earlier articles, and the details that appear new relative to the reader’s history.</p>
+  <h2>How the comparison works</h2>
+  <p>The backend breaks articles into passages and uses Sentence Transformers to represent their meaning as embeddings. It stores those representations in a vector database. When the reader opens another article, the backend retrieves relevant passages from earlier reading and uses them as context for the comparison.</p>
+  <figure class="pipeline">
+    <figcaption>Comparing the current article with earlier reading</figcaption>
+    <div class="node"><strong>Previously read articles</strong> <span>The Python backend splits the text into passages.</span></div>
+    <div class="edge">↓ Encode each passage with Sentence Transformers</div>
+    <div class="node"><strong>Vector store</strong> <span>Index the passages from the reader’s history.</span></div>
+    <div class="edge">↓ Search the index using passages from the current article in Chrome</div>
+    <div class="node"><strong>Python API</strong> <span>Retrieve relevant earlier passages and compare them with the current article text.</span></div>
+    <div class="edge">↓ Return the comparison</div>
+    <div class="node"><strong>Chrome extension</strong> <span>Article summary · Already covered · What this article adds</span></div>
+  </figure>
+  <p>Passage-level retrieval matters because two articles can cover the same subject while differing on one important detail. For example, an earlier article might announce a software release, while a follow-up repeats the announcement and adds a migration deadline. The comparison should surface the deadline even when most of the follow-up sounds familiar.</p>
+  <h2>What “new” means</h2>
+  <p>The reference point is the reader’s history. If the backend finds a related passage, it can compare what the two articles actually say. If it finds no matching passage, the narrower conclusion is <em>“I couldn’t find this in your earlier reading.”</em> That distinction matters because retrieval can miss a relevant passage.</p>
+</section>
+<footer><a href="/">← Backend portfolio</a></footer>
+</main></body></html>
