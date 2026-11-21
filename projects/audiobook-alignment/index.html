@@ -32,11 +32,12 @@
   <li>FastAPI</li>
   <li>Wav2Vec2</li>
 </ul>
+<p><strong>My contribution.</strong> I built the Python alignment pipeline in Apache Airflow and deployed a dedicated FastAPI service for GPU inference to production.</p>
+<p><strong>Production result.</strong> The pipeline produces a validated SMIL synchronization map that links ebook passages to the corresponding time intervals in the audiobook.</p>
 <h2>The problem</h2>
 <p>Given a passage in an ebook, where does it begin and end in the audiobook? The book gives us the words, and the recording gives us a timeline. Connecting the two gets tricky when the narrator repeats a line or reads a heading differently from the printed version.</p>
-<h2>What I built</h2>
-<p>I built the Python alignment pipeline and deployed a dedicated GPU inference service to production. The pipeline runs under Apache Airflow. It prepares the book text and uses FFmpeg to split the narration into short, overlapping audio windows.</p>
-<p>The GPU service has a narrow contract. It receives one audio window, runs Wav2Vec2, and returns a score for each possible speech token at each time step. The processor uses those scores to align the book text with the recording and place each match on the original audiobook timeline.</p>
+<h2>How the pipeline works</h2>
+<p>The pipeline prepares the book text and uses FFmpeg to split the narration into short, overlapping audio windows. The GPU service runs Wav2Vec2 on one window at a time and returns a score for each possible speech token at each time step. The processor uses those scores to align the text with the recording and place each match on the original audiobook timeline.</p>
 <figure class="pipeline">
   <figcaption>From audiobook recording to synchronization map</figcaption>
   <div class="node"><strong>Python processor · Airflow</strong> <span>Prepare overlapping audio windows with FFmpeg.</span></div>
@@ -47,10 +48,8 @@
   <div class="edge">↓ Validated map or failure details</div>
   <div class="node"><strong>Calling system</strong></div>
 </figure>
-<h2>An engineering detail</h2>
+<h2>Handling overlapping audio windows</h2>
 <p>A passage can span two audio windows. Simply joining their results would count part of the recording twice. The processor uses the model’s frame timing to trim the overlap and map the remaining frames back to their positions in the source audio. That gives both windows a common clock.</p>
-<h2>Result</h2>
-<p>The GPU service runs in production. The pipeline assembles the chapter timings into a SMIL synchronization map that links ebook passages to audio intervals. It validates the map before reporting the outcome to the calling system.</p>
 </section>
 <footer><a href="/">← Backend portfolio</a></footer>
 </main></body></html>
