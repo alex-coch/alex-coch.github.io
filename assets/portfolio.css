@@ -85,7 +85,10 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 }
 .hero-focus-toggle:focus-visible {outline:3px solid var(--focus);outline-offset:2px}
 
-.skills {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.skills {display:grid;grid-template-columns:auto 1fr;gap:.7em 1.5em}
+.skills dt {font-weight:650}
+.skills dd {margin:0}
+.skill-cards {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
 .skill-card {padding:1.1rem;border:1px solid var(--line);border-radius:.65rem;background:var(--panel)}
 .skill-card h3 {margin:0 0 .7rem;font-size:1.08rem;letter-spacing:normal}
 .tech-tags {display:flex;flex-wrap:wrap;gap:.45rem;margin:.75rem 0;padding:0;list-style:none}
@@ -104,7 +107,9 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
   .skill-card {transition:border-color 180ms ease,box-shadow 180ms ease}
 }
 @media(max-width:38rem){
-  .skills {grid-template-columns:1fr}
+  .skills {grid-template-columns:1fr;gap:.15em}
+  .skills dd {margin-bottom:.6em}
+  .skill-cards {grid-template-columns:1fr}
 }
 
 :root {--menu-motion:180ms ease-in-out}
