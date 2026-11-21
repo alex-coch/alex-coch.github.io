@@ -1,0 +1,17 @@
+:root {color-scheme:light;--ink:#182f32;--accent:#00695d;--line:#b6c9c2;background:#f7f8f3;color:var(--ink);font:17px/1.55 system-ui,sans-serif}
+* {box-sizing:border-box} body {margin:0} main {width:min(58rem,90%);margin:auto}
+a {color:var(--accent);text-underline-offset:.22em} a:hover {color:#003d34}
+a:focus-visible {outline:3px solid #aa5a00;outline-offset:4px}
+header,nav {display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap}
+header {padding:1.3rem 0;border-bottom:1px solid var(--line);justify-content:space-between}
+.name {font-weight:700;color:var(--ink);text-decoration:none}
+.hero,.case {padding:clamp(2rem,6vw,5rem) 0 2rem}
+h1,h2,h3 {line-height:1.1;text-wrap:balance} h1 {font-size:clamp(2.8rem,7vw,5.4rem);letter-spacing:-.055em;margin:.3em 0}
+h2 {font-size:1.55rem;margin:2rem 0 1rem} h3 {font-size:clamp(1.65rem,4vw,2.5rem);margin:.55em 0}
+p {max-width:64ch}.hero p {font-size:1.2rem} nav {margin:1.6rem 0}
+.primary {padding:.65em 1em;background:var(--accent);color:white;border-radius:.3rem;text-decoration:none}.primary:hover {color:white;background:#004a40}
+article,.flow {background:#e8efea;border-left:4px solid var(--accent);padding:clamp(1.2rem,4vw,2.4rem)}
+.meta {font-size:.9rem;color:#405e55} h3 a {color:var(--ink);text-decoration:none} h3 a:hover {text-decoration:underline}
+.flow {display:flex;gap:2.3rem;flex-wrap:wrap;list-style-position:inside}.flow li {flex:1 1 10rem}
+footer {margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.3rem}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}

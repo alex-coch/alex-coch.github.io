@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Matching audiobook narration to text · Aleksei Kokorev</title><link rel="stylesheet" href="/assets/portfolio.css"></head>
+<body><main><header><a class="name" href="/">Aleksei Kokorev</a><a href="/#work">← Selected work</a></header>
+<section class="case"><p class="meta">In production · Python backend engineering</p><h1>Matching audiobook narration to text</h1>
+<h2>The problem</h2><p>A book contains passages. Its audiobook contains a continuous timeline. Given a passage, the alignment task is to find where the narrator starts and finishes reading it.</p>
+<h2>My contribution</h2><p>I built the Python pipeline that processes the written text and audio, orchestrated the work with Apache Airflow, and deployed a dedicated service for GPU inference.</p>
+<h2>How it works</h2><ol class="flow"><li><strong>Inputs</strong><br>Book text and narration</li><li><strong>Processing</strong><br>Airflow pipeline and GPU inference</li><li><strong>Alignment</strong><br>Text mapped to audio time ranges</li></ol>
+<p>Airflow coordinates the processing steps. A dedicated GPU worker runs the model that matches the narration to the text.</p>
+<h2>Result</h2><p>The GPU inference service runs in production as part of the audiobook alignment pipeline.</p></section><footer><a href="/">← Backend portfolio</a></footer></main></body></html>
