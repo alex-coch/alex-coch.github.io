@@ -39,12 +39,11 @@
     <li>Sentence Transformers</li>
     <li>ChromaDB</li>
   </ul>
+  <p><strong>My contribution.</strong> I built a Chrome extension in JavaScript and a Python API that processes articles, retrieves relevant passages from the reader’s history, and compares them with the current article.</p>
+  <p><strong>Reader outcome.</strong> The extension shows a short summary in Chrome and separates points covered in earlier reading from what the current article adds.</p>
   <h2>The problem</h2>
   <p>When you follow a topic across several publications, a new article often spends most of its time on familiar ground. A summary tells you what the article says. As a returning reader, I wanted to answer a more specific question: <em>What does this add to what I’ve already read?</em></p>
-  <h2>What I built</h2>
-  <p>I built a Chrome extension in JavaScript and a Python API to handle article processing, retrieval, and comparison. The extension presents the result alongside the reading experience: a short summary, the points covered in earlier articles, and the details that appear new relative to the reader’s history.</p>
   <h2>How the comparison works</h2>
-  <p>The backend breaks articles into passages and uses Sentence Transformers to represent their meaning as embeddings. It stores those representations in ChromaDB, a vector database. When the reader opens another article, the backend retrieves relevant passages from earlier reading and uses them as context for the comparison.</p>
   <figure class="pipeline">
     <figcaption>Comparing the current article with earlier reading</figcaption>
     <div class="node"><strong>Previously read articles</strong> <span>The Python backend splits the text into passages.</span></div>
@@ -55,6 +54,8 @@
     <div class="edge">↓ Return the comparison</div>
     <div class="node"><strong>Chrome extension</strong> <span>Article summary · Already covered · What this article adds</span></div>
   </figure>
+  <h2>Searching reading history in ChromaDB</h2>
+  <p>The Python backend splits previously read articles into passages, turns each passage into an embedding with Sentence Transformers, and indexes those embeddings in ChromaDB. When the reader opens a new article, the backend searches that index using passages from the current article. It uses the matching passages as context for the comparison.</p>
   <p>Passage-level retrieval matters because two articles can cover the same subject while differing on one important detail. For example, an earlier article might announce a software release, while a follow-up repeats the announcement and adds a migration deadline. The comparison should surface the deadline even when most of the follow-up sounds familiar.</p>
   <h2>What “new” means</h2>
   <p>The reference point is the reader’s history. If the backend finds a related passage, it can compare what the two articles actually say. If it finds no matching passage, the narrower conclusion is <em>“I couldn’t find this in your earlier reading.”</em> That distinction matters because retrieval can miss a relevant passage.</p>
