@@ -8,20 +8,21 @@
   } catch { /* System colours also work without storage. */ }
 
   document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('theme-toggle');
+    const toggle = document.getElementById('theme-toggle');
     function isDark() {
       return root.dataset.theme ? root.dataset.theme === 'dark' : systemTheme.matches;
     }
-    function updateButton() {
-      button.setAttribute('aria-pressed', String(isDark()));
+    function syncSwitch() {
+      toggle.checked = isDark();
     }
-    button.addEventListener('click', () => {
-      root.dataset.theme = isDark() ? 'light' : 'dark';
+    toggle.addEventListener('change', () => {
+      root.dataset.theme = toggle.checked ? 'dark' : 'light';
       try { localStorage.setItem(key, root.dataset.theme); } catch { /* Session-only choice. */ }
-      updateButton();
+      syncSwitch();
     });
-    systemTheme.addEventListener('change', updateButton);
-    updateButton();
-    button.hidden = false;
+    if (systemTheme.addEventListener) systemTheme.addEventListener('change', syncSwitch);
+    else systemTheme.addListener(syncSwitch);
+    syncSwitch();
+    toggle.closest('.theme-switch').hidden = false;
   });
 })();
