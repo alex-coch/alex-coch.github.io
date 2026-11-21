@@ -24,11 +24,16 @@
   }
 
   const toggle = header.querySelector('.menu-toggle');
+  function setMenuOpen(open) {
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close main menu' : 'Open main menu');
+    toggle.textContent = open ? '×' : '☰';
+  }
   function closeMenu() {
-    toggle.setAttribute('aria-expanded', 'false');
+    setMenuOpen(false);
   }
   toggle.addEventListener('click', () => {
-    toggle.setAttribute('aria-expanded', String(toggle.getAttribute('aria-expanded') !== 'true'));
+    setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true');
   });
   document.addEventListener('click', event => {
     if (!header.contains(event.target) || event.target.closest('a')) closeMenu();
