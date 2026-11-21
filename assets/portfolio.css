@@ -1,7 +1,9 @@
-:root {color-scheme:light;--ink:#182f32;--accent:#00695d;--line:#b6c9c2;background:#f7f8f3;color:var(--ink);font:17px/1.55 system-ui,sans-serif}
+:root {color-scheme:light;--ink:#182f32;--accent:#00695d;--line:#b6c9c2;--page:#f7f8f3;--panel:#e8efea;--muted:#405e55;--hover:#003d34;--on-accent:white;--focus:#aa5a00;background:var(--page);color:var(--ink);font:17px/1.55 system-ui,sans-serif}
+:root[data-theme="dark"] {color-scheme:dark;--page:#11201f;--ink:#e7f1ec;--accent:#83dfc6;--line:#425c54;--panel:#1d312e;--muted:#aec9be;--hover:#b8f6df;--on-accent:#11201f;--focus:#ffbf74}
+@media(prefers-color-scheme:dark){:root:not([data-theme]) {color-scheme:dark;--page:#11201f;--ink:#e7f1ec;--accent:#83dfc6;--line:#425c54;--panel:#1d312e;--muted:#aec9be;--hover:#b8f6df;--on-accent:#11201f;--focus:#ffbf74}}
 * {box-sizing:border-box} body {margin:0} main {width:min(58rem,90%);margin:auto}
-a {color:var(--accent);text-underline-offset:.22em} a:hover {color:#003d34}
-a:focus-visible {outline:3px solid #aa5a00;outline-offset:4px}
+a {color:var(--accent);text-underline-offset:.22em} a:hover {color:var(--hover)}
+a:focus-visible {outline:3px solid var(--focus);outline-offset:4px}
 header,nav {display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap}
 header {padding:1.3rem 0;border-bottom:1px solid var(--line);justify-content:space-between}
 .name {font-weight:700;color:var(--ink);text-decoration:none}
@@ -9,15 +11,32 @@ header {padding:1.3rem 0;border-bottom:1px solid var(--line);justify-content:spa
 h1,h2,h3 {line-height:1.1;text-wrap:balance} h1 {font-size:clamp(2.8rem,7vw,5.4rem);letter-spacing:-.055em;margin:.3em 0}
 h2 {font-size:1.55rem;margin:2rem 0 1rem} h3 {font-size:clamp(1.65rem,4vw,2.5rem);margin:.55em 0}
 p {max-width:64ch}.hero p {font-size:1.2rem} nav {margin:1.6rem 0}
-.primary {padding:.65em 1em;background:var(--accent);color:white;border-radius:.3rem;text-decoration:none}.primary:hover {color:white;background:#004a40}
-article {background:#e8efea;border-left:4px solid var(--accent);padding:clamp(1.2rem,4vw,2.4rem)}
-.meta {font-size:.9rem;color:#405e55} h3 a {color:var(--ink);text-decoration:none} h3 a:hover {text-decoration:underline}
+.primary {padding:.65em 1em;background:var(--accent);color:var(--on-accent);border-radius:.3rem;text-decoration:none}.primary:hover {color:var(--on-accent);background:var(--hover)}
+article {background:var(--panel);border-left:4px solid var(--accent);padding:clamp(1.2rem,4vw,2.4rem)}
+.meta {font-size:.9rem;color:var(--muted)} h3 a {color:var(--ink);text-decoration:none} h3 a:hover {text-decoration:underline}
 .pipeline {max-width:64ch;margin:2rem 0}
 .pipeline figcaption {font-weight:700;margin-bottom:1rem}
-.pipeline .node {padding:.8rem 1rem;border:1px solid var(--line);border-left:4px solid var(--accent);background:#e8efea}
-.pipeline .gpu {background:var(--ink);color:white}
+.pipeline .node {padding:.8rem 1rem;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel)}
+.pipeline .gpu {background:var(--ink);color:var(--on-accent)}
 .pipeline .node span {display:block}
-.pipeline .edge {padding:.55rem 1rem;color:#405e55;font-size:.9rem}
+.pipeline .edge {padding:.55rem 1rem;color:var(--muted);font-size:.9rem}
 footer {margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.3rem}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 #work article + article {margin-top:1rem}
+
+header nav {margin:0}
+header nav a {font-size:.95rem}
+#theme-toggle {font:inherit;font-size:.9rem;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:.35rem;padding:.35em .65em;cursor:pointer}
+#theme-toggle:focus-visible {outline:3px solid var(--focus);outline-offset:4px}
+#theme-toggle[aria-pressed="true"] {border-color:var(--accent)}
+.actions {display:flex;align-items:center;flex-wrap:wrap;gap:1.3rem;margin:1.6rem 0}
+.hero .location {font-size:1rem;color:var(--muted)}
+#skills,#contact {margin-top:3rem}
+.skills {display:grid;grid-template-columns:auto 1fr;gap:.7em 1.5em}
+.skills dt {font-weight:650}
+.skills dd {margin:0}
+@media(max-width:38rem){
+  header nav {gap:.8rem}
+  .skills {grid-template-columns:1fr;gap:.15em}
+  .skills dd {margin-bottom:.6em}
+}
