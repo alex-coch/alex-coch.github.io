@@ -38,10 +38,16 @@
     <li>PostgreSQL</li>
     <li>RabbitMQ</li>
   </ul>
+  <p><strong>My contribution.</strong> I implemented a transactional outbox in Python, a relay that retries publication to RabbitMQ, and idempotent consumers that prevent duplicate deliveries from applying the same workflow update twice.</p>
+  <p><strong>Failure test results.</strong> I reproduced both scenarios in a standalone demo using Docker Compose and Kubernetes.</p>
+  <ul>
+    <li><strong>RabbitMQ was offline during a write.</strong> The API returned HTTP 201, the document was saved in PostgreSQL, and the event stayed pending. After RabbitMQ restarted, the event was delivered and one history entry appeared.</li>
+    <li><strong>The consumer stopped after commit, before acknowledgement.</strong> RabbitMQ redelivered the event to a replacement consumer. The queue drained and the document still had exactly one history entry.</li>
+  </ul>
   <h2>The problem</h2>
   <p>A document update had to save the change in PostgreSQL and notify other services through RabbitMQ. If the database commit succeeded and the process stopped before sending the message, the document would show its new state while downstream services would have no record of the change.</p>
-  <h2>What I built</h2>
-  <p>I implemented a transactional outbox in Python. The service wrote the document change and its outgoing event in the same PostgreSQL transaction. Once that transaction committed, a separate outbox processor could publish the event to RabbitMQ. If publication failed, the event remained available for another attempt.</p>
+  <h2>How the outbox works</h2>
+  <p>The service writes the document change and its outgoing event in the same PostgreSQL transaction. After commit, a separate relay publishes the event to RabbitMQ. If publication fails, the event stays pending for another attempt.</p>
   <figure class="pipeline">
     <figcaption>From document update to downstream processing</figcaption>
     <div class="node"><strong>Python document service</strong> <span>Receive a document update.</span></div>
@@ -57,15 +63,9 @@
       <li>Already processed → finish without repeating the update.</li></ul>
     </div>
   </figure>
-  <h2>Why the consumer mattered</h2>
-  <p>Retries solved one problem and introduced another. Suppose RabbitMQ accepts a message, but the publisher stops before recording that it sent it. On recovery, the publisher can send the same event again.</p>
-  <p>I built idempotent consumers so that processing the same event twice had the same business effect as processing it once. For a document workflow, that means a duplicate delivery can arrive without repeating the corresponding update.</p>
-  <h2>Failure scenarios</h2>
-  <p>I reproduced both failures in a standalone demo using Docker Compose and Kubernetes. For each run, I followed one event ID from the outbox to the document history.</p>
-  <h3>1. RabbitMQ was offline during a write</h3>
-  <p>With the broker stopped, the API returned HTTP 201. The document was readable in PostgreSQL, its outbox event was pending, and its history was empty. After RabbitMQ restarted, the relay published the pending event and the consumer wrote one history entry.</p>
-  <h3>2. The consumer stopped after commit, before acknowledgement</h3>
-  <p>The first consumer recorded the event ID and the history entry in one PostgreSQL transaction. I stopped it before it acknowledged the message. RabbitMQ delivered the same event to the replacement consumer, which found the existing ID and logged <code>duplicate_skipped</code>. The queue drained and the document still had exactly one history entry.</p>
+  <h2>Handling redelivery and duplicates</h2>
+  <p>Duplicates can come from either side. The relay can publish an event again if it stops after RabbitMQ accepts the message but before it records successful publication. RabbitMQ can also redeliver a message if the consumer disconnects before acknowledging it.</p>
+  <p>The consumer records the event ID and writes the history entry in the same PostgreSQL transaction, then acknowledges the message. In the demo, I stopped the first consumer between commit and acknowledgement. The replacement consumer found the existing event ID, logged <code>duplicate_skipped</code>, and acknowledged the message without writing a second history entry.</p>
   <h2>Run the demo</h2>
   <p><a href="https://github.com/alex-coch/document-events-outbox">View the demo repository and run instructions on GitHub →</a></p>
 </section>
