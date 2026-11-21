@@ -22,7 +22,7 @@ article {background:var(--panel);border-left:4px solid var(--accent);padding:cla
 .pipeline .edge {padding:.55rem 1rem;color:var(--muted);font-size:.9rem}
 footer {margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.3rem}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-#work article + article {margin-top:1rem}
+:is(#work, #writing) article + article {margin-top:1rem}
 
 header nav {margin:0}
 header nav a {font-size:.95rem}
