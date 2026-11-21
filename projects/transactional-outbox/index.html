@@ -35,6 +35,9 @@
   <p>I built idempotent consumers so that processing the same event twice had the same business effect as processing it once. For a document workflow, that means a duplicate delivery can arrive without repeating the corresponding update.</p>
   <h2>Result</h2>
   <p>A committed document change could survive a temporary broker outage with its event still waiting to be published. When delivery resumed, consumers could safely handle repeats. This let the document service complete its database transaction even when downstream processing had to wait.</p>
+  <h2>Run the demo</h2>
+  <p>I built a standalone demo to reproduce two failures: a broker outage and a consumer crash after commit but before acknowledgement. Run either experiment with Docker Compose or Kubernetes and check that the document history contains one entry.</p>
+  <p><a href="https://github.com/alex-coch/document-events-outbox">View the demo repository and run instructions on GitHub →</a></p>
 </section>
 <footer><a href="/">← Backend portfolio</a></footer>
 </main></body></html>
