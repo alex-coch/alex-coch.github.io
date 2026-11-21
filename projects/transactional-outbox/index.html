@@ -6,7 +6,7 @@
   <title>Reliable event delivery for document workflows · Aleksei Kokorev</title>
   <link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=31">
+<link rel="stylesheet" href="/assets/portfolio.css?v=36">
 <script defer src="/assets/portfolio-nav.js?v=7"></script>
 </head>
 <body>
@@ -67,7 +67,13 @@
   <p>Duplicates can come from either side. The relay can publish an event again if it stops after RabbitMQ accepts the message but before it records successful publication. RabbitMQ can also redeliver a message if the consumer disconnects before acknowledging it.</p>
   <p>The consumer records the event ID and writes the history entry in the same PostgreSQL transaction, then acknowledges the message. In the demo, I stopped the first consumer between commit and acknowledgement. The replacement consumer found the existing event ID, logged <code>duplicate_skipped</code>, and acknowledged the message without writing a second history entry.</p>
   <h2>Run the demo</h2>
-  <p><a href="https://github.com/alex-coch/document-events-outbox">View the demo repository and run instructions on GitHub →</a></p>
+  <div class="actions work-actions">
+    <a href="https://github.com/alex-coch/document-events-outbox">View the demo repository and run instructions on GitHub →</a>
+  </div>
 </section>
-<footer><a href="/">← Backend portfolio</a></footer>
+<footer>
+  <div class="actions work-actions">
+    <a href="/">← Backend portfolio</a>
+  </div>
+</footer>
 </main></body></html>
