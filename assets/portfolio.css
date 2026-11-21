@@ -1,6 +1,6 @@
-:root {color-scheme:light;--ink:#233447;--accent:#415f82;--line:#c3cfdd;--page:#fafbfd;--backdrop:rgba(10,20,35,.28);--panel:#eaf0f6;--muted:#4a6078;--hover:#2e4868;--on-accent:white;--focus:#476e99;background:var(--page);color:var(--ink);font:17px/1.55 system-ui,sans-serif}
-:root[data-theme="dark"] {color-scheme:dark;--page:#182331;--backdrop:rgba(0,0,0,.62);--ink:#e7edf5;--accent:#a3bcd7;--line:#485e73;--panel:#223245;--muted:#b6c5d5;--hover:#c7d8ec;--on-accent:#182331;--focus:#adc9eb}
-@media(prefers-color-scheme:dark){:root:not([data-theme]) {color-scheme:dark;--page:#182331;--backdrop:rgba(0,0,0,.62);--ink:#e7edf5;--accent:#a3bcd7;--line:#485e73;--panel:#223245;--muted:#b6c5d5;--hover:#c7d8ec;--on-accent:#182331;--focus:#adc9eb}}
+:root {color-scheme:light;--ink:#182839;--accent:#355473;--line:#c3cfdd;--page:#fafbfd;--backdrop:rgba(10,20,35,.28);--panel:#e7eef6;--muted:#3c5269;--hover:#2e4868;--on-accent:white;--focus:#476e99;background:var(--page);color:var(--ink);font:17px/1.55 system-ui,sans-serif}
+:root[data-theme="dark"] {color-scheme:dark;--page:#131d2a;--backdrop:rgba(0,0,0,.62);--ink:#f2f5fa;--accent:#a3bcd7;--line:#485e73;--panel:#1c2a3b;--muted:#c2cfde;--hover:#c7d8ec;--on-accent:#131d2a;--focus:#adc9eb}
+@media(prefers-color-scheme:dark){:root:not([data-theme]) {color-scheme:dark;--page:#131d2a;--backdrop:rgba(0,0,0,.62);--ink:#f2f5fa;--accent:#a3bcd7;--line:#485e73;--panel:#1c2a3b;--muted:#c2cfde;--hover:#c7d8ec;--on-accent:#131d2a;--focus:#adc9eb}}
 * {box-sizing:border-box} body {margin:0} main {width:min(58rem,90%);margin:auto}
 a {color:var(--accent);text-underline-offset:.22em} a:hover {color:var(--hover)}
 a:focus-visible {outline:3px solid var(--focus);outline-offset:4px}
@@ -22,6 +22,9 @@ article {background:var(--panel);border-left:4px solid var(--accent);padding:cla
 .pipeline .edge {padding:.55rem 1rem;color:var(--muted);font-size:.9rem}
 footer {margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.3rem}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+/* Keep section headings above card titles in the homepage hierarchy. */
+:is(#work, #writing) > h2 {font-size:clamp(1.75rem, 3.5vw, 2.25rem)}
+:is(#work, #writing) article h3 {font-size:clamp(1.35rem, 2.6vw, 1.75rem)}
 :is(#work, #writing) article + article {margin-top:1rem}
 
 body > header {position:sticky;top:0;z-index:2;background:var(--page);width:min(58rem,90%);margin-inline:auto}
