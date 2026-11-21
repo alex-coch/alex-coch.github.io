@@ -16,12 +16,12 @@
   <h2>What I built</h2>
   <p>I built a Chrome extension in JavaScript and a Python API to handle article processing, retrieval, and comparison. The extension presents the result alongside the reading experience: a short summary, the points covered in earlier articles, and the details that appear new relative to the reader’s history.</p>
   <h2>How the comparison works</h2>
-  <p>The backend breaks articles into passages and uses Sentence Transformers to represent their meaning as embeddings. It stores those representations in a vector database. When the reader opens another article, the backend retrieves relevant passages from earlier reading and uses them as context for the comparison.</p>
+  <p>The backend breaks articles into passages and uses Sentence Transformers to represent their meaning as embeddings. It stores those representations in ChromaDB, a vector database. When the reader opens another article, the backend retrieves relevant passages from earlier reading and uses them as context for the comparison.</p>
   <figure class="pipeline">
     <figcaption>Comparing the current article with earlier reading</figcaption>
     <div class="node"><strong>Previously read articles</strong> <span>The Python backend splits the text into passages.</span></div>
     <div class="edge">↓ Encode each passage with Sentence Transformers</div>
-    <div class="node"><strong>Vector store</strong> <span>Index the passages from the reader’s history.</span></div>
+    <div class="node"><strong>ChromaDB · Vector store</strong> <span>Index the passages from the reader’s history.</span></div>
     <div class="edge">↓ Search the index using passages from the current article in Chrome</div>
     <div class="node"><strong>Python API</strong> <span>Retrieve relevant earlier passages and compare them with the current article text.</span></div>
     <div class="edge">↓ Return the comparison</div>
