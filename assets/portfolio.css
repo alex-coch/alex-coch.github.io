@@ -29,6 +29,7 @@ html[data-pinned-nav] body {padding-top:var(--nav-height)}
 html[data-pinned-nav] body > header {position:fixed;inset-inline:0}
 html {scroll-padding-top:calc(var(--nav-height, 5rem) + 16px)}
 @media(max-width:38rem){body > header {padding-block:.5rem;row-gap:.35rem}}
+header .name {margin-inline-end:auto}
 header nav {margin:0}
 header nav a {font-size:.95rem}
 header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thickness:.15em}
@@ -58,7 +59,7 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
 
 .menu-toggle {display:none}
 @media(max-width:48rem){
-  html[data-pinned-nav] body > header {padding-block:.25rem}
+  html[data-pinned-nav] body > header {padding-block:.25rem;column-gap:.5rem}
   [data-pinned-nav] .menu-toggle {
     display:grid;place-items:center;width:44px;height:44px;padding:0;
     font:1.5rem/1 system-ui;color:var(--ink);background:var(--page);
