@@ -26,11 +26,11 @@
   function updateHeadlineMotion() {
     clearTimeout(timer);
     index = 0;
-    length = lines[0].length;
-    deleting = true;
-    text.textContent = lines[0];
+    length = 0;
+    deleting = false;
+    text.textContent = motion.matches ? '' : lines[0];
     text.toggleAttribute('data-typing', motion.matches);
-    if (motion.matches) timer = setTimeout(animateHeadline, 2000);
+    if (motion.matches) timer = setTimeout(animateHeadline, 800);
   }
 
   motion.addEventListener('change', updateHeadlineMotion);
