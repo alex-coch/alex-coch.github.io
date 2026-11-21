@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Aleksei Kokorev · Python Backend Engineer</title><meta name="description" content="Python backend engineering portfolio. APIs, event-driven systems and production GPU inference."><link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=25"><script defer src="/assets/portfolio-nav.js?v=7"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=26"><script defer src="/assets/portfolio-nav.js?v=7"></script>
 <script defer src="/assets/messenger-links.js"></script>
 <script defer src="/assets/contact-form.js"></script>
 <script async defer src="https://www.google.com/recaptcha/api.js"></script>
+<script defer src="/assets/posts.js"></script>
 </head>
 <body>
 <header>
@@ -17,7 +18,7 @@
   <nav id="main-nav" aria-label="Main navigation">
     <a href="#work">Projects</a>
     <a href="#skills">Skills</a>
-    <a href="#writing">Selected writing</a>
+    <a href="#writing">Posts</a>
     <a href="/resume/">Resume</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -64,22 +65,169 @@
   </dl>
 </section>
 <section id="writing">
-  <h2>Selected writing</h2>
-  <article>
-    <h3>When Does PostgreSQL Make Sense as a Job Queue?</h3>
-    <p>Some jobs can wait minutes. Others need to run almost immediately. This review looks at how workers use <code>SKIP LOCKED</code> to claim jobs, how delay tolerance shapes scheduling, and what a team takes on when it builds a queue in PostgreSQL.</p>
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7451172358293372929/" aria-label="Read on LinkedIn: When Does PostgreSQL Make Sense as a Job Queue?">Read on LinkedIn</a>
-  </article>
-  <article>
-    <h3>What Belongs in a Client Analytics Event?</h3>
-    <p>A client can record what happened and leave the metric calculation to the backend. This review explores how a small event payload makes analytics easier to change, and why real-time monitoring may still need a separate stream with richer context.</p>
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7483528796965560320/" aria-label="Read on LinkedIn: What Belongs in a Client Analytics Event?">Read on LinkedIn</a>
-  </article>
-  <article>
-    <h3>How Netflix Validates AI-Generated Search Queries</h3>
-    <p>How does a search system know which field a user meant? A review of how Netflix grounds natural-language queries in schema fields and allowed values, validates the generated filters, and shows users how their request was interpreted.</p>
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7439181328761143296/" aria-label="Read on LinkedIn: How Netflix Validates AI-Generated Search Queries">Read on LinkedIn</a>
-  </article>
+  <h2>Posts</h2>
+  <ul class="post-list">
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7483528796965560320/">What Belongs in a Client Analytics Event?</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7482462025793761280/">Digital Signatures Beyond RSA</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7473034975605420032/">Building an ML Platform with Kubeflow</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7461636613278736384/">Fast LLM Inference and the Reliability Trade-off</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7456250911443623936/">Text Classification with Python 3.14 and Zstandard</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7455555570629156864/">How Prior-Data Fitted Networks Work</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7451523711133941762/">How OpenAI Built Its In-House Data Agent</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7451172358293372929/">When Does PostgreSQL Make Sense as a Job Queue?</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7446456640150638592/">What Unshipped PostgreSQL Changes Can Teach Us</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7444012114224193536/">PaperBanana and the Trade-offs of Automated Scientific Figures</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7442951735469514752/">When Does It Help to Add More AI Agents?</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7441845024226705409/">Mamba, State Space Models, and Hybrid Architectures</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7441332824965558272/">How Speculative Decoding Speeds Up LLM Inference</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7440968711433265152/">EnCompass: Search and Backtracking for LLM Workflows</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7440764774247854080/">Visualizing PyTorch Models with TorchVista</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7440397104168067072/">PaperBanana: Automating Academic Illustration</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7440034266391932928/">Managing Database Migrations with Goose</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7439670262033457152/">Vector Search in Python with RedisVL</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7439181328761143296/">How Netflix Validates AI-Generated Search Queries</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7438841641752449024/">ATLAS: Scaling Multilingual Language Models</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7438559925624090624/">A Guide to the Evolution of Computer Vision</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7438232015826690048/">Ai2’s Open Coding Agents</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7437869208576827392/">AI Research from MIT and ETH Zurich</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7437503601138094080/">A Look at DeepSeek-OCR 2</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7437134568509337600/">How Autonomous Agents Evolved</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7436434097251561472/">Faster 3D Scene Generation</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7435906226116452352/">The Trade-offs of Training LLMs Across GPUs</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7435686304178257920/">How Thinking Models Reason</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7435328574951247875/">Kimi K2.5 and Visual Agentic Intelligence</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7434960610880102400/">Speeding Up a Transformer-Based Text Embedder</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7434573047124090880/">Candidate Generation and Ranking in Search</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7434235104669011968/">How OpenAI Scales PostgreSQL</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7433755446076772352/">FLUX and Interactive Image Generation</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7433380448690630656/">What Holds Back Production AI Agents?</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7433141387849613312/">Exactly-Once Processing in Event Pipelines</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7432784269632024576/">REST and Event-Driven Communication</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7432423833636073472/">Session Recording with rrweb</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7431574291156213760/">Qwen3.5 and Native Multimodal Agents</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7431199240728571904/">The State of Machine Learning Competitions in 2025</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7431015442720251904/">Qwen3-Coder-Next</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7430636999579049985/">Event-Driven Architecture in Practice</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7430248849480343552/">Scaling Python Tests</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7429887551357931520/">Threading and Concurrency in Python</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7429142497496449024/">What It Means That Everything in CPython Is an Object</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7428742635080589312/">The Limits of Larger Context Windows</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7427752453447655425/">Using LLMs to Identify Sensitive Fields in Database Schemas</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7427331782745706496/">Prompt Repetition as a Prompting Technique</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7426987669123092481/">Apache Iceberg and Open Table Formats</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7426624041634967553/">Choosing Open Models for Practical Workloads</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7426225745716297728/">What OpenClaw Shows About Agent Design</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7425785731312349184/">Project Genie and World Models</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7425542213822087168/">Watermarking LLM-Generated Text</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7425177751726366720/">Dialogue Embeddings for Action Classification</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7424811348124954624/">Vector Search with pgvector</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7424455945306615808/">Packaging C and C++ Extensions for Python</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7424086706863157248/">What OpenRouter’s State of AI Report Shows</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7423624665832521728/">Beyond Boosted Trees for Tabular ML</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7423329369437208576/">Qwen’s Open Voice Models</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7423003625049743360/">Evaluating LLMs on Bayesian Inference</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7422649164242616320/">When to Use Multiple Inheritance in Python</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7422275266917593088/">Working with High-Dimensional Data</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7421886998916816896/">Making Dense ML and Computer Science Material Easier to Read</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7421551103533776896/">Why Continual Learning Is Hard for LLMs</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7421103372910350336/">A Practical Path to Building an AI Agent</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7420716706945232896/">Comparing Consumer AI Models</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7420457267763904512/">chDB</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7420110285853626369/">The Unsolved Parts of Machine Translation</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7419727535946739712/">Dealing with Impedance Mismatch in Modern Applications</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7419378408100593664/">Fully Homomorphic Encryption with OpenFHE in Python</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7419010169872875520/">Continual Learning for Always-Training AI Systems</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7418574235259863040/">Making Sense of Memory in AI Agents</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7418140432364363776/">Top Python Libraries in 2025: General-Purpose Tools</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7417930589833637888/">Top Python Libraries in 2025: AI, ML, and Data</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7417568832288079872/">From Fancy Dashboards to Real Observability</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7417192403541045248/">Production Speculative Decoding with SpecBundle and SpecForge</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7416832752001413120/">Pytest Design Patterns</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7416455432656977921/">NVIDIA Nemotron 3 and Agentic AI</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7416015671840567296/">2025: A Pivotal Year for LLMs</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7415618599006142464/">Papers in 100 Lines of Code</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7415275575893946368/">GLM-4.6 for Agents, Reasoning, and Code</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7414995434647121920/">Triton, GPU Kernels, and Faster LLMs</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7414555049382871040/">Natural Language Tools for LLMs</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7414167378680348672/">Why Are Embeddings So Cheap?</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7413456921006895105/">Agents 2.0: From Shallow Loops to Deep Agents</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7413110432720248832/">Bringing Structure and Stability to Enterprise AI Agents</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7411393507719909376/">When to Look at Embeddings Instead of Prompts</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7410329393190858752/">A Different Way to Think About AI Reasoning</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7408385930115543040/">An Intuitive Take on Reinforcement Learning</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7406681364932194306/">Everything Is Failing. Can You Take a Look?</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7406320315649261570/">From Logs to Observability with Pydantic Logfire</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7405514395289620480/">Lessons from Kaggle Grandmasters on Tabular ML</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7405240907509489665/">What GPT-5.2 Brings to AI Builders</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7404869635801739265/">Masked Autoencoders as Tokenizers</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7404513032128778240/">Caching in Jupyter Notebooks</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7404145046809288704/">Software Design Patterns</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7403782685120266240/">Reasoning Lessons from DeepSeek-R1</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7403271761791713281/">Research on Modern Video Models</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7402929483617439744/">A Training Resource from MIT–IBM</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7402334211174719488/">SLED: A Decoding Method from Google Research</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7401976448221356033/">Long-Term Memory in Gemini</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7401618902683910146/">Optimize Your Code Before Scaling Your Cluster</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7401305399104077825/">Research from Epoch AI</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7400490144501383169/">How Randomization Can Reduce Bias and Variance</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7398057557841461249/">Measuring Chain-of-Thought Monitorability</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7397269660339019776/">GraalPy as an Alternative Python Runtime</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7397199104155492352/">How to Tell Whether Your Tests Actually Work</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7396905502657576961/">A Look at GPT-5.1</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7396535866086825984/">Optimizing Docker Images for Python Apps</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7395706585508978688/">RocksDB and High-Performance Storage</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7394341871520526337/">Running Data Science Experiments Without Seeing the Data</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7394010052845805569/">Scikit-LLM: Connecting Classical ML and Language Models</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7393645117544509440/">Learning CUDA</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7393224082596737025/">Generating Realistic Datasets</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7391832252508221445/">LLM Distillation and Inference Costs</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7389297048296263680/">Managing Python Projects with uv</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7388567820307161088/">From Python to C++: Compiling for Performance and Parallelism</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7388120614865375233/">Real-World ML System Design Case Studies</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7387817417420316673/">What a Draw Between Two AI Models Can Hide</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7387152025303613440/">Designing Databases for AI Agents</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7386800964944695298/">What It Takes to Build an AI Data Analyst</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7385596948554153984/">Qwen3-Next and LLM Efficiency</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7384941164002430976/">Fine-Tuning LLMs on Local GPUs</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7384223387146952704/">Understanding LLM Hallucinations</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7383501269862207488/">Building Python Web Apps with FastUI</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7382038716497809408/">Accelerating Python with Rust and PyO3</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7381318257435111424/">Demystifying LLM Evaluations</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7380481333581545472/">Understanding Large Codebases with Sourcebot</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7380143360574922752/">From Static Papers to Living AI Agents</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7379149413945929728/">PyArrow in Pandas</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7378396801869193216/">Questioning Diminishing Returns in AI</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7377970368617283584/">AI and Theorem Proving</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7377607065827192832/">Relational Data Meets Graph Foundation Models</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7377337821805686784/">Concurrency and Parallelism in Python for Data and ML</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7376914795704516608/">Rethinking Code Reviews with AI</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7376556650507239424/">Where RAG Can Still Go Wrong</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7376187273031155712/">Building Data Pipelines with Celery</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7375838495086489600/">Microsoft’s Phi-4-Mini-Flash-Reasoning</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7375559085959643136/">An AI Coding Agent in 100 Lines of Python</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7375120437342572544/">Taking AI Agents from Prototype to Production</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7374815370953588736/">How Do We Measure LLM Hallucinations?</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7374065965044781056/">Can Language Models Cooperate Without Communicating?</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7373615930712571905/">Machine Learning Preprocessing in SQL</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7373350476831956992/">How Far Can LLMs See in Their Context?</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7373022115735715840/">From Summarization to Knowledge Synthesis</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7372539519130058752/">Google DeepMind’s Genie 3</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7370793340285394944/">Event Sourcing in Action</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7369988197751341056/">Extracting Structured Insights from Unstructured Text</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7369041388878995460/">Two Perspectives on ETL and ELT at EuroPython</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7368640429099077634/">Anomaly Detection at EuroPython</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7368258555574919169/">A Deep Dive from EuroPython Prague</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7366793912759369728/">Multimodal Vector Search at EuroPython</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7366466250169884672/">Notes from GetYourGuide’s EuroPython Talk</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7364651480009568256/">Takeaways from EuroPython Prague</a></li>
+    <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7361746295587250177/">Python That Runs Like C?</a></li>
+  </ul>
+  <div class="post-pagination" role="group" aria-label="Posts pagination" hidden>
+    <button type="button" data-page="previous">Previous</button>
+    <span role="status"></span>
+    <button type="button" data-page="next">Next</button>
+  </div>
+  <p><a href="https://www.linkedin.com/in/alexcoch/recent-activity/all/">View profile activity on LinkedIn ↗</a></p>
 </section>
 <section id="contact">
   <h2>Let’s connect</h2>
