@@ -3,6 +3,8 @@
 <script src="/assets/theme.js?v=2"></script>
 <link rel="stylesheet" href="/assets/portfolio.css?v=15"><script defer src="/assets/portfolio-nav.js?v=7"></script>
 <script defer src="/assets/messenger-links.js"></script>
+<script defer src="/assets/contact-form.js"></script>
+<script async defer src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body>
 <header>
@@ -95,7 +97,9 @@
       <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
       <label for="contact-message">Message</label>
       <textarea id="contact-message" name="message" rows="5" maxlength="3000" required></textarea>
+      <div class="g-recaptcha" data-sitekey="6LeNySsuAAAAAIrT5clT1vbGpGcIemTxiV--gVbL" data-size="compact"></div>
       <button class="primary" type="submit">Send message</button>
+      <div id="contact-status" role="status" aria-atomic="true"></div>
     </form>
   </details>
 </section>
