@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Résumé · Aleksei Kokorev</title>
+  <link rel="icon" href="/assets/ak.svg" type="image/svg+xml">
+<script src="/assets/theme.js?v=2"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=2">
+</head>
+<body><main>
+<header>
+  <a class="name" href="/">Aleksei Kokorev</a>
+  <nav aria-label="Main navigation">
+    <a href="/#work">Case studies</a>
+    <a href="/#skills">Skills</a>
+    <a href="/#contact">Contact</a>
+    <label class="theme-switch" title="Dark theme" hidden>
+      <input id="theme-toggle" type="checkbox" role="switch" aria-label="Dark theme">
+      <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
+    </label>
+  </nav>
+</header>
+
+<section class="case resume">
+  <h1>Aleksei Kokorev</h1>
+  <p><strong>Python Backend Engineer</strong><br>Serbia · Open to relocation to other countries</p>
+  <p><a href="mailto:a@deonop.com">a@deonop.com</a> · <a href="https://www.linkedin.com/in/alexcoch/">LinkedIn</a> · <a href="https://github.com/alex-coch">GitHub</a><br>
+    <a href="https://wa.me/995568311218">+995568311218 (WhatsApp)</a></p>
+  <div class="actions"><a class="primary" href="/assets/Aleksei_Kokorev_Python_Backend_CV.pdf" download>Download PDF</a></div>
+  <h2>Summary</h2>
+  <p>Python Backend Engineer with 8+ years of experience building backend services for digital content, blockchain compliance, and business applications. Experienced in asynchronous APIs, event-driven systems, and backend performance optimization using FastAPI, SQL, Kafka, and RabbitMQ. Hands-on experience deploying services on Kubernetes and integrating ML inference and RAG into applications.</p>
+  <h2>Professional experience</h2>
+  <h3>Litres, Russia, Senior Python Developer</h3>
+  <p class="meta">Mar 2024 – Present</p>
+  <ul>
+    <li>Developed Python/FastAPI services for a high-traffic digital reading platform, covering catalog and search APIs, ebook reader and audiobook player integrations, and reading/listening activity tracking with ClickHouse-backed analytics.</li>
+    <li>Contributed to Elasticsearch/OpenSearch-backed search services and implemented Kafka producers and consumers for event-driven processing and external integrations, including Mindbox.</li>
+    <li>Developed <a href="/projects/audiobook-alignment/">text–audio alignment pipelines</a> with Apache Airflow and deployed a dedicated GPU inference service to production; contributed to ML-powered book search and text classification services.</li>
+    <li>Maintained Kubernetes deployment configurations and GitLab CI/CD workflows, using Ansible and Minikube-based staging environments to validate backend changes.</li>
+    <li>Investigated and optimized backend performance using Sentry traces, Graylog, and Grafana/Prometheus dashboards, reducing average response times by 25%.</li>
+  </ul>
+  <p class="meta"><strong>Tech stack:</strong> Python, Django, Kafka, RabbitMQ, Celery, K8s, ClickHouse, OpenSearch, GitLab CI/CD, Grafana, Prometheus, Sentry, Graylog, Apache Superset, Redash</p>
+  <h3>Ospree.io, Singapore, Python Backend Developer</h3>
+  <p class="meta">Nov 2022 – Mar 2024</p>
+  <ul>
+    <li>Developed asynchronous Python microservices and REST APIs using FastAPI and SQLAlchemy for a blockchain compliance SaaS platform.</li>
+    <li>Integrated blockchain analytics providers and implemented compliance workflows for whitelisting, monitoring, case management, rule-based automation, and reporting.</li>
+    <li>Applied TDD using pytest and unittest, and developed Playwright end-to-end tests for compliance workflows.</li>
+  </ul>
+  <p class="meta"><strong>Tech stack:</strong> Python, FastAPI, SQLAlchemy, RabbitMQ, pytest, unittest, Playwright, GitLab CI/CD</p>
+  <h3>Online LLC, Russia, Python Developer</h3>
+  <p class="meta">Apr 2018 – Nov 2022</p>
+  <ul>
+    <li>Developed Python services for document workflows, data collection, and reporting, implementing Event Sourcing with CQRS, snapshots, and idempotent request handling to support safe retries.</li>
+    <li>Implemented <a href="/projects/transactional-outbox/">a transactional outbox</a> with retry handling and idempotent consumers to reliably publish domain events to RabbitMQ and prevent duplicate processing.</li>
+    <li>Built Apache Airflow pipelines to ingest, validate, and transform data into PostgreSQL for reporting, managing database migrations with Alembic.</li>
+  </ul>
+  <p class="meta"><strong>Tech stack:</strong> Python, Flask, PostgreSQL, MongoDB, Alembic, RabbitMQ, Docker, Apache Airflow, WebSockets, gRPC, Protocol Buffers</p>
+  <h2>Projects</h2>
+  <h3>Axioma — Article Summarization and Comparison</h3>
+  <p class="meta">Apr 2023 – Mar 2024</p>
+  <ul>
+    <li>Developed a <a href="/projects/article-comparison/">Chrome extension</a> and Python backend API using RAG to summarize long-form articles and identify new information and previously covered content relative to the user’s reading history.</li>
+  </ul>
+  <p class="meta"><strong>Tech stack:</strong> JavaScript, Python, LangChain, Sentence Transformers, PyTorch, NLTK, Pinecone, ChromaDB, GitLab CI/CD</p>
+  <h3>TDI — Video Analytics for Warehouses and Manufacturing</h3>
+  <p class="meta">Dec 2021 – Nov 2022</p>
+  <ul>
+    <li>Developed Python video analytics pipelines to detect forklifts, workers, and conveyor objects and estimate movement speeds, supporting equipment speed monitoring, workplace safety, and product flow tracking.</li>
+  </ul>
+  <p class="meta"><strong>Tech stack:</strong> Python, OpenCV, TensorFlow, YOLOv5, YOLOv7, EfficientDet, CNNs, LSTM, RANSAC</p>
+  <h2>Technical skills</h2>
+  <dl class="skills">
+    <dt>Languages &amp; Backend</dt><dd>Python, SQL, FastAPI, SQLAlchemy, Celery</dd>
+    <dt>Data &amp; Messaging</dt><dd>PostgreSQL, MySQL, Redis, RabbitMQ, Kafka</dd>
+    <dt>Infrastructure</dt><dd>AWS, Docker, Kubernetes (K8s), Linux, GitLab CI/CD</dd>
+    <dt>Testing &amp; Observability</dt><dd>pytest, Prometheus, Grafana, Sentry</dd>
+  </dl>
+  <h2>Education</h2>
+  <p>Izhevsk State Technical University<br>Specialist Diploma in Computers and Automated Systems Software Engineering<br>Canadian equivalency: Bachelor&#x27;s and Master&#x27;s degree (WES, 2020)</p>
+  <h2>Languages</h2>
+  <p>Russian — Native | English — C1</p>
+  <h2>Additional experience</h2>
+  <p>ReDI School, Germany — Volunteer Machine Learning Tutor<br>Sep 2022 – Dec 2022 | ML for Beginners course</p>
+</section>
+<footer><a href="/">← Backend portfolio</a></footer>
+</main></body></html>
