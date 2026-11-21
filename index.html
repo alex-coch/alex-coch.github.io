@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Aleksei Kokorev · Python Backend Engineer</title><meta name="description" content="Python backend engineering portfolio. APIs, event-driven systems and production GPU inference."><link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=5"></head>
-<body><main>
-<header class="home-nav">
+<link rel="stylesheet" href="/assets/portfolio.css?v=6"><script defer src="/assets/portfolio-nav.js"></script>
+</head>
+<body>
+<header>
   <a class="name" href="/">Aleksei Kokorev</a>
   <nav aria-label="Main navigation">
     <a href="#work">Case studies</a>
@@ -17,6 +18,7 @@
     </label>
   </nav>
 </header>
+<main>
 <section class="hero">
   <h1>Python Backend<br>Engineer</h1>
   <p class="location">Available to work from Serbia · Open to relocation</p>
@@ -80,7 +82,6 @@
   </div>
 </section>
 <footer><a href="/learning/ml/">Machine Learning Archive →</a><p>Earlier projects in machine learning, computer vision, and natural language processing.</p></footer></main>
-<script src="/assets/section-nav.js"></script>
 <script>
 const archiveAnchors = ['machinelearning','boston','donors','segments','smartcab','digit','message','sentiment'];
 if (archiveAnchors.includes(location.hash.slice(1))) location.replace('/learning/ml/' + location.hash);
