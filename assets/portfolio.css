@@ -70,6 +70,15 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .hero .actions .primary {min-height:44px;padding-block:.4em;border:1px solid transparent}
 .hero .actions svg,.resume-action svg {flex:none}
 .resume-action:hover {border-color:currentColor}
+.work-actions {gap:.65rem;margin:1rem 0 0}
+.work-actions a {
+  display:flex;align-items:center;justify-content:center;min-height:44px;padding:.4rem .8rem;
+  border:1px solid var(--accent);border-radius:.3rem;background:var(--page);
+  color:var(--accent);font-weight:600;text-decoration:none
+}
+.work-actions a:hover {background:var(--accent);color:var(--on-accent)}
+@media(max-width:38rem){.work-actions a {width:100%}}
+
 .hero .location {font-size:1rem;color:var(--muted)}
 .hero .hero-focus {
   display:grid;margin-block:0 .85rem;color:var(--accent);
