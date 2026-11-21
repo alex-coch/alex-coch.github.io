@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /assets/Aleksei_Kokorev_Python_Backend_CV.pdf
