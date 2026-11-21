@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Matching audiobook narration to text · Aleksei Kokorev</title><link rel="icon" href="/assets/ak.svg" type="image/svg+xml">
-<script src="/assets/theme.js"></script>
-<link rel="stylesheet" href="/assets/portfolio.css"></head>
+<script src="/assets/theme.js?v=2"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=2"></head>
 <body><main><header>
   <a class="name" href="/">Aleksei Kokorev</a>
   <nav aria-label="Main navigation">
     <a href="/#work">Case studies</a>
     <a href="/#skills">Skills</a>
     <a href="/#contact">Contact</a>
-    <button id="theme-toggle" type="button" aria-pressed="false" hidden>Dark theme</button>
+    <label class="theme-switch" title="Dark theme" hidden>
+      <input id="theme-toggle" type="checkbox" role="switch" aria-label="Dark theme">
+      <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
+    </label>
   </nav>
 </header>
 <section class="case">

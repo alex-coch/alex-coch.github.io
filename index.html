@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Aleksei Kokorev · Python Backend Engineer</title><meta name="description" content="Python backend engineering portfolio. APIs, event-driven systems and production GPU inference."><link rel="icon" href="/assets/ak.svg" type="image/svg+xml">
-<script src="/assets/theme.js"></script>
-<link rel="stylesheet" href="/assets/portfolio.css"></head>
+<script src="/assets/theme.js?v=2"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=2"></head>
 <body><main>
 <header>
   <a class="name" href="/">Aleksei Kokorev</a>
@@ -9,7 +9,10 @@
     <a href="#work">Case studies</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
-    <button id="theme-toggle" type="button" aria-pressed="false" hidden>Dark theme</button>
+    <label class="theme-switch" title="Dark theme" hidden>
+      <input id="theme-toggle" type="checkbox" role="switch" aria-label="Dark theme">
+      <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
+    </label>
   </nav>
 </header>
 <section class="hero">
@@ -45,10 +48,10 @@
 </section>
 <section id="contact">
   <h2>Let’s connect</h2>
-  <div class="actions">
-    <a href="https://www.linkedin.com/in/alexcoch/">Message me on LinkedIn</a>
-    <a href="https://github.com/alex-coch">GitHub</a>
-    <a href="https://calendly.com/alexcoch">Schedule a call</a>
+  <div class="actions contact-icons">
+    <a href="https://www.linkedin.com/in/alexcoch/" aria-label="Message me on LinkedIn" title="Message me on LinkedIn"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M3 3h18v18H3z"/><path fill="var(--panel)" d="M6 10h2.6v8H6zm1.3-4.2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM10.4 10H13v1c.6-.8 1.4-1.2 2.5-1.2 2.2 0 3.2 1.3 3.2 3.8V18H16v-4.1c0-1.4-.4-2-1.4-2s-1.6.7-1.6 2V18h-2.6z"/></svg></a>
+    <a href="https://github.com/alex-coch" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.28.93.1-.73.4-1.22.72-1.5-2.5-.28-5.12-1.25-5.12-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.08 1.16a10.7 10.7 0 0 1 5.6 0c2.14-1.46 3.08-1.16 3.08-1.16.62 1.55.23 2.7.12 2.98.72.79 1.15 1.79 1.15 3.02 0 4.32-2.63 5.27-5.13 5.55.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg></a>
+    <a href="https://calendly.com/alexcoch" aria-label="Schedule a call" title="Schedule a call"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18m-13 5 3 3 5-5"/></g></svg></a>
   </div>
 </section>
 <footer><a href="/learning/ml/">Machine Learning Archive →</a><p>Earlier projects in machine learning, computer vision, and natural language processing.</p></footer></main>
