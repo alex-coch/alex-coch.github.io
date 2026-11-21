@@ -75,6 +75,8 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
 :root {--menu-motion:180ms ease-in-out}
 .menu-toggle, .menu-backdrop {display:none}
 @media(max-width:48rem){
+  .hero .actions {flex-direction:column;align-items:stretch;gap:.65rem}
+  .hero .actions a {justify-content:center}
   [data-pinned-nav] .menu-backdrop {
     display:block;position:fixed;inset:0;z-index:1;background:var(--backdrop);
     opacity:0;visibility:hidden;touch-action:none
