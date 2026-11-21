@@ -24,8 +24,11 @@ footer {margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.3rem}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 :is(#work, #writing) article + article {margin-top:1rem}
 
-.home-nav {position:sticky;top:0;z-index:1;background:var(--page)}
-.home-nav ~ section[id] {scroll-margin-top:var(--nav-offset, 6rem)}
+body > header {position:sticky;top:0;z-index:2;background:var(--page);width:min(58rem,90%);margin-inline:auto}
+html[data-pinned-nav] body {padding-top:var(--nav-height)}
+html[data-pinned-nav] body > header {position:fixed;inset-inline:0}
+html {scroll-padding-top:calc(var(--nav-height, 5rem) + 16px)}
+@media(max-width:38rem){body > header {padding-block:.5rem;row-gap:.35rem}}
 header nav {margin:0}
 header nav a {font-size:.95rem}
 header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thickness:.15em}

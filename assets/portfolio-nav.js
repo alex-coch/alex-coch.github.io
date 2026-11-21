@@ -1,5 +1,5 @@
 (() => {
-  const header = document.querySelector('.home-nav');
+  const header = document.querySelector('body > header');
   const sections = Array.from(header.querySelectorAll('a[href^="#"]'), link => ({
     link,
     section: document.getElementById(link.hash.slice(1))
@@ -19,12 +19,14 @@
   }
 
   function measureHeader() {
-    document.documentElement.style.setProperty('--nav-offset', (header.offsetHeight + 16) + 'px');
-    update();
+    document.documentElement.style.setProperty('--nav-height', header.offsetHeight + 'px');
+    if (sections.length) update();
   }
 
   measureHeader();
+  document.documentElement.dataset.pinnedNav = '';
   new ResizeObserver(measureHeader).observe(header);
+  if (!sections.length) return;
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
   window.addEventListener('pageshow', update);
