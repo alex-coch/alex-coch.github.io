@@ -57,5 +57,5 @@
     });
   }, { threshold: 0.15 });
 
-  document.querySelectorAll('.skill-card, #work article').forEach(card => observer.observe(card));
+  document.querySelectorAll('.skill-card, .work-card').forEach(card => observer.observe(card));
 })();
