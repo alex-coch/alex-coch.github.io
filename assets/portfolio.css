@@ -25,8 +25,8 @@ footer {margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.3rem}
 /* Keep section headings above card titles in the homepage hierarchy. */
 main > .hero ~ section {display:flow-root;margin-block-start:2rem}
 main > .hero ~ section > h2 {font-size:clamp(1.75rem, 3.5vw, 2.25rem);margin-block-start:0}
-:is(#work, #writing) article h3 {font-size:clamp(1.35rem, 2.6vw, 1.75rem)}
-:is(#work, #writing) article + article {margin-top:1rem}
+#work article h3 {font-size:clamp(1.35rem, 2.6vw, 1.75rem)}
+#work article + article {margin-top:1rem}
 
 body > header {position:sticky;top:0;z-index:2;background:var(--page);width:min(58rem,90%);margin-inline:auto}
 html[data-pinned-nav] body {padding-top:var(--nav-height)}
@@ -129,3 +129,15 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
 #contact-form textarea {resize:vertical}
 #contact-form button {justify-self:start;border:0;font:inherit;cursor:pointer}
 #contact-form :focus-visible {outline:3px solid var(--focus);outline-offset:3px}
+
+
+.post-list {list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.post-list li {padding:.65rem 0;border-bottom:1px solid var(--line)}
+.post-pagination {display:flex;align-items:center;flex-wrap:wrap;gap:.65rem;margin-top:1rem}
+.post-pagination[hidden] {display:none}
+.post-pagination button {
+  min-height:44px;padding:.4em .75em;font:inherit;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:.3rem;cursor:pointer
+}
+.post-pagination button:disabled {opacity:.6;cursor:default}
+.post-pagination button:focus-visible {outline:3px solid var(--focus);outline-offset:3px}
