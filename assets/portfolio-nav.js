@@ -23,6 +23,25 @@
     if (sections.length) update();
   }
 
+  const toggle = header.querySelector('.menu-toggle');
+  function closeMenu() {
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  toggle.addEventListener('click', () => {
+    toggle.setAttribute('aria-expanded', String(toggle.getAttribute('aria-expanded') !== 'true'));
+  });
+  document.addEventListener('click', event => {
+    if (!header.contains(event.target) || event.target.closest('a')) closeMenu();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+  matchMedia('(max-width:48rem)').addEventListener('change', closeMenu);
+  window.addEventListener('pageshow', closeMenu);
+
   measureHeader();
   document.documentElement.dataset.pinnedNav = '';
   new ResizeObserver(measureHeader).observe(header);
