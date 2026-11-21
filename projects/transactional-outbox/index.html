@@ -36,7 +36,7 @@
     <div class="edge">↓ Read committed outbox events</div>
     <div class="node"><strong>Outbox processor</strong> <span>Publish each event. If publication fails, keep it pending and retry later.</span></div>
     <div class="edge">↓ Publish</div>
-    <div class="node"><strong>RabbitMQ</strong></div>
+    <div class="node"><strong>RabbitMQ</strong> <span>Queue the message for delivery. If a consumer disconnects before acknowledging it, deliver it again.</span></div>
     <div class="edge">↓ Delivery or redelivery</div>
     <div class="node"><strong>Idempotent consumer</strong>
       <ul><li>First successful processing → apply the workflow update.</li>
@@ -46,10 +46,13 @@
   <h2>Why the consumer mattered</h2>
   <p>Retries solved one problem and introduced another. Suppose RabbitMQ accepts a message, but the publisher stops before recording that it sent it. On recovery, the publisher can send the same event again.</p>
   <p>I built idempotent consumers so that processing the same event twice had the same business effect as processing it once. For a document workflow, that means a duplicate delivery can arrive without repeating the corresponding update.</p>
-  <h2>Result</h2>
-  <p>A committed document change could survive a temporary broker outage with its event still waiting to be published. When delivery resumed, consumers could safely handle repeats. This let the document service complete its database transaction even when downstream processing had to wait.</p>
+  <h2>Failure scenarios</h2>
+  <p>I reproduced both failures in a standalone demo using Docker Compose and Kubernetes. For each run, I followed one event ID from the outbox to the document history.</p>
+  <h3>1. RabbitMQ was offline during a write</h3>
+  <p>With the broker stopped, the API returned HTTP 201. The document was readable in PostgreSQL, its outbox event was pending, and its history was empty. After RabbitMQ restarted, the relay published the pending event and the consumer wrote one history entry.</p>
+  <h3>2. The consumer stopped after commit, before acknowledgement</h3>
+  <p>The first consumer recorded the event ID and the history entry in one PostgreSQL transaction. I stopped it before it acknowledged the message. RabbitMQ delivered the same event to the replacement consumer, which found the existing ID and logged <code>duplicate_skipped</code>. The queue drained and the document still had exactly one history entry.</p>
   <h2>Run the demo</h2>
-  <p>I built a standalone demo to reproduce two failures: a broker outage and a consumer crash after commit but before acknowledgement. Run either experiment with Docker Compose or Kubernetes and check that the document history contains one entry.</p>
   <p><a href="https://github.com/alex-coch/document-events-outbox">View the demo repository and run instructions on GitHub →</a></p>
 </section>
 <footer><a href="/">← Backend portfolio</a></footer>
