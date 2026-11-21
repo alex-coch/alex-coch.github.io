@@ -69,27 +69,23 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .hero .actions svg,.resume-action svg {flex:none}
 .resume-action:hover {border-color:currentColor}
 .hero .location {font-size:1rem;color:var(--muted)}
-.hero-focus {
-  display:flex;align-items:start;gap:.7rem;max-width:64ch;margin-block:0 .85rem;
-  color:var(--accent)
-}
-.hero .hero-focus-lines {
-  display:grid;flex:1;min-width:0;max-width:none;margin:0;
+.hero .hero-focus {
+  display:grid;margin-block:0 .85rem;color:var(--accent);
   font-size:clamp(1rem,2.5vw,1.22rem);font-weight:650;line-height:1.4
 }
-.hero-focus-lines span {grid-area:1 / 1;opacity:0;pointer-events:none}
-.hero-focus-lines span[data-visible] {opacity:1;pointer-events:auto}
-.hero-focus-toggle {
-  min-height:44px;margin-block:-.45rem;padding:0 .4rem;color:var(--accent);background:none;
-  border:0;border-radius:.25rem;font:inherit;font-size:.85rem;text-decoration:underline;cursor:pointer
+.hero-focus > span {grid-area:1 / 1}
+.hero-focus-line {opacity:0;pointer-events:none}
+.hero-focus-text[data-typing]::after {
+  content:"";display:inline-block;height:.95em;margin-inline-start:.12em;
+  border-inline-start:2px solid currentColor;vertical-align:-.13em
 }
-.hero-focus-toggle:focus-visible {outline:3px solid var(--focus);outline-offset:2px}
 
 .skills {display:grid;grid-template-columns:auto 1fr;gap:.7em 1.5em}
 .skills dt {font-weight:650}
 .skills dd {margin:0}
 .skill-cards {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
 .skill-card {padding:1.1rem;border:1px solid var(--line);border-radius:.65rem;background:var(--panel)}
+#work article {border:1px solid var(--line);border-left:4px solid var(--accent)}
 .skill-card h3 {margin:0 0 .7rem;font-size:1.08rem;letter-spacing:normal}
 .tech-tags {display:flex;flex-wrap:wrap;gap:.45rem;margin:.75rem 0;padding:0;list-style:none}
 .skill-card .tech-tags {margin:0}
@@ -98,13 +94,12 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
   background:var(--page);color:var(--ink);font-size:.86rem
 }
 @media (hover:hover) {
-  .skill-card:hover {border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+  :is(.skill-card,#work article):hover {border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
   .tech-tags li:hover {color:var(--on-accent);background:var(--accent);border-color:var(--accent)}
 }
 @media (prefers-reduced-motion:no-preference) {
   header nav a,.tech-tags li {transition:background-color 170ms ease,border-color 170ms ease,color 170ms ease}
-  .hero-focus-lines span {transition:opacity 240ms ease}
-  .skill-card {transition:border-color 180ms ease,box-shadow 180ms ease}
+  .skill-card,#work article {transition:border-color 180ms ease,box-shadow 180ms ease}
 }
 @media(max-width:38rem){
   .skills {grid-template-columns:1fr;gap:.15em}

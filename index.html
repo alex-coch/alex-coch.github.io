@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Aleksei Kokorev · Python Backend Engineer</title><meta name="description" content="Python backend engineering portfolio. APIs, event-driven systems and production GPU inference."><link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=28"><script defer src="/assets/portfolio-nav.js?v=7"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=29"><script defer src="/assets/portfolio-nav.js?v=7"></script>
 <script defer src="/assets/messenger-links.js"></script>
 <script defer src="/assets/contact-form.js"></script>
 <script async defer src="https://www.google.com/recaptcha/api.js"></script>
 <script defer src="/assets/posts.js"></script>
-<script defer src="/assets/portfolio-enhancements.js?v=1"></script>
+<script defer src="/assets/portfolio-enhancements.js?v=2"></script>
 </head>
 <body>
 <header>
@@ -31,14 +31,12 @@
 <main>
 <section class="hero">
   <h1>Python Backend<br>Engineer</h1>
-  <div class="hero-focus">
-    <p class="hero-focus-lines">
-      <span data-visible>Python APIs · FastAPI · PostgreSQL</span>
-      <span aria-hidden="true">Event-driven systems · Kafka · RabbitMQ</span>
-      <span aria-hidden="true">Production ML inference · GPU pipelines · RAG</span>
-    </p>
-    <button class="hero-focus-toggle" type="button" aria-label="Pause headline rotation" hidden>Pause</button>
-  </div>
+  <p class="hero-focus">
+    <span class="hero-focus-text" aria-hidden="true">Python APIs · FastAPI · PostgreSQL</span>
+    <span class="hero-focus-line">Python APIs · FastAPI · PostgreSQL</span>
+    <span class="hero-focus-line" aria-hidden="true">Event-driven systems · Kafka · RabbitMQ</span>
+    <span class="hero-focus-line" aria-hidden="true">Production ML inference · GPU pipelines · RAG</span>
+  </p>
   <p class="location">Available for international remote work from Serbia · Open to relocation</p>
   <p>I’m a Python backend engineer with 8+ years of experience building services for digital content, blockchain compliance, and business applications.</p>
   <p>I build asynchronous APIs and event-driven services, improve backend performance, and integrate ML inference and RAG into applications. One recent project matches audiobook narration to ebook passages using a GPU inference service in production.</p>
@@ -300,13 +298,4 @@ window.addEventListener('hashchange', revealContactForm);
 
 const archiveAnchors = ['machinelearning','boston','donors','segments','smartcab','digit','message','sentiment'];
 if (archiveAnchors.includes(location.hash.slice(1))) location.replace('/learning/ml/' + location.hash);
-if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const observer = new IntersectionObserver(entries => {
-    for (const entry of entries) if (entry.isIntersecting) {
-      entry.target.animate([{opacity: 0.35, transform: 'translateY(10px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 380});
-      observer.unobserve(entry.target);
-    }
-  });
-  document.querySelectorAll('#work article').forEach(card => observer.observe(card));
-}
 </script></body></html>
