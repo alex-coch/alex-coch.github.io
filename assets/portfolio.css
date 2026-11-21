@@ -57,9 +57,16 @@ header nav a[aria-current] {color:var(--ink);font-weight:700;text-decoration-thi
   .skills dd {margin-bottom:.6em}
 }
 
-header {--menu-motion:180ms ease-in-out}
+:root {--menu-motion:180ms ease-in-out}
 .menu-toggle {display:none}
 @media(max-width:48rem){
+  [data-pinned-nav] body::before {
+    content:"";position:fixed;inset:0;z-index:1;background:rgb(10 20 35 / 20%);
+    opacity:0;visibility:hidden
+  }
+  [data-pinned-nav] body:has(.menu-toggle[aria-expanded="true"])::before {
+    opacity:1;visibility:visible
+  }
   html[data-pinned-nav] body > header {padding-block:.25rem;column-gap:.5rem}
   [data-pinned-nav] .menu-toggle {
     display:grid;place-items:center;width:44px;height:44px;padding:0;
@@ -87,5 +94,6 @@ header {--menu-motion:180ms ease-in-out}
   .menu-icon path {transition:transform var(--menu-motion), opacity var(--menu-motion)}
 }
 @media(max-width:48rem) and (prefers-reduced-motion:no-preference){
+  [data-pinned-nav] body::before {transition:opacity var(--menu-motion), visibility var(--menu-motion)}
   [data-pinned-nav] header nav {transition:clip-path var(--menu-motion), visibility var(--menu-motion)}
 }
