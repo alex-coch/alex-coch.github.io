@@ -1,36 +1,40 @@
 (() => {
   const motion = matchMedia('(prefers-reduced-motion: no-preference)');
-  if (!motion.matches) return;
-
   const text = document.querySelector('.hero-focus-text');
   const lines = [...document.querySelectorAll('.hero-focus-line')].map(line => line.textContent);
-  const wait = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
-  let typing = true;
+  let index;
+  let length;
+  let deleting;
+  let timer;
 
-  motion.addEventListener('change', () => {
-    typing = false;
-    text.textContent = lines[0];
-    text.removeAttribute('data-typing');
-  }, { once: true });
+  function animateHeadline() {
+    length += deleting ? -1 : 1;
+    text.textContent = lines[index].slice(0, length);
 
-  async function typeHeadline() {
-    text.setAttribute('data-typing', '');
-    for (const line of lines.slice(1)) {
-      await wait(950);
-      while (typing && text.textContent.length) {
-        text.textContent = text.textContent.slice(0, -1);
-        await wait(10);
-      }
-      for (let length = 1; typing && length <= line.length; length++) {
-        text.textContent = line.slice(0, length);
-        await wait(19);
-      }
-      if (!typing) return;
+    if (length === 0) {
+      index = (index + 1) % lines.length;
+      deleting = false;
+      timer = setTimeout(animateHeadline, 400);
+    } else if (length === lines[index].length) {
+      deleting = true;
+      timer = setTimeout(animateHeadline, 2000);
+    } else {
+      timer = setTimeout(animateHeadline, deleting ? 40 : 60);
     }
-    text.removeAttribute('data-typing');
   }
 
-  typeHeadline();
+  function updateHeadlineMotion() {
+    clearTimeout(timer);
+    index = 0;
+    length = lines[0].length;
+    deleting = true;
+    text.textContent = lines[0];
+    text.toggleAttribute('data-typing', motion.matches);
+    if (motion.matches) timer = setTimeout(animateHeadline, 2000);
+  }
+
+  motion.addEventListener('change', updateHeadlineMotion);
+  updateHeadlineMotion();
 
   if (!('IntersectionObserver' in window)) return;
 
