@@ -51,6 +51,11 @@ p {max-width:64ch}.hero p {font-size:1.2rem} nav {margin:1.6rem 0}
 #example-transcript button[data-active] {
   background:var(--accent);color:var(--on-accent)
 }
+@media(max-width:38rem) {
+  .comparison-result-heading h2 {scroll-margin-top:1.25rem}
+  #example-transcript button {min-height:44px;max-width:100%;padding-inline:.35em}
+  #example-transcript code {white-space:nowrap}
+}
 footer {margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.3rem}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 /* Keep section headings above card titles in the homepage hierarchy. */
