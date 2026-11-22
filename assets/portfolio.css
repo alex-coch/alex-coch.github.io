@@ -109,6 +109,9 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .resume-action:hover {border-color:currentColor}
 .resume-download {display:inline-flex;align-items:center;min-height:44px}
 .work-actions {gap:.65rem;margin:1rem 0 0}
+.comparison-result > .work-actions {
+  margin:0;padding:0 calc(clamp(.55rem,2vw,1rem) + .75rem) 1rem
+}
 .work-actions > a {
   display:flex;align-items:center;justify-content:center;min-height:44px;padding:.4rem .8rem;
   border:1px solid var(--accent);border-radius:.3rem;background:var(--page);
