@@ -7,6 +7,9 @@
   }));
   let active;
 
+  audio.defaultPlaybackRate = 1.4;
+  audio.playbackRate = audio.defaultPlaybackRate;
+
   function setHighlight(current) {
     if (current === active) return;
 
