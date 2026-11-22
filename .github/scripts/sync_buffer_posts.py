@@ -10,6 +10,9 @@ from urllib.error import HTTPError
 from urllib.parse import unquote, urlsplit
 from urllib.request import Request, urlopen
 
+# The existing archive covers posts published before Buffer was connected.
+SYNC_FROM = datetime.fromisoformat("2026-11-22T00:00:00+01:00")
+
 POST_LIST = re.compile(r'(<ul class="post-list">\n)(.*?)(^  </ul>)', re.DOTALL | re.MULTILINE)
 SYNCED_ROW = re.compile(r'^    <li data-published-at="([^"]+)">.*</li>\n', re.MULTILINE)
 FEED_PATH = re.compile(r"/feed/update/urn:li:(?:activity|share|ugcPost):(\d+)/?")
@@ -120,8 +123,10 @@ def add_posts(page, posts):
         post_id, url = link
         if post_id in known:
             continue
-        known.add(post_id)
         sent_at = datetime.fromisoformat(post["sentAt"].replace("Z", "+00:00")).astimezone(timezone.utc)
+        if sent_at < SYNC_FROM:
+            continue
+        known.add(post_id)
         date = sent_at.isoformat()
         title = html.escape(post_title(post["text"], sent_at))
         new_rows.append((date, f'    <li data-published-at="{date}"><a href="{html.escape(url)}">{title}</a></li>\n'))
