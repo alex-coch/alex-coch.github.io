@@ -7,9 +7,7 @@
   }));
   let active;
 
-  function syncHighlight() {
-    const time = audio.currentTime;
-    const current = audio.ended ? undefined : segments.find(({ start, end }) => start <= time && time < end);
+  function setHighlight(current) {
     if (current === active) return;
 
     active?.element.removeAttribute('data-active');
@@ -17,7 +15,20 @@
     active = current;
   }
 
-  for (const event of ['play', 'timeupdate', 'seeked', 'ended']) {
+  function syncHighlight() {
+    const time = audio.currentTime;
+    setHighlight(audio.ended ? undefined : segments.find(({ start, end }) => start <= time && time < end));
+  }
+
+  for (const segment of segments) {
+    segment.element.addEventListener('click', () => {
+      audio.currentTime = segment.start;
+      setHighlight(segment);
+      if (audio.paused) audio.play().catch(syncHighlight);
+    });
+  }
+
+  for (const event of ['play', 'timeupdate', 'seeking', 'seeked', 'ended']) {
     audio.addEventListener(event, syncHighlight);
   }
 })();
