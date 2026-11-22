@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Matching audiobook narration to text · Aleksei Kokorev</title><link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=36"><script defer src="/assets/portfolio-nav.js?v=7"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=37"><script defer src="/assets/portfolio-nav.js?v=7"></script>
+<script defer src="example-alignment.js"></script>
 </head>
 <body><header>
   <a class="name" href="/">Aleksei Kokorev</a>
@@ -34,8 +35,14 @@
 </ul>
 <p><strong>My contribution.</strong> I built the Python alignment pipeline in Apache Airflow and deployed a dedicated FastAPI service for GPU inference to production.</p>
 <p><strong>Production result.</strong> The pipeline produces a validated SMIL synchronization map that links ebook passages to the corresponding time intervals in the audiobook.</p>
-<p><strong>Example (demonstration data).</strong> “Mira closed the gate and followed the lanterns down the path toward the river.” → <code>00:12:08–00:12:16</code> in the audiobook.</p>
-<audio controls preload="none" aria-label="Sample narration" style="width: min(100%, 28rem)">
+<p id="example-transcript"><strong>Example (demonstration data).</strong>
+  “<span data-start="0" data-end="1.96">Mira closed the gate</span>
+  <span data-start="1.96" data-end="4.35">and followed the lanterns</span>
+  <span data-start="4.35" data-end="5.64">down the path</span>
+  <span data-start="5.64" data-end="7.17">toward the river.</span>”
+  → <code>00:12:08–00:12:16</code> in the audiobook.
+</p>
+<audio id="example-narration" controls preload="none" aria-label="Sample narration" style="width: min(100%, 28rem)">
   <source src="example-narration.mp3" type="audio/mpeg">
   <a href="example-narration.mp3">Download the sample narration (MP3)</a>
 </audio>

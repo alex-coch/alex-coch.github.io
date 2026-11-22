@@ -20,6 +20,10 @@ p {max-width:64ch}.hero p {font-size:1.2rem} nav {margin:1.6rem 0}
 .pipeline .gpu {background:var(--ink);color:var(--on-accent)}
 .pipeline .node span {display:block}
 .pipeline .edge {padding:.55rem 1rem;color:var(--muted);font-size:.9rem}
+#example-transcript [data-active] {
+  background:var(--accent);color:var(--on-accent);border-radius:.2em;
+  text-decoration:underline;text-underline-offset:.16em
+}
 footer {margin:3rem 0 2rem;border-top:1px solid var(--line);padding-top:1.3rem}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 /* Keep section headings above card titles in the homepage hierarchy. */
