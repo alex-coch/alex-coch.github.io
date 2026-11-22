@@ -1,21 +1,15 @@
-[![GitHub last commit](https://img.shields.io/github/last-commit/alex-coch/alex-coch.github.io)](https://github.com/alex-coch/alex-coch.github.io/commits/main)
-[![GitHub repo size](https://img.shields.io/github/repo-size/alex-coch/alex-coch.github.io)](https://github.com/alex-coch/alex-coch.github.io/archive/main.zip)
+# Aleksei Kokorev · Python Backend Engineer
 
-# Data Science portfolio
-Repository containing portfolio of data science projects completed by me for academic, self learning, and hobby purposes. Presented in the form of iPython Notebooks.
+My portfolio covers Python APIs, event-driven services, and production ML inference.
 
-## Instructions for running Python notebooks locally
-1. Install dependencies using requirements.txt: pip install -r requirements.txt
-2. Run notebooks as usual by using a Jupyter notebook server.
+**[View portfolio](https://alex-coch.github.io/)** · [View resume](https://alex-coch.github.io/resume/)
 
-## Contents
+## Case studies
 
-- ### Machine Learning
- - [Predicting Boston Housing Prices](/boston_housing/boston_housing.ipynb): A model to predict the value of a given house in the Boston real estate market using various statistical analysis tools. Identified the best price that a client can sell their house utilizing machine learning.
- - [Supervised Learning: Finding Donors for CharityML](/finding_donors/finding_donors.ipynb): Testing out several different supervised learning algorithms to build a model that accurately predicts whether an individual makes more than $50,000, to identify likely donors for a fictional non-profit organisation.
- - [Unsupervised Learning: Creating Customer Segments](/customer_segments/customer_segments.ipynb): Analyzing a dataset containing data on various customers' annual spending amounts (reported in monetary units) of diverse product categories for discovering internal structure, patterns and knowledge.
- - [Reinforcement Learning: Training a Smartcab to Drive](/smartcab/smartcab.ipynb): Creating an optimized Q-Learning driving agent that will navigate a Smartcab through its environment towards a goal.
- ``` 
- Pandas, numpy, matplotlib, seaborn, sklearn, AWS, Heroku. 
- ```
-- ### Deep Learning
+- [Matching audiobook narration to text](https://alex-coch.github.io/projects/audiobook-alignment/) — An Airflow pipeline and a production GPU inference service that align audiobook narration with ebook passages.
+- [Reliable event delivery for document workflows](https://alex-coch.github.io/projects/transactional-outbox/) — A PostgreSQL transactional outbox and idempotent RabbitMQ consumers that handle broker outages and prevent duplicate updates on redelivery.
+- [What’s new in this article?](https://alex-coch.github.io/projects/article-comparison/) — A Chrome extension and Python API that use ChromaDB to compare an article with earlier reading and show what’s new.
+
+## Machine Learning Archive
+
+[Explore earlier projects](https://alex-coch.github.io/learning/ml/) in machine learning, computer vision, and natural language processing.
