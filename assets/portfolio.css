@@ -78,13 +78,16 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .resume-action:hover {border-color:currentColor}
 .resume-download {display:inline-flex;align-items:center;min-height:44px}
 .work-actions {gap:.65rem;margin:1rem 0 0}
-.work-actions a {
+.work-actions > a {
   display:flex;align-items:center;justify-content:center;min-height:44px;padding:.4rem .8rem;
   border:1px solid var(--accent);border-radius:.3rem;background:var(--page);
   color:var(--accent);font-weight:600;text-decoration:none
 }
-.work-actions a:hover {background:var(--accent);color:var(--on-accent)}
-@media(max-width:38rem){.work-actions a {width:100%}}
+.work-actions > a:hover {background:var(--accent);color:var(--on-accent)}
+@media(max-width:38rem){.work-actions > a {width:100%}}
+.ci-badges {display:flex;flex-wrap:wrap;align-items:center;gap:0 .65rem;max-width:100%}
+.ci-badges a {display:inline-flex;align-items:center;min-height:44px;max-width:100%}
+.ci-badges img {display:block;max-width:100%}
 
 .hero .location {font-size:1rem;color:var(--muted)}
 .hero .hero-focus {
