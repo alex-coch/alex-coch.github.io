@@ -8,6 +8,7 @@ My portfolio covers Python APIs, event-driven services, and production ML infere
 
 - [Matching audiobook narration to text](https://alex-coch.github.io/projects/audiobook-alignment/) — An Airflow pipeline and a production GPU inference service that align audiobook narration with ebook passages.
 - [Reliable event delivery for document workflows](https://alex-coch.github.io/projects/transactional-outbox/) — A PostgreSQL transactional outbox and idempotent RabbitMQ consumers that handle broker outages and prevent duplicate updates on redelivery. · [Run the demo](https://github.com/alex-coch/document-events-outbox#quick-start)
+  [![Docker Compose](https://github.com/alex-coch/document-events-outbox/actions/workflows/compose-ci.yml/badge.svg?branch=main)](https://github.com/alex-coch/document-events-outbox/actions/workflows/compose-ci.yml) [![Kubernetes (kind)](https://github.com/alex-coch/document-events-outbox/actions/workflows/kind-ci.yml/badge.svg?branch=main)](https://github.com/alex-coch/document-events-outbox/actions/workflows/kind-ci.yml)
 - [What’s new in this article?](https://alex-coch.github.io/projects/article-comparison/) — A Chrome extension and Python API that use ChromaDB to compare an article with earlier reading and show what’s new.
 
 ## Local preview
