@@ -6,7 +6,7 @@
   <title>Reliable event delivery for document workflows · Aleksei Kokorev</title>
   <link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=40">
+<link rel="stylesheet" href="/assets/portfolio.css?v=41">
 <script defer src="/assets/portfolio-nav.js?v=7"></script>
 </head>
 <body>
@@ -48,6 +48,9 @@
       <li><strong>RabbitMQ was offline during a write.</strong> The API returned HTTP 201, the document was saved in PostgreSQL, and the event stayed pending. After RabbitMQ restarted, the event was delivered and one history entry appeared.</li>
       <li><strong>The consumer stopped after commit, before acknowledgement.</strong> RabbitMQ redelivered the event to a replacement consumer. The queue drained and the document still had exactly one history entry.</li>
     </ul>
+    <div class="actions work-actions">
+      <a href="https://github.com/alex-coch/document-events-outbox#quick-start">Run the demo ↗</a>
+    </div>
   </section>
   <h2>The problem</h2>
   <p>A document update had to save the change in PostgreSQL and notify other services through RabbitMQ. If the database commit succeeded and the process stopped before sending the message, the document would show its new state while downstream services would have no record of the change.</p>
