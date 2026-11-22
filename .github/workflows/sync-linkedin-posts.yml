@@ -2,13 +2,8 @@ name: Sync LinkedIn posts from Buffer
 
 on:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '43 * * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/sync-linkedin-posts.yml
-      - .github/scripts/sync_buffer_posts.py
 
 permissions:
   contents: write

@@ -16,7 +16,7 @@ SYNC_FROM = datetime.fromisoformat("2026-11-22T00:00:00+01:00")
 POST_LIST = re.compile(r'(<ul class="post-list">\n)(.*?)(^  </ul>)', re.DOTALL | re.MULTILINE)
 SYNCED_ROW = re.compile(r'^    <li data-published-at="([^"]+)">.*</li>\n', re.MULTILINE)
 FEED_PATH = re.compile(r"/feed/update/urn:li:(?:activity|share|ugcPost):(\d+)/?")
-POST_PATH = re.compile(r"/posts/[\w%-]+-activity-(\d+)(?:-[\w-]+)?/?")
+POST_PATH = re.compile(r"/posts/[\w%-]+-(?:activity|share)-(\d+)(?:-[\w-]+)?/?")
 
 
 def query_buffer(token, query, **variables):
