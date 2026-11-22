@@ -34,6 +34,7 @@
 </ul>
 <p><strong>My contribution.</strong> I built the Python alignment pipeline in Apache Airflow and deployed a dedicated FastAPI service for GPU inference to production.</p>
 <p><strong>Production result.</strong> The pipeline produces a validated SMIL synchronization map that links ebook passages to the corresponding time intervals in the audiobook.</p>
+<p><strong>Example (demonstration data).</strong> “Mira closed the gate and followed the lanterns down the path toward the river.” → <code>00:12:08–00:12:16</code> in the audiobook.</p>
 <h2>The problem</h2>
 <p>Given a passage in an ebook, where does it begin and end in the audiobook? The book gives us the words, and the recording gives us a timeline. Connecting the two gets tricky when the narrator repeats a line or reads a heading differently from the printed version.</p>
 <h2>How the pipeline works</h2>
