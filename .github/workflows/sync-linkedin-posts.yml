@@ -2,7 +2,7 @@ name: Sync LinkedIn posts from Buffer
 
 on:
   schedule:
-    - cron: '43 * * * *'
+    - cron: '40 * * * *'
   workflow_dispatch:
 
 permissions:
