@@ -41,6 +41,13 @@
   </ul>
   <p><strong>My contribution.</strong> I built a Chrome extension in JavaScript and a Python API that processes articles, retrieves relevant passages from the reader’s history, and compares them with the current article.</p>
   <p><strong>Reader outcome.</strong> The extension shows a short summary in Chrome and separates points covered in earlier reading from what the current article adds.</p>
+  <h2>Example comparison</h2>
+  <p><em>Illustrative example using a fictional API release.</em></p>
+  <ul>
+    <li><strong>Already read.</strong> The release announcement said that API v2 was available and that existing API keys still worked.</li>
+    <li><strong>Repeated in the new article.</strong> The follow-up restates that v2 is live and that developers can keep using their current keys.</li>
+    <li><strong>New to the reader.</strong> The follow-up gives a shutdown date for v1. Integrations must switch to <code>/v2</code> by June 30.</li>
+  </ul>
   <h2>The problem</h2>
   <p>When you follow a topic across several publications, a new article often spends most of its time on familiar ground. A summary tells you what the article says. As a returning reader, I wanted to answer a more specific question: <em>What does this add to what I’ve already read?</em></p>
   <h2>How the comparison works</h2>
