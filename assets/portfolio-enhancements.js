@@ -2,42 +2,34 @@
   const motion = matchMedia('(prefers-reduced-motion: no-preference)');
   function setupHeadline() {
     const text = document.querySelector('.hero-focus-text');
-    if (!text) return;
+    if (!text || !motion.matches) return;
 
-    const lines = [...document.querySelectorAll('.hero-focus-line')].map(line => line.textContent);
-    let index;
-    let length;
-    let deleting;
+    const phrase = text.textContent;
+    let length = 0;
     let timer;
 
-    function animateHeadline() {
-      length += deleting ? -1 : 1;
-      text.textContent = lines[index].slice(0, length);
-
-      if (length === 0) {
-        index = (index + 1) % lines.length;
-        deleting = false;
-        timer = setTimeout(animateHeadline, 400);
-      } else if (length === lines[index].length) {
-        deleting = true;
-        timer = setTimeout(animateHeadline, 2000);
-      } else {
-        timer = setTimeout(animateHeadline, deleting ? 40 : 60);
-      }
-    }
-
-    function updateHeadlineMotion() {
+    function finishHeadline() {
       clearTimeout(timer);
-      index = 0;
-      length = 0;
-      deleting = false;
-      text.textContent = motion.matches ? '' : lines[0];
-      text.toggleAttribute('data-typing', motion.matches);
-      if (motion.matches) timer = setTimeout(animateHeadline, 800);
+      text.textContent = phrase;
+      text.removeAttribute('data-typing');
+      motion.removeEventListener('change', finishHeadline);
     }
 
-    motion.addEventListener('change', updateHeadlineMotion);
-    updateHeadlineMotion();
+    function typeCharacter() {
+      length += 1;
+      if (length === phrase.length) {
+        finishHeadline();
+        return;
+      }
+
+      text.textContent = phrase.slice(0, length);
+      timer = setTimeout(typeCharacter, 60);
+    }
+
+    text.textContent = '';
+    text.setAttribute('data-typing', '');
+    motion.addEventListener('change', finishHeadline);
+    timer = setTimeout(typeCharacter, 800);
   }
 
   setupHeadline();
