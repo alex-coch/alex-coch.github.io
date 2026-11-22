@@ -68,7 +68,7 @@
   <p>The consumer records the event ID and writes the history entry in the same PostgreSQL transaction, then acknowledges the message. In the demo, I stopped the first consumer between commit and acknowledgement. The replacement consumer found the existing event ID, logged <code>duplicate_skipped</code>, and acknowledged the message without writing a second history entry.</p>
   <h2>Run the demo</h2>
   <div class="actions work-actions">
-    <a href="https://github.com/alex-coch/document-events-outbox">View the demo repository and run instructions on GitHub →</a>
+    <a href="https://github.com/alex-coch/document-events-outbox#quick-start">View the demo repository and run instructions on GitHub →</a>
   </div>
 </section>
 <footer>
