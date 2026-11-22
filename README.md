@@ -10,6 +10,17 @@ My portfolio covers Python APIs, event-driven services, and production ML infere
 - [Reliable event delivery for document workflows](https://alex-coch.github.io/projects/transactional-outbox/) — A PostgreSQL transactional outbox and idempotent RabbitMQ consumers that handle broker outages and prevent duplicate updates on redelivery. · [Run the demo](https://github.com/alex-coch/document-events-outbox#quick-start)
 - [What’s new in this article?](https://alex-coch.github.io/projects/article-comparison/) — A Chrome extension and Python API that use ChromaDB to compare an article with earlier reading and show what’s new.
 
+## Local preview
+
+With [Jekyll’s prerequisites](https://jekyllrb.com/docs/installation/) and Bundler installed, run these commands from the repository root:
+
+```sh
+bundle install
+bundle exec jekyll serve --host 127.0.0.1
+```
+
+Open [http://127.0.0.1:4000/](http://127.0.0.1:4000/). Jekyll builds the ML archive along with the portfolio.
+
 ## Machine Learning Archive
 
 [Explore earlier projects](https://alex-coch.github.io/learning/ml/) in machine learning, computer vision, and natural language processing.
