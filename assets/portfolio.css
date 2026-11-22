@@ -24,12 +24,13 @@ p {max-width:64ch}.hero p {font-size:1.2rem} nav {margin:1.6rem 0}
   max-width:64ch;margin-block:1.5rem 2rem;background:var(--page);
   border:1px solid var(--line);border-radius:.65rem
 }
+.comparison-result-heading,.alignment-example-body {padding:1rem clamp(.9rem,3vw,1.35rem)}
 .comparison-result-heading {
-  padding:1rem clamp(.9rem,3vw,1.35rem);background:var(--panel);
+  background:var(--panel);
   border-bottom:1px solid var(--line);border-radius:.65rem .65rem 0 0
 }
-.comparison-result h2,.comparison-result p {margin:0}
-.comparison-result p {margin-top:.35rem;color:var(--muted);font-size:.9rem}
+.comparison-result-heading h2 {margin:0}
+.comparison-result-heading p {margin:.35rem 0 0;color:var(--muted);font-size:.9rem}
 .comparison-result ul {list-style:none;margin:0;padding:.6rem clamp(.55rem,2vw,1rem) 1rem}
 .comparison-result li {padding:.65rem .75rem;line-height:1.45}
 .comparison-result li strong {display:block;margin-bottom:.2rem}
@@ -39,6 +40,8 @@ p {max-width:64ch}.hero p {font-size:1.2rem} nav {margin:1.6rem 0}
   border-inline-start-width:4px;border-radius:.35rem
 }
 .comparison-result-new strong {color:var(--accent)}
+.alignment-example-body p {margin:0 0 .75rem}
+.alignment-example-body audio {display:block;width:min(100%,28rem)}
 #example-transcript button {
   appearance:none;background:transparent;border:0;border-radius:.2em;padding:0;
   color:var(--accent);font:inherit;cursor:pointer;
