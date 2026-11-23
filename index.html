@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Aleksei Kokorev · Python Backend Engineer</title><meta name="description" content="Python backend engineering portfolio. APIs, event-driven systems and production GPU inference."><link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=39"><script defer src="/assets/portfolio-nav.js?v=7"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=43"><script defer src="/assets/portfolio-nav.js?v=7"></script>
 <script defer src="/assets/messenger-links.js"></script>
 <script defer src="/assets/contact-form.js"></script>
 <script async defer src="https://www.google.com/recaptcha/api.js"></script>
+<script defer src="/projects/audiobook-alignment/example-alignment.js?v=3"></script>
 <script defer src="/assets/posts.js"></script>
 <script defer src="/assets/portfolio-enhancements.js?v=7"></script>
 </head>
@@ -30,16 +31,32 @@
 </header>
 <main>
 <section class="hero">
-  <h1>Python Backend<br>Engineer</h1>
-  <p class="hero-focus">
-    <span class="hero-focus-text" aria-hidden="true">Python APIs · FastAPI · PostgreSQL</span>
-    <span class="hero-focus-line">Python APIs · FastAPI · PostgreSQL</span>
-  </p>
-  <p class="location">Available for international remote work from Serbia · Open to relocation</p>
-  <p>I’m a Python backend engineer with 8+ years of experience building asynchronous APIs and event-driven services. I recently deployed a GPU inference service to production to help match audiobook narration to ebook passages.</p>
-  <div class="actions"><a class="primary" href="#work"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>View projects</span></a>
-    <a class="resume-action" href="/resume/"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6m-6 4h6"/></svg><span>View resume</span></a>
-    <a class="resume-download" href="/assets/Aleksei_Kokorev_Python_Backend_CV.pdf" download>Download resume (PDF)</a></div>
+  <div class="hero-copy">
+    <h1>Python Backend<br>Engineer</h1>
+    <p class="hero-focus">
+      <span class="hero-focus-text" aria-hidden="true">Python APIs · FastAPI · PostgreSQL</span>
+      <span class="hero-focus-line">Python APIs · FastAPI · PostgreSQL</span>
+    </p>
+    <p class="location">Available for international remote work from Serbia · Open to relocation</p>
+    <p>I build asynchronous APIs and event-driven services. In 8+ years of backend development, my work has included deploying a GPU service that matches audiobook narration to ebook passages.</p>
+    <div class="actions"><a class="primary" href="#work"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>View projects</span></a>
+      <a class="resume-action" href="/resume/"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6m-6 4h6"/></svg><span>View resume</span></a>
+      <a class="resume-download" href="/assets/Aleksei_Kokorev_Python_Backend_CV.pdf" download>Download resume (PDF)</a></div>
+  </div>
+  <section class="hero-sample" aria-labelledby="sample-title">
+    <h2 id="sample-title">Text meets audio</h2>
+    <p class="sample-hint">Select a phrase to hear its matching passage.</p>
+    <p id="example-transcript">“<button type="button" data-start="0" data-end="1.96" aria-controls="example-narration">Mira closed the gate</button>
+      <button type="button" data-start="1.96" data-end="4.35" aria-controls="example-narration">and followed the lanterns</button>
+      <button type="button" data-start="4.35" data-end="5.64" aria-controls="example-narration">down the path</button>
+      <button type="button" data-start="5.64" data-end="7.17" aria-controls="example-narration">toward the river.</button>”</p>
+    <p class="sample-time">Audiobook excerpt · <time>00:12:08</time>–<time>00:12:16</time></p>
+    <audio id="example-narration" controls preload="none" aria-label="Play sample narration">
+      <source src="/projects/audiobook-alignment/example-narration.mp3" type="audio/mpeg">
+      <a href="/projects/audiobook-alignment/example-narration.mp3">Download sample narration</a>
+    </audio>
+    <a class="sample-case" href="/projects/audiobook-alignment/">Read the alignment case study →</a>
+  </section>
 </section>
 <section id="work">
 <h2>Selected work</h2>

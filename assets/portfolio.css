@@ -237,3 +237,24 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 }
 .post-pagination button:disabled {opacity:.6;cursor:default}
 .post-pagination button:focus-visible {outline:3px solid var(--focus);outline-offset:3px}
+
+.hero {display:grid;gap:2rem;align-items:center}
+.hero-copy,.hero-sample {min-width:0}
+.hero-copy .actions {margin-bottom:0}
+.hero-sample {
+  padding:clamp(1rem,3vw,1.65rem);border:1px solid var(--line);
+  border-radius:.75rem;background:var(--panel)
+}
+.hero-sample h2 {margin:0;font-size:1.4rem}
+.hero-sample .sample-hint {margin:.35rem 0 1.3rem;color:var(--muted);font-size:.95rem}
+.hero-sample #example-transcript {
+  margin:0;padding-block:1rem;border-block:1px solid var(--line);
+  font:1.3rem/1.6 Georgia,serif
+}
+.hero-sample .sample-time {margin:1rem 0 .5rem;font-size:.85rem;font-variant-numeric:tabular-nums}
+.hero-sample audio {display:block;width:100%}
+.sample-case {display:inline-flex;align-items:center;min-height:44px;margin-top:.5rem;font-size:.95rem}
+@media(min-width:54rem) {
+  .hero {grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(2rem,4vw,3rem)}
+  .hero h1 {font-size:clamp(3.4rem,5.3vw,4.5rem)}
+}
