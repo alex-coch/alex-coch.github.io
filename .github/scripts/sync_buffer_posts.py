@@ -6,6 +6,7 @@ import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from textwrap import shorten
 from urllib.error import HTTPError
 from urllib.parse import unquote, urlsplit
 from urllib.request import Request, urlopen
@@ -100,11 +101,14 @@ def linkedin_link(url):
     return match[1], f"https://www.linkedin.com{path.rstrip('/')}/"
 
 
-def post_title(text, sent_at):
-    first_line = next((" ".join(line.split()) for line in text.splitlines() if line.strip()), "")
-    if not first_line:
-        return f"LinkedIn post · {sent_at.date().isoformat()}"
-    return first_line if len(first_line) <= 110 else first_line[:109].rstrip() + "…"
+def post_copy(text, sent_at):
+    lines = [" ".join(line.split()) for line in text.splitlines() if line.strip()]
+    if not lines:
+        return f"LinkedIn post · {sent_at.date().isoformat()}", ""
+    title = shorten(lines[0], width=110, placeholder="…")
+    remainder = lines[0][len(title.removesuffix("…")):].strip() if title != lines[0] else ""
+    excerpt = " ".join(part for part in [remainder, *lines[1:]] if part)
+    return title, shorten(excerpt, width=180, placeholder="…")
 
 
 def add_posts(page, posts):
@@ -128,8 +132,9 @@ def add_posts(page, posts):
             continue
         known.add(post_id)
         date = sent_at.isoformat()
-        title = html.escape(post_title(post["text"], sent_at))
-        new_rows.append((date, f'    <li data-published-at="{date}"><a href="{html.escape(url)}">{title}</a></li>\n'))
+        title, excerpt = post_copy(post["text"], sent_at)
+        teaser = f"<p>{html.escape(excerpt)}</p>" if excerpt else ""
+        new_rows.append((date, f'    <li data-published-at="{date}"><a href="{html.escape(url)}">{html.escape(title)}</a>{teaser}</li>\n'))
 
     if not new_rows:
         return page, 0
