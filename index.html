@@ -60,27 +60,25 @@
 </section>
 <section id="work">
 <h2>Selected work</h2>
-<article class="work-card">
-  <div class="meta">Production GPU service · Backend engineering</div>
-  <h3><a href="/projects/audiobook-alignment/">Matching audiobook narration to text</a></h3>
-  <p><strong>My contribution.</strong> I built a Python alignment pipeline and deployed a dedicated GPU inference service to production.</p>
-  <p><strong>Production result.</strong> The pipeline produces a validated SMIL map linking ebook passages to audiobook time ranges.</p>
-  <ul role="list" class="tech-tags" aria-label="Tech stack"><li>Python</li><li>Apache Airflow</li><li>FastAPI</li><li>Wav2Vec2</li></ul>
-  <div class="actions work-actions">
-    <a href="/projects/audiobook-alignment/">Read case study →</a>
-    <a href="/projects/audiobook-alignment/#alignment-example">View audio example →</a>
-  </div>
-</article>
-<article class="work-card">
-  <div class="meta">Backend engineering · Event-driven systems</div>
-  <h3><a href="/projects/transactional-outbox/">Reliable event delivery for document workflows</a></h3>
-  <p><strong>My contribution.</strong> I built a Python transactional outbox with a relay that retries publication and idempotent consumers.</p>
-  <p><strong>Failure test results.</strong> In the demo, a pending event was delivered after RabbitMQ restarted, and redelivery after a consumer failure left exactly one history entry.</p>
-  <ul role="list" class="tech-tags" aria-label="Tech stack"><li>Python</li><li>PostgreSQL</li><li>RabbitMQ</li></ul>
-  <div class="actions work-actions">
-    <a href="/projects/transactional-outbox/">Read case study →</a>
-    <a href="/projects/transactional-outbox/#failure-test-results">View failure test results →</a>
-    <a href="https://github.com/alex-coch/document-events-outbox#quick-start">Run the demo ↗</a>
+<div class="project-grid">
+  <article class="work-card">
+    <h3><a href="/projects/audiobook-alignment/">Matching audiobook narration to text</a></h3>
+    <p>I built a Python alignment pipeline and deployed its GPU inference service to production. It maps each matched ebook passage to the corresponding time range in the audiobook.</p>
+    <div class="project-links">
+      <a class="project-action" href="/projects/audiobook-alignment/">Read case study →</a>
+      <a href="/projects/audiobook-alignment/#alignment-example">View audio example →</a>
+    </div>
+    <ul role="list" class="tech-tags" aria-label="Tech stack"><li>Python</li><li>Apache Airflow</li><li>FastAPI</li><li>Wav2Vec2</li></ul>
+  </article>
+  <article class="work-card">
+    <h3><a href="/projects/transactional-outbox/">Keeping document events safe when RabbitMQ goes offline</a></h3>
+    <p>I built a transactional outbox that keeps pending events in PostgreSQL until RabbitMQ recovers. If a consumer receives the same event twice, the document history records the change once.</p>
+    <div class="project-links">
+      <a class="project-action" href="https://github.com/alex-coch/document-events-outbox#quick-start">Run the demo ↗</a>
+      <a href="/projects/transactional-outbox/">Read case study →</a>
+      <a href="/projects/transactional-outbox/#failure-test-results">View failure test results →</a>
+    </div>
+    <ul role="list" class="tech-tags" aria-label="Tech stack"><li>Python</li><li>PostgreSQL</li><li>RabbitMQ</li></ul>
     <div class="ci-badges" role="group" aria-label="GitHub Actions status">
       <a href="https://github.com/alex-coch/document-events-outbox/actions/workflows/compose-ci.yml">
         <img src="https://github.com/alex-coch/document-events-outbox/actions/workflows/compose-ci.yml/badge.svg?branch=main" alt="Docker Compose workflow status" height="20">
@@ -89,19 +87,17 @@
         <img src="https://github.com/alex-coch/document-events-outbox/actions/workflows/kind-ci.yml/badge.svg?branch=main" alt="Kubernetes (kind) workflow status" height="20">
       </a>
     </div>
-  </div>
-</article>
-<article class="work-card">
-  <div class="meta">Chrome extension · Python backend · Retrieval-augmented generation</div>
-  <h3><a href="/projects/article-comparison/">What’s new in this article?</a></h3>
-  <p><strong>My contribution.</strong> I built a Chrome extension in JavaScript and a Python API that compares articles with the reader’s history.</p>
-  <p><strong>Reader outcome.</strong> The extension shows a short summary and highlights what the current article adds to earlier reading.</p>
-  <ul role="list" class="tech-tags" aria-label="Tech stack"><li>JavaScript</li><li>Python</li><li>Sentence Transformers</li><li>ChromaDB</li></ul>
-  <div class="actions work-actions">
-    <a href="/projects/article-comparison/">Read case study →</a>
-    <a href="/projects/article-comparison/#example-comparison">View example comparison →</a>
-  </div>
-</article>
+  </article>
+  <article class="work-card">
+    <h3><a href="/projects/article-comparison/">Showing readers what’s new in an article</a></h3>
+    <p>I built a Chrome extension and Python API that compare an article with the reader’s history. Readers get a short summary that highlights what the article adds.</p>
+    <div class="project-links">
+      <a class="project-action" href="/projects/article-comparison/#example-comparison">View example comparison →</a>
+      <a href="/projects/article-comparison/">Read case study →</a>
+    </div>
+    <ul role="list" class="tech-tags" aria-label="Tech stack"><li>JavaScript</li><li>Python</li><li>Sentence Transformers</li><li>ChromaDB</li></ul>
+  </article>
+</div>
 </section>
 <section id="skills">
   <h2>What I work with</h2>
