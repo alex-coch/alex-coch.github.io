@@ -272,3 +272,5 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
   .project-grid > :first-child {grid-column:1 / -1}
   .project-grid > :first-child h3 {font-size:2rem}
 }
+
+.featured-posts li p {margin:.25rem 0 0}
