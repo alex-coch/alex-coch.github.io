@@ -63,7 +63,7 @@
 <div class="project-grid">
   <article class="work-card">
     <h3><a href="/projects/audiobook-alignment/">Matching audiobook narration to text</a></h3>
-    <p>I built a Python alignment pipeline and deployed its GPU inference service to production. It maps each matched ebook passage to the corresponding time range in the audiobook.</p>
+    <p>Select a phrase in the sample and playback starts where those words are spoken. I built the Python alignment pipeline and deployed the GPU service that matches ebook passages to audiobook timestamps.</p>
     <div class="project-links">
       <a class="project-action" href="/projects/audiobook-alignment/">Read case study →</a>
       <a href="/projects/audiobook-alignment/#alignment-example">View audio example →</a>
@@ -72,7 +72,7 @@
   </article>
   <article class="work-card">
     <h3><a href="/projects/transactional-outbox/">Keeping document events safe when RabbitMQ goes offline</a></h3>
-    <p>I built a transactional outbox that keeps pending events in PostgreSQL until RabbitMQ recovers. If a consumer receives the same event twice, the document history records the change once.</p>
+    <p>When RabbitMQ came back online in the demo, the pending event was delivered. When the consumer crashed and the message arrived again, the document history still contained just one entry. I built the transactional outbox and made the consumer safe to retry.</p>
     <div class="project-links">
       <a class="project-action" href="https://github.com/alex-coch/document-events-outbox#quick-start">Run the demo ↗</a>
       <a href="/projects/transactional-outbox/">Read case study →</a>
@@ -90,7 +90,7 @@
   </article>
   <article class="work-card">
     <h3><a href="/projects/article-comparison/">Showing readers what’s new in an article</a></h3>
-    <p>I built a Chrome extension and Python API that compare an article with the reader’s history. Readers get a short summary that highlights what the article adds.</p>
+    <p>Readers can see which points an article repeats and what it adds to their earlier reading. I built the Chrome extension and Python API that compare the current article with relevant passages from the reader’s history.</p>
     <div class="project-links">
       <a class="project-action" href="/projects/article-comparison/#example-comparison">View example comparison →</a>
       <a href="/projects/article-comparison/">Read case study →</a>
