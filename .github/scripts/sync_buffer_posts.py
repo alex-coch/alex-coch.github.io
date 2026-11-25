@@ -110,7 +110,7 @@ def post_title(text, sent_at):
 def add_posts(page, posts):
     match = POST_LIST.search(page)
     if not match:
-        raise RuntimeError("Could not find the Posts list in index.html.")
+        raise RuntimeError("Could not find the Posts list in posts/index.html.")
     current = match[2]
     known = {
         link[0] for url in re.findall(r'href="([^"]+)"', current)
@@ -152,7 +152,7 @@ def main():
         channel = find_channel(token, query_buffer)
         cache.write_text(json.dumps(channel))
 
-    page = Path("index.html")
+    page = Path("posts/index.html")
     posts = list(get_posts(token, query_buffer, channel))
     updated, added = add_posts(page.read_text(), posts)
     if added:
