@@ -227,16 +227,15 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 #contact-form :focus-visible {outline:3px solid var(--focus);outline-offset:3px}
 
 
-.post-list {list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.post-list li {padding:.65rem 0;border-bottom:1px solid var(--line)}
-.post-pagination {display:flex;align-items:center;flex-wrap:wrap;gap:.65rem;margin-top:1rem}
+.post-list {list-style:none;margin:0;padding:0}
+.post-list li {padding:.65rem 0}
+.post-list li p {margin:.2rem 0 0;color:var(--muted)}
+.post-pagination {display:flex;align-items:center;flex-wrap:wrap;gap:.15rem;margin:1rem 0}
 .post-pagination[hidden] {display:none}
-.post-pagination button {
-  min-height:44px;padding:.4em .75em;font:inherit;color:var(--ink);
-  background:var(--panel);border:1px solid var(--line);border-radius:.3rem;cursor:pointer
-}
-.post-pagination button:disabled {opacity:.6;cursor:default}
-.post-pagination button:focus-visible {outline:3px solid var(--focus);outline-offset:3px}
+.post-pagination a {display:inline-grid;place-items:center;min-width:2rem;min-height:2.5rem;border-radius:.3rem;text-decoration:none}
+.post-pagination a:hover,.post-pagination a[aria-current] {background:var(--panel);color:var(--ink)}
+.post-pagination a[aria-current] {font-weight:700}
+.post-pagination span {padding-inline:.2rem;color:var(--muted)}
 
 .hero {display:grid;gap:2rem;align-items:center}
 .hero-copy,.hero-sample {min-width:0}
@@ -272,5 +271,3 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
   .project-grid > :first-child {grid-column:1 / -1}
   .project-grid > :first-child h3 {font-size:2rem}
 }
-
-.featured-posts li p {margin:.25rem 0 0}
