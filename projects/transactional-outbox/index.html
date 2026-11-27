@@ -6,8 +6,9 @@
   <title>Reliable event delivery for document workflows · Aleksei Kokorev</title>
   <link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=42">
+<link rel="stylesheet" href="/assets/portfolio.css?v=47">
 <script defer src="/assets/portfolio-nav.js?v=7"></script>
+<script defer src="failure-walkthrough.js?v=1"></script>
 </head>
 <body>
 <header>
@@ -42,12 +43,38 @@
   <section class="comparison-result" aria-labelledby="failure-test-results">
     <div class="comparison-result-heading">
       <h2 id="failure-test-results">Failure test results.</h2>
-      <p>I reproduced both scenarios in a standalone demo using Docker Compose and Kubernetes.</p>
+      <p>Walkthrough of recorded test results from the Docker Compose and Kubernetes demo.</p>
     </div>
-    <ul role="list">
-      <li><strong>RabbitMQ was offline during a write.</strong> The API returned HTTP 201, the document was saved in PostgreSQL, and the event stayed pending. After RabbitMQ restarted, the event was delivered and one history entry appeared.</li>
-      <li><strong>The consumer stopped after commit, before acknowledgement.</strong> RabbitMQ redelivered the event to a replacement consumer. The queue drained and the document still had exactly one history entry.</li>
-    </ul>
+    <div class="failure-walkthrough" data-failure-walkthrough>
+      <div class="failure-selector" hidden>
+        <label for="failure-scenario">Choose a failure</label>
+        <select id="failure-scenario">
+          <option value="broker-outage">RabbitMQ offline</option>
+          <option value="consumer-crash">Consumer crash before acknowledgement</option>
+        </select>
+      </div>
+      <section id="broker-outage" data-failure-scenario aria-label="RabbitMQ offline">
+        <h3>RabbitMQ offline</h3>
+        <ol>
+          <li><strong>Document saved.</strong> The API returns HTTP 201. PostgreSQL commits the document and its outbox event in the same transaction.</li>
+          <li><strong>Event pending.</strong> The relay cannot publish while RabbitMQ is offline. The event remains in PostgreSQL for retry.</li>
+          <li><strong>Event delivered.</strong> After RabbitMQ restarts, the relay publishes the event and the consumer writes one history entry.</li>
+        </ol>
+      </section>
+      <section id="consumer-crash" data-failure-scenario aria-label="Consumer crash before acknowledgement">
+        <h3>Consumer crash before acknowledgement</h3>
+        <ol>
+          <li><strong>History entry committed.</strong> The consumer commits the event ID and history entry in PostgreSQL, then stops before acknowledging the message.</li>
+          <li><strong>Message redelivered.</strong> RabbitMQ delivers the unacknowledged message to a replacement consumer.</li>
+          <li><strong>Duplicate skipped.</strong> The replacement detects the existing event ID and acknowledges the message. The queue drains and the history still contains one entry.</li>
+        </ol>
+      </section>
+      <div class="failure-controls" hidden>
+        <button type="button" data-failure-previous>Previous step</button>
+        <button type="button" data-failure-next>Next step</button>
+      </div>
+      <p class="failure-progress" role="status"></p>
+    </div>
     <div class="actions work-actions">
       <a href="https://github.com/alex-coch/document-events-outbox#quick-start">Run the demo ↗</a>
       <div class="ci-badges" role="group" aria-label="GitHub Actions status">

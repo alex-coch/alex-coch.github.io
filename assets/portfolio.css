@@ -285,3 +285,19 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
   .project-grid > :first-child {grid-column:1 / -1}
   .project-grid > :first-child h3 {font-size:2rem}
 }
+
+.failure-walkthrough {padding:1rem 1.25rem 0}
+.failure-walkthrough h3 {font-size:1rem}
+.failure-walkthrough ol {padding-inline-start:1.3rem;margin:.75rem 0}
+.failure-walkthrough li {padding:.35rem 0}
+.failure-selector label {display:block;font-weight:600;margin-bottom:.25rem}
+.failure-selector select,.failure-controls button {
+  max-width:100%;min-height:44px;padding:.35rem .55rem;font:inherit;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:.3rem
+}
+.failure-controls button {cursor:pointer;margin:.15rem .3rem .15rem 0}
+.failure-controls button[aria-disabled="true"] {opacity:.65;cursor:default}
+.failure-walkthrough :focus-visible {outline:2px solid var(--focus);outline-offset:2px}
+.failure-progress {margin:.4rem 0 .65rem;color:var(--muted);font-size:.9rem}
+.failure-progress:empty {margin:0}
+.failure-selector:not([hidden]) ~ section ol {list-style:none;padding:0}
