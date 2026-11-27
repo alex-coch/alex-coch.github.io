@@ -301,3 +301,15 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .failure-progress {margin:.4rem 0 .65rem;color:var(--muted);font-size:.9rem}
 .failure-progress:empty {margin:0}
 .failure-selector:not([hidden]) ~ section ol {list-style:none;padding:0}
+
+.comparison-excerpts {display:grid;gap:.75rem;padding:1rem 1rem .4rem}
+.comparison-excerpts figure {
+  min-width:0;margin:0;padding:.75rem;background:var(--panel);
+  border:1px solid var(--line);border-radius:.35rem
+}
+.comparison-excerpts figcaption {font-weight:700;font-size:.9rem}
+.comparison-excerpts blockquote {margin:.4rem 0 0}
+.comparison-excerpts p {margin:0}
+@media (min-width:38rem) {
+  .comparison-excerpts {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
