@@ -40,7 +40,7 @@
     <li>PostgreSQL</li>
     <li>RabbitMQ</li>
   </ul>
-  <p><strong>My contribution.</strong> I implemented a transactional outbox in Python, a relay that retries publication to RabbitMQ, and idempotent consumers that prevent duplicate deliveries from applying the same workflow update twice.</p>
+  <p>I built a Python transactional outbox and idempotent consumers. In failure tests, the event was delivered after RabbitMQ recovered, and redelivery left just one history entry.</p>
   <section class="comparison-result" aria-labelledby="failure-test-results">
     <div class="comparison-result-heading">
       <h2 id="failure-test-results">Failure test results.</h2>
