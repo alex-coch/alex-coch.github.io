@@ -335,6 +335,6 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .resume-role h3 {margin:0;font-size:clamp(1.25rem,3vw,1.55rem);line-height:1.25}
 .resume-role h3 span {display:block;margin-top:.2rem;font-size:1rem}
 .resume-role .meta {margin:.3rem 0 .65rem;color:var(--muted)}
-.resume-role .resume-example-link {display:inline-flex;align-items:center;gap:.3rem;min-height:44px;font-weight:600}
-.resume-role .resume-example {margin:0}
+.resume .resume-example-link {display:inline-flex;align-items:center;gap:.3rem;min-height:44px;font-weight:600}
+.resume .resume-example {margin:0}
 .resume-role .resume-role-location {display:block}
