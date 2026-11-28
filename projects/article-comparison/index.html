@@ -34,12 +34,6 @@
   <p class="meta">Chrome extension · Python backend · Retrieval-augmented generation</p>
   <h1>What’s new in this article?</h1>
   <a class="primary case-example-link" href="#example-comparison">View example comparison <span aria-hidden="true">↓</span></a>
-  <ul role="list" class="tech-tags" aria-label="Tech stack">
-    <li>JavaScript</li>
-    <li>Python</li>
-    <li>Sentence Transformers</li>
-    <li>ChromaDB</li>
-  </ul>
   <p>I built a Chrome extension and Python API that compare an article with the reader’s history. The extension summarizes the article and highlights what’s new to the reader.</p>
   <section class="comparison-result" aria-labelledby="example-comparison">
     <div class="comparison-result-heading">
@@ -59,9 +53,15 @@
     </div>
     <p class="comparison-covered"><strong>Already covered:</strong> <code>/v2</code> is available and existing API keys still work.</p>
   </section>
+  <ul role="list" class="tech-tags" aria-label="Tech stack">
+    <li>JavaScript</li>
+    <li>Python</li>
+    <li>Sentence Transformers</li>
+    <li>ChromaDB</li>
+  </ul>
   <h2>The problem</h2>
   <p>When you follow a topic across several publications, a new article often spends most of its time on familiar ground. A summary tells you what the article says. As a returning reader, I wanted to answer a more specific question: <em>What does this add to what I’ve already read?</em></p>
-  <h2>How the comparison works</h2>
+  <h2>How it works</h2>
   <figure class="pipeline">
     <figcaption>From the current article to a comparison with reading history</figcaption>
     <div class="node"><strong>Chrome extension</strong> <span>Send the page HTML and the selected topic to the Python API.</span></div>
