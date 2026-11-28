@@ -390,3 +390,16 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
   .resume-sidebar-download svg {flex:none}
   .resume-content > h2:first-child {margin-top:0}
 }
+
+.screening-results {padding:1rem clamp(.9rem,3vw,1.35rem)}
+.screening-results h3 {margin:0;font-size:1rem}
+.screening-results dl {
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:.45rem .75rem;margin:.75rem 0
+}
+.screening-results dt {color:var(--muted)}
+.screening-results dd {margin:0}
+.screening-results details {border-top:1px solid var(--line)}
+.screening-results summary {
+  min-height:44px;padding:.55rem .25rem;color:var(--accent);cursor:pointer
+}

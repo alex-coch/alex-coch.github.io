@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blockchain Address Screening · Aleksei Kokorev</title>
+  <link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
+<script src="/assets/theme.js?v=2"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=63">
+<script defer src="/assets/portfolio-nav.js?v=7"></script>
+</head>
+<body>
+<header>
+  <a class="name" href="/">Aleksei Kokorev</a>
+  <button class="menu-toggle" type="button" aria-label="Open main menu" aria-expanded="false" aria-controls="main-nav">
+    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/>
+    </svg>
+  </button>
+  <nav id="main-nav" aria-label="Main navigation">
+    <a href="/#work" aria-current="location">Projects</a>
+    <a href="/#skills">Skills</a>
+    <a href="/#writing">Posts</a>
+    <a href="/resume/">Resume</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+  <label class="theme-switch" title="Dark theme" hidden>
+    <input id="theme-toggle" type="checkbox" role="switch" aria-label="Dark theme">
+    <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
+  </label>
+</header>
+<main>
+<section class="case">
+  <p class="meta">Ospree · Compliance SaaS</p>
+  <h1>Blockchain Address Screening</h1>
+  <a class="primary case-example-link" href="#screening-example">View screening example <span aria-hidden="true">↓</span></a>
+  <p><strong>My contribution.</strong> I built Ospree’s blockchain address screening service in Python and FastAPI. It validates addresses, selects risk and financial data providers based on blockchain coverage, and maps their responses into a common format. I implemented screening history and CSV report export so compliance teams could review past checks.</p>
+  <section class="comparison-result screening-example" aria-labelledby="screening-example">
+    <div class="comparison-result-heading">
+      <h2 id="screening-example">Screening history example</h2>
+      <p>Illustrative data for a fictional Bitcoin address.</p>
+    </div>
+    <div class="screening-results">
+      <h3>Latest screening</h3>
+      <dl>
+        <dt>Checked</dt><dd><time datetime="2024-01-20">Jan 20, 2024</time></dd>
+        <dt>Risk source</dt><dd>Demo risk provider</dd>
+        <dt>Risk score</dt><dd>35 / 100</dd>
+        <dt>Financial source</dt><dd>Demo financial provider</dd>
+        <dt>Reported balance</dt><dd>0.42 BTC</dd>
+      </dl>
+      <details>
+        <summary>View previous screening</summary>
+        <dl>
+          <dt>Checked</dt><dd><time datetime="2024-01-13">Jan 13, 2024</time></dd>
+          <dt>Risk source</dt><dd>Demo risk provider</dd>
+          <dt>Risk score</dt><dd>20 / 100</dd>
+          <dt>Financial source</dt><dd>Demo financial provider</dd>
+          <dt>Reported balance</dt><dd>0.18 BTC</dd>
+        </dl>
+      </details>
+    </div>
+  </section>
+  <ul role="list" class="tech-tags" aria-label="Tech stack">
+    <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>Playwright</li>
+  </ul>
+  <h2>The problem</h2>
+  <p>Compliance teams need risk and financial data for blockchain addresses. Provider coverage varies by chain, and reviewers need access to earlier screening results.</p>
+  <h2>How the service works</h2>
+  <figure class="pipeline">
+    <figcaption>From address validation to screening history</figcaption>
+    <div class="node"><strong>Address and blockchain</strong> <span>Validate the address format for the requested chain.</span></div>
+    <div class="edge">↓ Select data sources</div>
+    <div class="node"><strong>Provider selection</strong> <span>Choose risk and financial providers that support the chain.</span></div>
+    <div class="edge">↓ Fetch and map provider responses</div>
+    <div class="node"><strong>Screening result</strong> <span>Return risk and financial data in shared response schemas.</span></div>
+    <div class="edge">↓ Save a complete result in the background</div>
+    <div class="node"><strong>Screening history</strong> <span>Review previous checks or request a CSV report for a date range.</span></div>
+  </figure>
+  <h2>Choosing providers by chain</h2>
+  <p>The service checks the configured risk and financial providers against the requested chain’s coverage. If either configured provider lacks support for that chain, the service uses the chain-level default for that type of data. Provider adapters keep response mapping behind a shared interface.</p>
+  <h2>Reviewing past checks</h2>
+  <p>Complete checks are saved to PostgreSQL in the background. Reviewers can retrieve the latest result or browse paginated screening history. A report request starts background generation and returns a report ID for later download.</p>
+</section>
+<footer>
+  <div class="actions work-actions">
+    <a href="/#work">← Back to projects</a>
+  </div>
+</footer>
+</main></body></html>
