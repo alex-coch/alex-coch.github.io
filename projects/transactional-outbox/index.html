@@ -6,9 +6,9 @@
   <title>Reliable event delivery for document workflows · Aleksei Kokorev</title>
   <link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=47">
+<link rel="stylesheet" href="/assets/portfolio.css?v=58">
 <script defer src="/assets/portfolio-nav.js?v=7"></script>
-<script defer src="failure-walkthrough.js?v=1"></script>
+<script defer src="failure-walkthrough.js?v=2"></script>
 </head>
 <body>
 <header>
@@ -46,13 +46,14 @@
       <p>Walkthrough of recorded test results from the Docker Compose and Kubernetes demo.</p>
     </div>
     <div class="failure-walkthrough" data-failure-walkthrough>
-      <div class="failure-selector" hidden>
-        <label for="failure-scenario">Choose a failure</label>
-        <select id="failure-scenario">
-          <option value="broker-outage">RabbitMQ offline</option>
-          <option value="consumer-crash">Consumer crash before acknowledgement</option>
-        </select>
-      </div>
+      <fieldset class="failure-selector" hidden>
+        <legend>Choose a failure</legend>
+        <div class="failure-options">
+          <label><input type="radio" name="failure-scenario" value="broker-outage" checked> Broker offline</label>
+          <label><input type="radio" name="failure-scenario" value="consumer-crash"> Consumer crash</label>
+        </div>
+      </fieldset>
+      <p class="failure-progress" role="status"></p>
       <section id="broker-outage" data-failure-scenario aria-label="RabbitMQ offline">
         <h3>RabbitMQ offline</h3>
         <ol>
@@ -73,7 +74,6 @@
         <button type="button" data-failure-previous>Previous step</button>
         <button type="button" data-failure-next>Next step</button>
       </div>
-      <p class="failure-progress" role="status"></p>
     </div>
     <div class="actions work-actions">
       <a href="https://github.com/alex-coch/document-events-outbox#quick-start">Run the demo ↗</a>
