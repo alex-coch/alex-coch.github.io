@@ -1,6 +1,7 @@
 (() => {
   const header = document.querySelector('body > header');
   const resumeNav = document.querySelector('.resume-section-nav');
+  const introDownload = document.querySelector('.resume-intro a[download]');
   const sectionNav = resumeNav ?? header;
   const sections = Array.from(sectionNav.querySelectorAll('a[href^="#"]'), link => ({
     link,
@@ -9,7 +10,12 @@
   let current;
 
   function update() {
-    const threshold = header.offsetHeight + 18;
+    const headerHeight = header.offsetHeight;
+    if (resumeNav && introDownload) {
+      const pastIntroDownload = introDownload.getBoundingClientRect().bottom <= headerHeight;
+      resumeNav.toggleAttribute('data-past-intro-download', pastIntroDownload);
+    }
+    const threshold = headerHeight + 18;
     const atBottom = window.scrollY > 0 &&
       window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 1;
     // Near the footer, an anchor can be visible even if the page cannot scroll it to the top.
