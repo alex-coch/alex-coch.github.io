@@ -322,6 +322,7 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .comparison-excerpts figcaption {font-weight:700;font-size:.9rem}
 .comparison-excerpts blockquote {margin:.4rem 0 0}
 .comparison-excerpts p {margin:0}
+.comparison-covered {margin:.45rem 1rem 1rem}
 .comparison-result > p.comparison-result-new {
   max-width:none;margin:.85rem 1rem 0;padding:.65rem .75rem;
   background:var(--panel);border:1px solid var(--accent);
