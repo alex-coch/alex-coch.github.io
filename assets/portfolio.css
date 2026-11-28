@@ -313,3 +313,16 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 @media (min-width:38rem) {
   .comparison-excerpts {grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+.resume.case {padding-top:clamp(1.3rem,4vw,3rem)}
+.resume-intro h1 {font-size:clamp(2rem,7vw,3.75rem);margin:0 0 .5rem}
+.resume-intro > p {margin:.6rem 0}
+.resume-intro .resume-summary {max-width:65ch}
+.resume-intro .contact-actions {margin:.75rem 0 0}
+.resume-intro + h2 {margin-top:1.4rem}
+.resume-recent-role.work-card {padding:clamp(1rem,3vw,1.75rem)}
+.resume-recent-role h3 {margin:0;font-size:clamp(1.25rem,3vw,1.55rem);line-height:1.25}
+.resume-recent-role h3 span {display:block;margin-top:.2rem;font-size:1rem}
+.resume-recent-role .meta {margin:.3rem 0 .65rem;color:var(--muted)}
+.resume-recent-role .resume-example-link {display:inline-flex;align-items:center;gap:.3rem;min-height:44px;font-weight:600}
+.resume-recent-role .resume-example {margin:0}

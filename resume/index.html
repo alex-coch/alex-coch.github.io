@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex">
   <link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=38">
+<link rel="stylesheet" href="/assets/portfolio.css?v=49">
 <script defer src="/assets/portfolio-nav.js?v=7"></script>
 <script defer src="/assets/portfolio-enhancements.js?v=7"></script>
 </head>
@@ -34,26 +34,27 @@
 <main>
 
 <section class="case resume">
-  <h1>Aleksei Kokorev</h1>
-  <p><strong>Python Backend Engineer</strong><br>Serbia · Open to relocation to other countries</p>
-  <div class="actions contact-actions">
-    <a class="primary" href="/assets/Aleksei_Kokorev_Python_Backend_CV.pdf" download><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3"/></svg><span>Download resume (PDF)</span></a>
-    <a href="https://www.linkedin.com/in/alexcoch/">LinkedIn</a>
-    <a href="https://github.com/alex-coch">GitHub</a>
-    <a href="/#contact">Contact</a>
+  <div class="resume-intro">
+    <h1>Aleksei Kokorev</h1>
+    <p><strong>Python Backend Engineer</strong><br>Serbia · Open to relocation</p>
+    <p class="resume-summary">8+ years building Python APIs and event-driven services. I work on backend performance, Kubernetes deployments, and production ML inference.</p>
+    <div class="actions contact-actions">
+      <a class="primary" href="/assets/Aleksei_Kokorev_Python_Backend_CV.pdf" download><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3"/></svg><span>Download resume (PDF)</span></a>
+      <a href="https://www.linkedin.com/in/alexcoch/">LinkedIn</a>
+      <a href="https://github.com/alex-coch">GitHub</a>
+      <a href="/#contact">Contact</a>
+    </div>
   </div>
-  <section class="work-card">
-    <h2>Summary</h2>
-    <p>Python Backend Engineer with 8+ years of experience building backend services for digital content, blockchain compliance, and business applications. Experienced in asynchronous APIs, event-driven systems, and backend performance optimization using FastAPI, SQL, Kafka, and RabbitMQ. Hands-on experience deploying services on Kubernetes and integrating ML inference and RAG into applications.</p>
-  </section>
   <h2>Professional experience</h2>
-  <article class="work-card">
-    <h3>Litres, Russia, Senior Python Developer</h3>
-    <p class="meta">Mar 2024 – Present</p>
+  <article class="work-card resume-recent-role">
+    <h3>Litres <span>Senior Python Developer</span></h3>
+    <p class="meta"><time datetime="2024-03">Mar 2024</time> – Present · Russia</p>
+    <p>Built <a href="/projects/audiobook-alignment/">text–audio alignment pipelines</a> with Apache Airflow and deployed a dedicated GPU inference service to production. The service matches ebook passages to audiobook timestamps.</p>
+    <p class="resume-example"><a class="resume-example-link" href="/projects/audiobook-alignment/#alignment-example">View audio example <span aria-hidden="true">→</span></a></p>
     <ul>
       <li>Developed Python/FastAPI services for a high-traffic digital reading platform, covering catalog and search APIs, ebook reader and audiobook player integrations, and reading/listening activity tracking with ClickHouse-backed analytics.</li>
       <li>Contributed to Elasticsearch/OpenSearch-backed search services and implemented Kafka producers and consumers for event-driven processing and external integrations, including Mindbox.</li>
-      <li>Developed <a href="/projects/audiobook-alignment/">text–audio alignment pipelines</a> with Apache Airflow and deployed a dedicated GPU inference service to production; contributed to ML-powered book search and text classification services.</li>
+      <li>Contributed to ML-powered book search and text classification services.</li>
       <li>Maintained Kubernetes deployment configurations and GitLab CI/CD workflows, using Ansible and Minikube-based staging environments to validate backend changes.</li>
       <li>Optimized a high-traffic book download API by caching file-existence and purchase-availability checks, reducing repeated database lookups.</li>
     </ul>
