@@ -84,6 +84,11 @@ header nav a {
   header nav a:hover {color:var(--ink);background:var(--panel)}
 }
 header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
+#main-nav > a[href="/resume/"] {position:relative;margin-inline-start:.6rem}
+#main-nav > a[href="/resume/"]::before {
+  content:"";position:absolute;inset-block:.25rem;inset-inline-start:-.45rem;
+  border-inline-start:1px solid var(--line);pointer-events:none
+}
 .theme-switch {position:relative;display:inline-grid;align-items:center;min-height:44px;cursor:pointer}
 .theme-switch[hidden] {display:none}
 .theme-switch input {position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
@@ -202,6 +207,11 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
     clip-path:inset(0 0 100% 0);visibility:hidden;pointer-events:none
   }
   header nav a {display:flex;align-items:center;min-height:44px}
+  [data-pinned-nav] #main-nav > a[href="/resume/"] {margin-inline-start:0;margin-block-start:.5rem}
+  [data-pinned-nav] #main-nav > a[href="/resume/"]::before {
+    inset-block:-.4rem auto;inset-inline:0;
+    border-inline-start:0;border-block-start:1px solid var(--line)
+  }
 }
 
 .menu-icon {fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
