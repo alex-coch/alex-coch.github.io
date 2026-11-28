@@ -280,6 +280,7 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .project-grid h3 {margin-top:0}
 .project-grid .tech-tags {margin-bottom:0}
 .project-links {display:flex;align-items:center;flex-wrap:wrap;gap:.25rem 1rem}
+.project-secondary-links {display:contents}
 .project-links a {display:inline-flex;align-items:center;min-height:44px}
 .project-links .project-action {background:var(--accent);color:var(--on-accent);padding:0 .9rem;border-radius:.4rem;text-decoration:none}
 .project-links .project-action:hover {text-decoration:underline}
@@ -287,6 +288,17 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
   .project-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
   .project-grid > :first-child {grid-column:1 / -1}
   .project-grid > :first-child h3 {font-size:2rem}
+  .project-grid > .work-card {
+    display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0;align-items:start
+  }
+  .project-grid > .work-card .project-links {
+    display:grid;justify-items:start
+  }
+  .project-grid > .work-card .project-secondary-links {
+    display:flex;flex-wrap:wrap;gap:0 1rem
+  }
+  .project-grid > .work-card > .tech-tags {grid-row:4}
+  .project-grid > .work-card > .ci-badges {grid-row:5}
 }
 
 .failure-walkthrough {padding:1rem 1.25rem 0}

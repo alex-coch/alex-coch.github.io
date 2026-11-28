@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Aleksei Kokorev · Python Backend Engineer</title><meta name="description" content="Python backend engineering portfolio. APIs, event-driven systems and production GPU inference."><link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=46"><script defer src="/assets/portfolio-nav.js?v=7"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=64"><script defer src="/assets/portfolio-nav.js?v=7"></script>
 <script defer src="/assets/messenger-links.js"></script>
 <script defer src="/assets/contact-form.js"></script>
 <script async defer src="https://www.google.com/recaptcha/api.js"></script>
@@ -66,7 +66,9 @@
     <p>I built the Python alignment pipeline and deployed its GPU inference service to production. It maps ebook passages to the corresponding audiobook timestamps.</p>
     <div class="project-links">
       <a class="project-action" href="/projects/audiobook-alignment/">Read case study →</a>
-      <a href="/projects/audiobook-alignment/#alignment-example">View audio example →</a>
+      <div class="project-secondary-links">
+        <a href="/projects/audiobook-alignment/#alignment-example">View audio example →</a>
+      </div>
     </div>
     <ul role="list" class="tech-tags" aria-label="Tech stack"><li>Python</li><li>Apache Airflow</li><li>FastAPI</li><li>Wav2Vec2</li></ul>
   </article>
@@ -75,8 +77,10 @@
     <p>When RabbitMQ came back online in the demo, the pending event was delivered. When the consumer crashed and the message arrived again, the document history still contained just one entry. I built the transactional outbox and made the consumer safe to retry.</p>
     <div class="project-links">
       <a class="project-action" href="https://github.com/alex-coch/document-events-outbox#quick-start">Run the demo ↗</a>
-      <a href="/projects/transactional-outbox/">Read case study →</a>
-      <a href="/projects/transactional-outbox/#failure-test-results">View failure test results →</a>
+      <div class="project-secondary-links">
+        <a href="/projects/transactional-outbox/">Read case study →</a>
+        <a href="/projects/transactional-outbox/#failure-test-results">View failure test results →</a>
+      </div>
     </div>
     <ul role="list" class="tech-tags" aria-label="Tech stack"><li>Python</li><li>PostgreSQL</li><li>RabbitMQ</li></ul>
     <div class="ci-badges" role="group" aria-label="GitHub Actions status">
@@ -93,7 +97,9 @@
     <p>Readers can see which points an article repeats and what it adds to their earlier reading. I built the Chrome extension and Python API that compare the current article with relevant passages from the reader’s history.</p>
     <div class="project-links">
       <a class="project-action" href="/projects/article-comparison/#example-comparison">View example comparison →</a>
-      <a href="/projects/article-comparison/">Read case study →</a>
+      <div class="project-secondary-links">
+        <a href="/projects/article-comparison/">Read case study →</a>
+      </div>
     </div>
     <ul role="list" class="tech-tags" aria-label="Tech stack"><li>JavaScript</li><li>Python</li><li>Sentence Transformers</li><li>ChromaDB</li></ul>
   </article>
@@ -102,7 +108,9 @@
     <p>I built Ospree’s Python service for screening blockchain addresses. Compliance teams can review current and past checks and export a CSV report.</p>
     <div class="project-links">
       <a class="project-action" href="/projects/blockchain-address-screening/#screening-example">View screening example →</a>
-      <a href="/projects/blockchain-address-screening/">Read case study →</a>
+      <div class="project-secondary-links">
+        <a href="/projects/blockchain-address-screening/">Read case study →</a>
+      </div>
     </div>
     <ul role="list" class="tech-tags" aria-label="Tech stack"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>Playwright</li></ul>
   </article>
