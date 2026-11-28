@@ -433,3 +433,16 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .screening-results summary {
   min-height:44px;padding:.55rem .25rem;color:var(--accent);cursor:pointer
 }
+
+.ml-archive.case {padding-top:clamp(1.3rem,4vw,3rem)}
+.archive-intro h1 {font-size:clamp(2rem,7vw,3.75rem);margin:0 0 .5rem}
+.archive-intro p {margin:.6rem 0;color:var(--muted)}
+.archive-group > h2 {margin:0 0 .8rem}
+.archive-group + .archive-group {margin-top:1.75rem}
+.archive-group .work-card {padding:clamp(1rem,3vw,1.75rem)}
+.archive-group h3 {margin:0}
+.archive-group .tech-tags {margin-block:.65rem}
+.archive-group .project-links a {gap:.35rem}
+.archive-figure {margin:1rem 0 0}
+.archive-figure img {display:block;max-width:100%;height:auto;border-radius:.25rem}
+.archive-figure figcaption {margin-top:.35rem;font-size:.875rem;color:var(--muted)}

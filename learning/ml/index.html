@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine Learning Archive · Aleksei Kokorev</title>
+  <link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
+<script src="/assets/theme.js?v=2"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=72">
+<script defer src="/assets/portfolio-nav.js?v=9"></script>
+</head>
+<body>
+<header>
+  <a class="name" href="/">Aleksei Kokorev</a>
+  <button class="menu-toggle" type="button" aria-label="Open main menu" aria-expanded="false" aria-controls="main-nav">
+    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/>
+    </svg>
+  </button>
+  <nav id="main-nav" aria-label="Main navigation">
+    <a href="/#work">Projects</a>
+    <a href="/#skills">Skills</a>
+    <a href="/#writing">Posts</a>
+    <a href="/#contact">Contact</a>
+    <a href="/resume/">Resume</a>
+  </nav>
+  <label class="theme-switch" title="Dark theme" hidden>
+    <input id="theme-toggle" type="checkbox" role="switch" aria-label="Dark theme">
+    <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
+  </label>
+</header>
+<main>
+<section class="case ml-archive">
+  <div class="archive-intro">
+    <h1 id="machine-learning-archive">Machine Learning Archive</h1>
+    <p>Earlier coursework and experiments in machine learning, computer vision, and natural language processing.</p>
+  </div>
+  <div class="resume-layout">
+    <nav class="resume-section-nav" aria-labelledby="ml-section-nav-label">
+      <span id="ml-section-nav-label">On this page</span>
+      <div>
+        <a href="#machinelearning">Machine Learning</a>
+        <a href="#computer-vision">Computer Vision</a>
+        <a href="#natural-language-processing">Natural Language Processing</a>
+      </div>
+    </nav>
+    <div class="resume-content archive-projects">
+      <section id="machinelearning" class="archive-group">
+        <h2 id="machine-learning">Machine Learning</h2>
+        <article id="boston" class="work-card">
+          <h3 id="predicting-boston-housing-prices">Predicting Boston Housing Prices</h3>
+          <p>Trained and evaluated a decision tree regressor on the Boston Housing dataset. Compared training and validation scores across tree depths.</p>
+          <ul role="list" class="tech-tags" aria-label="Methods and tools"><li>Decision tree regression</li><li>scikit-learn</li><li>pandas</li></ul>
+          <div class="project-links">
+            <a class="project-action" href="/boston_housing/boston_housing.html">Open notebook <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/alex-coch/alex-coch.github.io/tree/main/boston_housing/">View on GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://colab.research.google.com/github/alex-coch/alex-coch.github.io/blob/main/boston_housing/boston_housing.ipynb">Open in Colab <span aria-hidden="true">↗</span></a>
+          </div>
+          <figure class="archive-figure">
+            <img src="/assets/img/boston.jpg" width="219" height="163" loading="lazy" alt="Training and validation scores at different decision tree depths.">
+            <figcaption>Training and validation scores at different decision tree depths.</figcaption>
+          </figure>
+        </article>
+        <article id="donors" class="work-card">
+          <h3 id="supervised-learning-finding-donors-for-charityml">Finding Donors for CharityML</h3>
+          <p>Compared supervised classifiers that predict whether income exceeds $50,000 in a coursework dataset for a fictional charity.</p>
+          <ul role="list" class="tech-tags" aria-label="Methods and tools"><li>Classification</li><li>SVM</li><li>Decision trees</li><li>AdaBoost</li><li>scikit-learn</li></ul>
+          <div class="project-links">
+            <a class="project-action" href="/finding_donors/finding_donors.html">Open notebook <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/alex-coch/alex-coch.github.io/tree/main/finding_donors/">View on GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://colab.research.google.com/github/alex-coch/alex-coch.github.io/blob/main/finding_donors/finding_donors.ipynb">Open in Colab <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article id="segments" class="work-card">
+          <h3 id="unsupervised-learning-creating-customer-segments">Creating Customer Segments</h3>
+          <p>Used PCA and a Gaussian mixture model to explore customer segments in annual spending data.</p>
+          <ul role="list" class="tech-tags" aria-label="Methods and tools"><li>PCA</li><li>Gaussian mixture model</li><li>scikit-learn</li><li>pandas</li></ul>
+          <div class="project-links">
+            <a class="project-action" href="/customer_segments/customer_segments.html">Open notebook <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/alex-coch/alex-coch.github.io/tree/main/customer_segments/">View on GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://colab.research.google.com/github/alex-coch/alex-coch.github.io/blob/main/customer_segments/customer_segments.ipynb">Open in Colab <span aria-hidden="true">↗</span></a>
+          </div>
+          <figure class="archive-figure">
+            <img src="/assets/img/customer.jpg" width="219" height="126" loading="lazy" alt="Customer spending records projected onto two principal components.">
+            <figcaption>Customer spending records projected onto two principal components.</figcaption>
+          </figure>
+        </article>
+        <article id="smartcab" class="work-card">
+          <h3 id="reinforcement-learning-training-a-smartcab-to-drive">Training a Smartcab to Drive</h3>
+          <p>Trained a Q-learning agent to navigate a simulated road network and evaluated its driving behavior.</p>
+          <ul role="list" class="tech-tags" aria-label="Methods and tools"><li>Reinforcement learning</li><li>Q-learning</li></ul>
+          <div class="project-links">
+            <a class="project-action" href="/smartcab/smartcab.html">Open notebook <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/alex-coch/alex-coch.github.io/tree/main/smartcab">View on GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://colab.research.google.com/github/alex-coch/alex-coch.github.io/blob/main/smartcab/smartcab.ipynb">Open in Colab <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </section>
+      <section id="computer-vision" class="archive-group">
+        <h2>Computer Vision</h2>
+        <article id="digit" class="work-card">
+          <h3 id="deep-learning-digit-sequence-recognition-using-cnns">Digit Sequence Recognition</h3>
+          <p>Built a convolutional network to recognize multi-digit sequences using synthetic examples assembled from MNIST digits.</p>
+          <ul role="list" class="tech-tags" aria-label="Methods and tools"><li>CNN</li><li>TensorFlow</li><li>Keras</li><li>MNIST</li></ul>
+          <div class="project-links">
+            <a class="project-action" href="/digit_recognition/digit_recognition_mnist_sequence.html">Open notebook <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/alex-coch/alex-coch.github.io/tree/main/digit_recognition">View on GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://colab.research.google.com/github/alex-coch/alex-coch.github.io/blob/main/digit_recognition/digit_recognition_mnist_sequence.ipynb">Open in Colab <span aria-hidden="true">↗</span></a>
+          </div>
+          <figure class="archive-figure">
+            <img src="/assets/img/digit.jpg" width="219" height="219" loading="lazy" alt="A synthetic sequence of four handwritten digits assembled from MNIST.">
+            <figcaption>A synthetic sequence of four handwritten digits assembled from MNIST.</figcaption>
+          </figure>
+        </article>
+      </section>
+      <section id="natural-language-processing" class="archive-group">
+        <h2>Natural Language Processing</h2>
+        <article id="message" class="work-card">
+          <h3 id="disaster-message-classifier">Disaster Message Classifier</h3>
+          <p>Built a pipeline that prepares disaster messages, trains a multilabel classifier, and serves predictions in a Flask app.</p>
+          <ul role="list" class="tech-tags" aria-label="Methods and tools"><li>ETL</li><li>Multilabel classification</li><li>NLTK</li><li>XGBoost</li><li>Flask</li><li>SQLAlchemy</li></ul>
+          <div class="project-links">
+            <a class="project-action" href="/message/notebook/walkthrough.html">Open notebook <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/alex-coch/alex-coch.github.io/tree/main/message">View on GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://colab.research.google.com/github/alex-coch/alex-coch.github.io/blob/main/message/notebook/walkthrough.ipynb">Open in Colab <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article id="sentiment" class="work-card">
+          <h3 id="3-way-sentiment-analysis-for-tweets">Tweet Sentiment Analysis</h3>
+          <p>Built a classifier for positive, neutral, and negative tweets and evaluated it using a baseline and classification reports.</p>
+          <ul role="list" class="tech-tags" aria-label="Methods and tools"><li>Sentiment classification</li><li>NLTK</li><li>scikit-learn</li><li>Logistic regression</li></ul>
+          <div class="project-links">
+            <a class="project-action" href="/sentiment/Sentiment_Analysis_for_Tweets.html">Open notebook <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/alex-coch/alex-coch.github.io/tree/main/sentiment">View on GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://colab.research.google.com/github/alex-coch/alex-coch.github.io/blob/main/sentiment/Sentiment_Analysis_for_Tweets.ipynb">Open in Colab <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="actions work-actions">
+    <a href="/">← Back to portfolio</a>
+  </div>
+</footer>
+</main></body></html>
