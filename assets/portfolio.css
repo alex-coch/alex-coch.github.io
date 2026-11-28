@@ -238,6 +238,10 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
   background:var(--panel);border:1px solid var(--muted);border-radius:.3rem
 }
 #contact-form textarea {resize:vertical}
+/* Google allocates a 164 × 144 frame for the 158 × 138 compact widget. */
+#contact-captcha[data-size="compact"] {
+  width:158px;height:138px;overflow:hidden;border-radius:3px
+}
 #contact-form button {justify-self:start;border:0;font:inherit;cursor:pointer}
 #contact-form :focus-visible {outline:3px solid var(--focus);outline-offset:3px}
 
