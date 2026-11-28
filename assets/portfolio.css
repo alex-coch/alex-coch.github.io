@@ -98,6 +98,8 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .resume .contact-actions {margin-bottom:1.5rem}
 .contact-actions :is(a,button) {display:inline-flex;align-items:center;min-height:44px}
 .contact-actions .primary {gap:.45em;border:0;font:inherit;font-weight:600;cursor:pointer}
+.contact-actions .contact-social {gap:.4rem}
+.contact-social svg {flex:none}
 .contact-actions button[hidden] {display:none}
 .contact-actions button:focus-visible,.more-contact-links summary:focus-visible {
   outline:3px solid var(--focus);outline-offset:4px
