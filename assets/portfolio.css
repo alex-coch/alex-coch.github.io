@@ -410,7 +410,7 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
   .resume-section-nav a:hover {text-decoration:underline}
   .resume-section-nav a:focus-visible {outline-offset:-3px}
   .resume-section-nav a[aria-current="location"] {background:var(--panel);color:var(--ink)}
-  .resume-section-nav .resume-sidebar-download {
+  .resume-section-nav[data-past-intro-download] .resume-sidebar-download {
     display:flex;gap:.4rem;margin-top:.75rem;padding:.45rem .6rem;line-height:1.25;font-weight:600
   }
   .resume-sidebar-download svg {flex:none}
