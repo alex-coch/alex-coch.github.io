@@ -293,6 +293,10 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .failure-walkthrough h3 {font-size:1rem}
 .failure-walkthrough ol {padding-inline-start:1.3rem;margin:.75rem 0}
 .failure-walkthrough li {padding:.35rem 0}
+.failure-step-state {
+  display:table;margin:.25rem 0 .45rem;padding:.2rem .5rem;color:var(--ink);
+  background:var(--panel);border-radius:.25rem;font-size:.9rem;font-weight:600
+}
 .failure-selector {min-inline-size:0;margin:0;padding:0;border:0}
 .failure-selector legend {font-weight:600;margin-bottom:.35rem;padding:0}
 .failure-options {display:flex;flex-wrap:wrap;gap:.45rem}
