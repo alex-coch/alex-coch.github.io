@@ -6,7 +6,7 @@
   <title>Reliable event delivery for document workflows · Aleksei Kokorev</title>
   <link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=60">
+<link rel="stylesheet" href="/assets/portfolio.css?v=61">
 <script defer src="/assets/portfolio-nav.js?v=7"></script>
 <script defer src="failure-walkthrough.js?v=2"></script>
 </head>
@@ -58,17 +58,17 @@
       <section id="broker-outage" data-failure-scenario aria-label="RabbitMQ offline">
         <h3>RabbitMQ offline</h3>
         <ol>
-          <li><strong>Document saved.</strong> The API returns HTTP 201. PostgreSQL commits the document and its outbox event in the same transaction.</li>
-          <li><strong>Event pending.</strong> The relay cannot publish while RabbitMQ is offline. The event remains in PostgreSQL for retry.</li>
-          <li><strong>Event delivered.</strong> After RabbitMQ restarts, the relay publishes the event and the consumer writes one history entry.</li>
+          <li><strong>Document saved.</strong> <span class="failure-step-state">Write accepted · HTTP 201</span> The API returns HTTP 201. PostgreSQL commits the document and its outbox event in the same transaction.</li>
+          <li><strong>Event pending.</strong> <span class="failure-step-state">Outbox · Pending in PostgreSQL</span> The relay cannot publish while RabbitMQ is offline. The event remains in PostgreSQL for retry.</li>
+          <li><strong>Event delivered.</strong> <span class="failure-step-state">Delivery complete · 1 history entry</span> After RabbitMQ restarts, the relay publishes the event and the consumer writes one history entry.</li>
         </ol>
       </section>
       <section id="consumer-crash" data-failure-scenario aria-label="Consumer crash before acknowledgement">
         <h3>Consumer crash before acknowledgement</h3>
         <ol>
-          <li><strong>History entry committed.</strong> The consumer commits the event ID and history entry in PostgreSQL, then stops before acknowledging the message.</li>
-          <li><strong>Message redelivered.</strong> RabbitMQ delivers the unacknowledged message to a replacement consumer.</li>
-          <li><strong>Duplicate skipped.</strong> The replacement detects the existing event ID and acknowledges the message. The queue drains and the history still contains one entry.</li>
+          <li><strong>History entry committed.</strong> <span class="failure-step-state">1 history entry · Message unacknowledged</span> The consumer commits the event ID and history entry in PostgreSQL, then stops before acknowledging the message.</li>
+          <li><strong>Message redelivered.</strong> <span class="failure-step-state">RabbitMQ · Redelivered to replacement consumer</span> RabbitMQ delivers the unacknowledged message to a replacement consumer.</li>
+          <li><strong>Duplicate skipped.</strong> <span class="failure-step-state">Queue drained · Still 1 history entry</span> The replacement detects the existing event ID and acknowledges the message. The queue drains and the history still contains one entry.</li>
         </ol>
       </section>
       <div class="failure-controls" hidden>
