@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.summary | escape }}">
+  <title>{{ page.title | escape }} · Machine Learning Archive</title>
+  <link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
+  <script src="/assets/theme.js?v=2"></script>
+  <link rel="stylesheet" href="/assets/portfolio.css?v=72">
+  <link rel="stylesheet" href="/assets/notebook.css?v=1">
+  <script defer src="/assets/portfolio-nav.js?v=9"></script>
+  <script defer src="/assets/notebook.js?v=1"></script>
+</head>
+<body>
+<header>
+  <a class="name" href="/">Aleksei Kokorev</a>
+  <button class="menu-toggle" type="button" aria-label="Open main menu" aria-expanded="false" aria-controls="main-nav">
+    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/>
+    </svg>
+  </button>
+  <nav id="main-nav" aria-label="Main navigation">
+    <a href="/#work">Projects</a>
+    <a href="/#skills">Skills</a>
+    <a href="/#writing">Posts</a>
+    <a href="/#contact">Contact</a>
+    <a href="/resume/">Resume</a>
+  </nav>
+  <label class="theme-switch" title="Dark theme" hidden>
+    <input id="theme-toggle" type="checkbox" role="switch" aria-label="Dark theme">
+    <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
+  </label>
+</header>
+<main class="notebook-page">
+  <section class="case notebook-overview" aria-labelledby="project-title">
+    <a class="notebook-back" href="/learning/ml/#{{ page.archive_anchor }}">← Back to ML archive</a>
+    <div class="archive-intro">
+      <p class="meta">{{ page.area | escape }} · Archived project</p>
+      <h1 id="project-title">{{ page.title | escape }}</h1>
+      <p>{{ page.summary | escape }}</p>
+    </div>
+    <div class="project-links">
+      <a class="project-action" href="#full-notebook">Read the notebook <span aria-hidden="true">↓</span></a>
+      <a href="{{ page.github | escape }}">View on GitHub <span aria-hidden="true">↗</span></a>
+      <a href="{{ page.colab | escape }}">Open in Colab <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="work-card notebook-result">
+      <h2>{{ page.result_title | default: "Result" | escape }}</h2>
+      <p>{{ page.result | escape }}</p>
+      {% if page.figure %}
+      <figure class="archive-figure">
+        <img src="{{ page.figure }}" width="{{ page.figure_width }}" height="{{ page.figure_height }}" alt="{{ page.figure_alt | escape }}">
+        <figcaption>{{ page.figure_caption | escape }}</figcaption>
+      </figure>
+      {% endif %}
+      {% if page.steps %}
+      <ol class="notebook-steps" role="list">
+        {% for step in page.steps %}
+        <li>{{ step | escape }}</li>
+        {% endfor %}
+      </ol>
+      {% endif %}
+    </div>
+  </section>
+  <section class="notebook-content" aria-labelledby="full-notebook">
+    <h2 id="full-notebook">Full notebook</h2>
+    <p class="meta">Archived HTML with the original code and saved outputs.</p>
+    <nav class="notebook-outline" aria-label="On this page">
+      <strong>On this page</strong>
+      <ul role="list">
+        {% for section in page.sections %}
+        <li><a href="{{ page.export }}#{{ section.id | url_encode }}" data-notebook-fragment="{{ section.id | escape }}">{{ section.label | escape }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <iframe id="notebook-export" src="{{ page.export }}" title="{{ page.title | escape }} notebook"></iframe>
+  </section>
+</main>
+</body>
+</html>
