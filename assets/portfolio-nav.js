@@ -1,6 +1,8 @@
 (() => {
   const header = document.querySelector('body > header');
-  const sections = Array.from(header.querySelectorAll('a[href^="#"]'), link => ({
+  const resumeNav = document.querySelector('.resume-section-nav');
+  const sectionNav = resumeNav ?? header;
+  const sections = Array.from(sectionNav.querySelectorAll('a[href^="#"]'), link => ({
     link,
     section: document.getElementById(link.hash.slice(1))
   }));
@@ -10,7 +12,10 @@
     const threshold = header.offsetHeight + 18;
     const atBottom = window.scrollY > 0 &&
       window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 1;
-    const active = atBottom ? sections.at(-1) :
+    // Near the footer, an anchor can be visible even if the page cannot scroll it to the top.
+    const requested = resumeNav && atBottom && sections.find(({ link, section }) =>
+      link.hash === location.hash && section.getBoundingClientRect().top > threshold);
+    const active = atBottom ? requested || sections.at(-1) :
       sections.findLast(({ section }) => section.getBoundingClientRect().top <= threshold);
     if (current === active) return;
     current?.link.removeAttribute('aria-current');
@@ -63,4 +68,5 @@
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
   window.addEventListener('pageshow', update);
+  if (resumeNav) window.addEventListener('hashchange', update);
 })();
