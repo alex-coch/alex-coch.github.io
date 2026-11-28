@@ -317,6 +317,13 @@ header nav a[aria-current] {color:var(--on-accent);background:var(--accent)}
 .comparison-excerpts figcaption {font-weight:700;font-size:.9rem}
 .comparison-excerpts blockquote {margin:.4rem 0 0}
 .comparison-excerpts p {margin:0}
+.comparison-result > p.comparison-result-new {
+  max-width:none;margin:.85rem 1rem 0;padding:.65rem .75rem;
+  background:var(--panel);border:1px solid var(--accent);
+  border-inline-start-width:4px;border-radius:.35rem
+}
+.comparison-result-new strong {display:block;margin-bottom:.2rem}
+.comparison-source-highlight {text-decoration:underline;text-underline-offset:.17em}
 @media (min-width:38rem) {
   .comparison-excerpts {grid-template-columns:repeat(2,minmax(0,1fr))}
 }
