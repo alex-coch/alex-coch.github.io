@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Matching audiobook narration to text · Aleksei Kokorev</title><link rel="icon" href="/assets/ak.svg?v=3" type="image/svg+xml">
 <script src="/assets/theme.js?v=2"></script>
-<link rel="stylesheet" href="/assets/portfolio.css?v=42"><script defer src="/assets/portfolio-nav.js?v=7"></script>
+<link rel="stylesheet" href="/assets/portfolio.css?v=57"><script defer src="/assets/portfolio-nav.js?v=7"></script>
 <script defer src="example-alignment.js?v=3"></script>
 </head>
 <body><header>
@@ -27,32 +27,33 @@
 <section class="case">
 <p class="meta">Production GPU service · Python backend engineering</p>
 <h1>Matching audiobook narration to text</h1>
+<p>I built the Python alignment pipeline and deployed its GPU inference service to production. It matches ebook passages to audiobook timestamps.</p>
+<section class="comparison-result" aria-labelledby="alignment-example">
+  <div class="comparison-result-heading">
+    <h2 id="alignment-example">Listen to the matching phrase</h2>
+    <p>Fictional excerpt · 8-second sample</p>
+  </div>
+  <div class="alignment-example-body">
+    <audio id="example-narration" controls preload="metadata" aria-label="Sample narration">
+      <source src="example-narration.mp3" type="audio/mpeg">
+      <a href="example-narration.mp3">Download the sample narration (MP3)</a>
+    </audio>
+    <p class="alignment-hint">Choose a phrase to hear it.</p>
+    <p id="example-transcript">
+      “<button type="button" data-start="0" data-end="1.96" aria-controls="example-narration">Mira closed the gate</button>
+      <button type="button" data-start="1.96" data-end="4.35" aria-controls="example-narration">and followed the lanterns</button>
+      <button type="button" data-start="4.35" data-end="5.64" aria-controls="example-narration">down the path</button>
+      <button type="button" data-start="5.64" data-end="7.17" aria-controls="example-narration">toward the river.</button>”
+    </p>
+    <p class="alignment-time">Position in audiobook · <code>00:12:08–00:12:16</code></p>
+  </div>
+</section>
 <ul role="list" class="tech-tags" aria-label="Tech stack">
   <li>Python</li>
   <li>Apache Airflow</li>
   <li>FastAPI</li>
   <li>Wav2Vec2</li>
 </ul>
-<p><strong>My contribution.</strong> I built the Python alignment pipeline in Apache Airflow and deployed a dedicated FastAPI service for GPU inference to production.</p>
-<p><strong>Production result.</strong> The pipeline produces a validated SMIL synchronization map that links ebook passages to the corresponding time intervals in the audiobook.</p>
-<section class="comparison-result" aria-labelledby="alignment-example">
-  <div class="comparison-result-heading">
-    <h2 id="alignment-example">Example (demonstration data).</h2>
-  </div>
-  <div class="alignment-example-body">
-    <p id="example-transcript">
-      “<button type="button" data-start="0" data-end="1.96" aria-controls="example-narration">Mira closed the gate</button>
-      <button type="button" data-start="1.96" data-end="4.35" aria-controls="example-narration">and followed the lanterns</button>
-      <button type="button" data-start="4.35" data-end="5.64" aria-controls="example-narration">down the path</button>
-      <button type="button" data-start="5.64" data-end="7.17" aria-controls="example-narration">toward the river.</button>”
-      → <code>00:12:08–00:12:16</code> in the audiobook.
-    </p>
-    <audio id="example-narration" controls preload="auto" aria-label="Sample narration">
-      <source src="example-narration.mp3" type="audio/mpeg">
-      <a href="example-narration.mp3">Download the sample narration (MP3)</a>
-    </audio>
-  </div>
-</section>
 <h2>The problem</h2>
 <p>Given a passage in an ebook, where does it begin and end in the audiobook? The book gives us the words, and the recording gives us a timeline. Connecting the two gets tricky when the narrator repeats a line or reads a heading differently from the printed version.</p>
 <h2>How the pipeline works</h2>

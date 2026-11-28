@@ -42,6 +42,8 @@ p {max-width:64ch}.hero p {font-size:1.2rem} nav {margin:1.6rem 0}
 .comparison-result-new strong {color:var(--accent)}
 .alignment-example-body p {margin:0 0 .75rem}
 .alignment-example-body audio {display:block;width:min(100%,28rem)}
+.alignment-example-body .alignment-hint {margin:.65rem 0 .25rem;color:var(--muted);font-size:.9rem}
+.alignment-example-body .alignment-time {margin:0;color:var(--muted);font-size:.9rem}
 #example-transcript button {
   appearance:none;background:transparent;border:0;border-radius:.2em;padding:0;
   color:var(--accent);font:inherit;cursor:pointer;
