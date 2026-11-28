@@ -35,15 +35,10 @@
   <p class="meta">Backend engineering · Event-driven systems</p>
   <h1>Reliable event delivery for document workflows</h1>
   <a class="primary case-example-link" href="#failure-test-results">View failure test results <span aria-hidden="true">↓</span></a>
-  <ul role="list" class="tech-tags" aria-label="Tech stack">
-    <li>Python</li>
-    <li>PostgreSQL</li>
-    <li>RabbitMQ</li>
-  </ul>
   <p>I built a Python transactional outbox and idempotent consumers. In failure tests, the event was delivered after RabbitMQ recovered, and redelivery left just one history entry.</p>
   <section class="comparison-result" aria-labelledby="failure-test-results">
     <div class="comparison-result-heading">
-      <h2 id="failure-test-results">Failure test results.</h2>
+      <h2 id="failure-test-results">Failure test results</h2>
       <p>Walkthrough of recorded test results from the Docker Compose and Kubernetes demo.</p>
     </div>
     <div class="failure-walkthrough" data-failure-walkthrough>
@@ -88,9 +83,14 @@
       </div>
     </div>
   </section>
+  <ul role="list" class="tech-tags" aria-label="Tech stack">
+    <li>Python</li>
+    <li>PostgreSQL</li>
+    <li>RabbitMQ</li>
+  </ul>
   <h2>The problem</h2>
   <p>A document update had to save the change in PostgreSQL and notify other services through RabbitMQ. If the database commit succeeded and the process stopped before sending the message, the document would show its new state while downstream services would have no record of the change.</p>
-  <h2>How the outbox works</h2>
+  <h2>How it works</h2>
   <p>The service writes the document change and its outgoing event in the same PostgreSQL transaction. After commit, a separate relay publishes the event to RabbitMQ. If publication fails, the event stays pending for another attempt.</p>
   <figure class="pipeline">
     <figcaption>From document update to downstream processing</figcaption>
@@ -110,18 +110,6 @@
   <h2>Handling redelivery and duplicates</h2>
   <p>Duplicates can come from either side. The relay can publish an event again if it stops after RabbitMQ accepts the message but before it records successful publication. RabbitMQ can also redeliver a message if the consumer disconnects before acknowledging it.</p>
   <p>The consumer records the event ID and writes the history entry in the same PostgreSQL transaction, then acknowledges the message. In the demo, I stopped the first consumer between commit and acknowledgement. The replacement consumer found the existing event ID, logged <code>duplicate_skipped</code>, and acknowledged the message without writing a second history entry.</p>
-  <h2>Run the demo</h2>
-  <div class="actions work-actions">
-    <a href="https://github.com/alex-coch/document-events-outbox#quick-start">Run the demo ↗</a>
-    <div class="ci-badges" role="group" aria-label="GitHub Actions status">
-      <a href="https://github.com/alex-coch/document-events-outbox/actions/workflows/compose-ci.yml">
-        <img src="https://github.com/alex-coch/document-events-outbox/actions/workflows/compose-ci.yml/badge.svg?branch=main" alt="Docker Compose workflow status" height="20">
-      </a>
-      <a href="https://github.com/alex-coch/document-events-outbox/actions/workflows/kind-ci.yml">
-        <img src="https://github.com/alex-coch/document-events-outbox/actions/workflows/kind-ci.yml/badge.svg?branch=main" alt="Kubernetes (kind) workflow status" height="20">
-      </a>
-    </div>
-  </div>
 </section>
 <footer>
   <div class="actions work-actions">

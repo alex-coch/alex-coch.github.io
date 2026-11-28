@@ -57,7 +57,7 @@
 </ul>
 <h2>The problem</h2>
 <p>Given a passage in an ebook, where does it begin and end in the audiobook? The book gives us the words, and the recording gives us a timeline. Connecting the two gets tricky when the narrator repeats a line or reads a heading differently from the printed version.</p>
-<h2>How the pipeline works</h2>
+<h2>How it works</h2>
 <p>The pipeline prepares the book text and uses FFmpeg to split the narration into short, overlapping audio windows. The GPU service runs Wav2Vec2 on one window at a time and returns a score for each possible speech token at each time step. The processor uses those scores to align the text with the recording and place each match on the original audiobook timeline.</p>
 <figure class="pipeline">
   <figcaption>From audiobook recording to synchronization map</figcaption>
