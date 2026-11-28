@@ -63,18 +63,18 @@
   <p>When you follow a topic across several publications, a new article often spends most of its time on familiar ground. A summary tells you what the article says. As a returning reader, I wanted to answer a more specific question: <em>What does this add to what I’ve already read?</em></p>
   <h2>How the comparison works</h2>
   <figure class="pipeline">
-    <figcaption>Comparing the current article with earlier reading</figcaption>
-    <div class="node"><strong>Previously read articles</strong> <span>The Python backend splits the text into passages.</span></div>
-    <div class="edge">↓ Encode each passage with Sentence Transformers</div>
-    <div class="node"><strong>ChromaDB · Vector store</strong> <span>Index the passages from the reader’s history.</span></div>
-    <div class="edge">↓ Search the index using passages from the current article in Chrome</div>
-    <div class="node"><strong>Python API</strong> <span>Retrieve relevant earlier passages and compare them with the current article text.</span></div>
-    <div class="edge">↓ Return the comparison</div>
-    <div class="node"><strong>Chrome extension</strong> <span>Article summary · Already covered · What this article adds</span></div>
+    <figcaption>From the current article to a comparison with reading history</figcaption>
+    <div class="node"><strong>Chrome extension</strong> <span>Send the page HTML and the selected topic to the Python API.</span></div>
+    <div class="edge">↓ Extract the article text</div>
+    <div class="node"><strong>Python API</strong> <span>Use the full article text as the search query and calculate how much room remains for history in the prompt.</span></div>
+    <div class="edge">↓ Search saved passages for the current reader and topic</div>
+    <div class="node"><strong>ChromaDB · Vector store</strong> <span>Return up to 40 matching passages. The API keeps the matches that fit the token budget.</span></div>
+    <div class="edge">↓ Send the retrieved passages alongside the current article</div>
+    <div class="node"><strong>Comparison</strong> <span>Ask the model separately what is new and what the earlier reading already covered, then return both answers to Chrome.</span></div>
   </figure>
-  <h2>Searching reading history in ChromaDB</h2>
-  <p>The Python backend splits previously read articles into passages, turns each passage into an embedding with Sentence Transformers, and indexes those embeddings in ChromaDB. When the reader opens a new article, the backend searches that index using passages from the current article. It uses the matching passages as context for the comparison.</p>
-  <p>Passage-level retrieval matters because two articles can cover the same subject while differing on one important detail. For example, an earlier article might announce a software release, while a follow-up repeats the announcement and adds a migration deadline. The comparison should surface the deadline even when most of the follow-up sounds familiar.</p>
+  <h2>Index passages, query with the full article</h2>
+  <p>When a reader saves an article, the backend extracts its text, applies translation when needed, and groups sentences into passages of about 1,000 characters or less. It stores those passages in ChromaDB with the reader and topic as metadata.</p>
+  <p>For comparison, a single query uses the full current article. Filtering by reader and topic keeps matches within the chosen reading history. Storing the history in smaller passages lets the API include a relevant excerpt without taking up prompt space with an entire earlier article.</p>
   <h2>What “new” means</h2>
   <p>The reference point is the reader’s history. If the backend finds a related passage, it can compare what the two articles actually say. If it finds no matching passage, the narrower conclusion is <em>“I couldn’t find this in your earlier reading.”</em> That distinction matters because retrieval can miss a relevant passage.</p>
 </section>
